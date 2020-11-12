@@ -42,7 +42,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'sqlite3', 'web-console', '>= 3.3.0' # 'sqlite3' を追加
+  gem 'sqlite3' #'web-console', '>= 3.3.0' # 'sqlite3' を追加
 end
 
 group :test do
