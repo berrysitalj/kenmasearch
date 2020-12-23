@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mail: MyString
+  name: MyString
+  tel: MyString
+  station: MyString
+  onfoot: 1
+  businessday: MyText
+  businesstime1: 2020-12-17 16:14:23
+  businesstime2: 2020-12-17 16:14:23
+  pricelist: MyString
+  topphoto: MyString
+  reservation: false
+
+two:
+  mail: MyString
+  name: MyString
+  tel: MyString
+  station: MyString
+  onfoot: 1
+  businessday: MyText
+  businesstime1: 2020-12-17 16:14:23
+  businesstime2: 2020-12-17 16:14:23
+  pricelist: MyString
+  topphoto: MyString
+  reservation: false

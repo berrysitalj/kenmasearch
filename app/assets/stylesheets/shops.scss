@@ -1,8 +1,10 @@
-// Place all the styles related to the home controller here.
+// Place all the styles related to the shops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @charset "utf-8";
+
+
 
 dd,dl,h1,h2,h3,p{
 margin:0
@@ -1886,12 +1888,14 @@ font-size:28px
 
 .contentsDetails__desc{
 font-size:14px;
-margin-top:15px
+margin-top:15px;
+white-space: pre-wrap
 }
 
 @media screen and (min-width:769px){
 .contentsDetails__desc{
-font-size:16px
+font-size:16px;
+white-space: pre-wrap
 }}
 
 @media screen and (min-width:769px){
@@ -2004,3 +2008,33 @@ border-bottom:none;
 padding-left:20px
 
 }}
+
+
+
+
+
+
+
+
+
+.edit_form{
+	position:relative;
+	padding:10px 10px 10px 120px;
+	min-height:80px;
+	border:solid 1px #E6FFE9;
+}
+.edit_form p{
+	display: inline-block;
+}
+
+.edit_link{
+	display: inline-block;
+}
+
+
+.edit_form_title{
+	position:absolute;
+	left:10px;
+	top:10px;
+	border:solid 1px #808080;
+}

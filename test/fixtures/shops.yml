@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: MyString
+  pass: MyString
+  shopname: MyString
+  shoptel: 1
+  yomi: MyString
+  addres1: MyString
+  addres2: MyString
+  area: MyString
+  paidmember: false
+
+two:
+  id: MyString
+  pass: MyString
+  shopname: MyString
+  shoptel: 1
+  yomi: MyString
+  addres1: MyString
+  addres2: MyString
+  area: MyString
+  paidmember: false

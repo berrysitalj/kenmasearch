@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  freeicon1: false
+  freeicon2: false
+  freeicon3: false
+  freeicon4: false
+  freeicon5: false
+  freeicon6: false
+  freeicon11: false
+  freeicon12: false
+  freeicon13: false
+  freeicon14: false
+  freeicon15: false
+  freeicon16: false
+  freeicon21: false
+  freeicon22: false
+  freeicon23: false
+  freeicon24: false
+  freeicon25: false
+  freeicon26: false
+  freeicon27: false
+  paidicon1: false
+  paidicon2: false
+  paidicon3: false
+  paidicon4: false
+
+two:
+  freeicon1: false
+  freeicon2: false
+  freeicon3: false
+  freeicon4: false
+  freeicon5: false
+  freeicon6: false
+  freeicon11: false
+  freeicon12: false
+  freeicon13: false
+  freeicon14: false
+  freeicon15: false
+  freeicon16: false
+  freeicon21: false
+  freeicon22: false
+  freeicon23: false
+  freeicon24: false
+  freeicon25: false
+  freeicon26: false
+  freeicon27: false
+  paidicon1: false
+  paidicon2: false
+  paidicon3: false
+  paidicon4: false
