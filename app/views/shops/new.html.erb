@@ -1,0 +1,246 @@
+<!doctype html>
+
+
+
+<html lang="ja">
+
+	
+
+	<body class="top">
+
+		<div class="contentsKv"><p class="contentsKv__head item--sp">全国の健康麻雀＆ノーレート検索</p>
+		</div>
+		
+
+
+
+		<div class="contentsLayout--shop">
+			
+			<div class="contentsMain">
+			
+				
+				<div class="contentsBreadcrumb"> <a href="#">TOP</a><span>&gt;</span><a href="#">愛知県名古屋市</a><span>&gt;</span><a href="#"><%= @shop.shopname %></a></div>
+				
+
+
+				<div class="contentsDetails">
+					<div class="contentsDetails__flex">
+						<a class="contentsDetails__tag" href="#"><%= @icon.freeicon11 %></a>
+						<a class="contentsDetails__tag" href="#"><%= @icon.freeicon22 %></a>
+						<h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
+					</div>
+					<p class="contentsDetails__desc"><%= @member.topcomment %></p>
+					
+					<div class="contentsDetails__img">
+						<a href="">トップ画像(users)</a>
+						<!-- <img src="/assets/details_img01.jpeg" alt=""> -->
+						<a href="">有料画像1(members)</a>
+						<a href="">有料画像2(members)</a>
+						<!-- <img src="/assets/details_img02.jpeg" alt=""> -->
+					</div>
+					<p class="contentsDetails__desc"><%= @member.comment %></p>
+					
+
+
+
+
+                
+                    <%= form_tag("/shops/create") do %>
+					<h2 class="contentsDetails__head">基本情報(非公開)</h2>
+					
+					<table class="contentsDetails__table">
+						
+						
+						<tr>						                           
+						    <th><p>user_id</p><p>(shops,users,icons,members)</p></th>
+							<td><textarea name="userid"></textarea></td>						
+						</tr>
+						
+						<tr>
+							<th>種別(icons1～5)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th><p>住所(shops)</p><p>地図アイコン</p></th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>電話番号(shops)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>交通手段(users)</th>
+							<td>分</td>
+						</tr>
+					
+						<tr>
+							<th>営業日(users)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>営業時間(users)</th>
+							<td>～</td>
+						</tr>
+					
+						<tr>
+							<th>営業内容(icons)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>HP(公式)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>HP(雀サクッ)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>HP(麻雀王国)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>Twitter</th>
+							<td></td>
+						</tr>
+					
+					</table>
+					<input type="submit" name="" value="保存">
+                    <% end %>
+
+					<h2 class="contentsDetails__head">店舗情報(公開)</h2>
+					
+					<table class="contentsDetails__table">
+						<tr>
+							<th>店舗名(サークル名)(shops)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>種別(icons1～5)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th><p>住所(shops)</p><p>地図アイコン</p></th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>電話番号(shops)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>交通手段(users)</th>
+							<td>徒歩　分</td>
+						</tr>
+					
+						<tr>
+							<th>営業日(users)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>営業時間(users)</th>
+							<td>～</td>
+						</tr>
+					
+						<tr>
+							<th>営業内容(icons)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>HP(公式)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>HP(雀サクッ)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>HP(麻雀王国)</th>
+							<td></td>
+						</tr>
+
+						<tr>
+							<th>Twitter</th>
+							<td></td>
+						</tr>
+					
+					</table>
+					
+
+					<h2 class="contentsDetails__head">サービス(公開)</h2>
+					<table class="contentsDetails__table">
+					
+						<tr>
+							<th>卓数(members)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>卓種(members)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>サービス(members)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>システム・設備(members)</th>
+							<td></td>
+						</tr>
+					
+						<tr>
+							<th>オープン(members)</th>
+							<td></td>
+						</tr>
+					
+					</table>
+
+					<h2 class="contentsDetails__head">ルール(公開)</h2>
+					<table class="contentsDetails__table">
+					
+						<tr>
+							<th>時間打ち切り(members)</th>
+							<td><%= @member.timeup %></td>
+						</tr>
+					
+						<tr>
+							<th>ルール詳細(members)</th>
+							<td></td>
+						</tr>
+					
+					
+					</table>
+				
+
+				</div>
+				
+            </div>
+
+			<div class="contentsAd">
+
+			</div>
+			
+			<div class="contentsRecommendPost">
+			</div>
+
+		</div>
+
+	</body>
+
+</html>s

@@ -1,7 +1,4 @@
 <!doctype html>
-<div><%= link_to("/shops/1へ移動する", "/shops/1") %></div>
-<div><%= link_to("/shops/1/editへ移動する", "/shops/1/edit") %></div>
-<div><%= link_to("/shops2/へ移動する", "/shops/2") %></div>
 
 
 
@@ -22,22 +19,18 @@
 			<div class="contentsMain">
 			
 				
-				<div class="contentsBreadcrumb"> <a href="#">TOP</a><span>&gt;</span><a href="#">千種区</a><span>&gt;</span><a href="#">いかさぽ</a></div>
+				<div class="contentsBreadcrumb"> <a href="#">ログイン</a><span>&gt;</span><a href="#">愛知県</a><span>&gt;</span><a href="#">名古屋市</a></div>
 				
 
 
 				<div class="contentsDetails">
 					<div class="contentsDetails__flex">
-						<a class="contentsDetails__tag" href="#">健康麻雀</a>
-						<h1 class="contentsDetails__title">いかさぽ</h1>
+						
+						<h1 class="contentsDetails__title">店舗一覧</h1>
 					</div>
-					<p class="contentsDetails__desc">TOP用コメント30文字以内</p>
 					
-					<div class="contentsDetails__img">
-						<img src="/assets/details_img01.jpeg" alt="">
-						<img src="/assets/details_img02.jpeg" alt="">
-					</div>
-					<p class="contentsDetails__desc">コメント2000文字以内</p>
+					
+					
 					
 
 					<h2 class="contentsDetails__head">店舗情報</h2>
@@ -45,73 +38,15 @@
 					<table class="contentsDetails__table">
 					<% @shops.each do |shop| %>
 						<tr>
-							<th>店舗名</th>
+							<th><%= link_to("編集", "/shops/#{shop.userid}/edit") %>    <%= shop.userid %></th>
 							<td><%= shop.shopname %></td>
+
 						</tr>
-					
-						<tr>
-							<th>住所</th>
-							<td>愛知県名古屋市中村区名駅4丁目22-17 中央ビル3F</td>
-						</tr>
-					
-						<tr>
-							<th>電話</th>
-							<td>000-0000-0000</td>
-						</tr>
-					
-						<tr>
-							<th>交通手段</th>
-							<td>名古屋駅　徒歩○分</td>
-						</tr>
-					
-						<tr>
-							<th>営業時間</th>
-							<td>00:00～00:00</td>
-						</tr>
-					
-						<tr>
-							<th>営業内容</th>
-							<td>フリー、セット、健康麻雀、麻雀教室、ノーレート</td>
-						</tr>
-					
 					<% end %>
 					</table>
 					
 
-					<h2 class="contentsDetails__head">お店のサービス</h2>
-					<table class="contentsDetails__table">
 					
-						<tr>
-							<th>総卓数</th>
-							<td>5卓</td>
-						</tr>
-					
-						<tr>
-							<th>卓種</th>
-							<td>点数表示付全自動卓×5　全自動配牌卓×5</td>
-						</tr>
-					
-						<tr>
-							<th>サービス</th>
-							<td>フリードリンク、自動配牌卓、禁煙、ノーレート、駐車場、女性スタッフ、学割</td>
-						</tr>
-					
-						<tr>
-							<th>システム・設備</th>
-							<td>ウォシュレット、大型TV、ネット環境</td>
-						</tr>
-					
-						<tr>
-							<th>備考</th>
-							<td>フリー、セット、健康麻雀、麻雀教室、ノーレート </td>
-						</tr>
-					
-						<tr>
-							<th>営業内容</th>
-							<td>フリー、セット、健康麻雀、麻雀教室、ノーレート </td>
-						</tr>
-					
-					</table>
 				</div>
 				
             </div>
@@ -128,14 +63,8 @@
 
 
 
-		<footer class="footer">
-			<div class="footer__inner"><a href="/"><img class="footer__logo" src="/assets/logo.png" alt="けんま〜サーチ"></a>
-				<div class="footer__mapList"><a class="footer__mapItem" href="#">千種区</a><a class="footer__mapItem" href="#">東区</a><a class="footer__mapItem" href="#">北区</a><a class="footer__mapItem" href="#">西区</a><a class="footer__mapItem" href="#">中村区</a><a class="footer__mapItem" href="#">中区</a><a class="footer__mapItem" href="#">昭和区</a><a class="footer__mapItem" href="#">瑞穂区</a><a class="footer__mapItem" href="#">熱田区</a><a class="footer__mapItem" href="#">中川区</a><a class="footer__mapItem" href="#">港区</a><a class="footer__mapItem" href="#">南区</a><a class="footer__mapItem" href="#">守山区</a><a class="footer__mapItem" href="#">緑区</a><a class="footer__mapItem" href="#">名東区</a><a class="footer__mapItem" href="#">天白区</a></div>
-				<div class="footer__pageList"><a class="footer__pageItem" href="#">新着情報</a><a class="footer__pageItem" href="#">おすすめ店舗</a><a class="footer__pageItem" href="#">店舗一覧</a><a class="footer__pageItem" href="#">お問い合わせ</a></div>
-			</div>
-		</footer>
-		<div class="footer__copyright">Copyright© けんま〜サーチ All Rights Reserved.</div>
-		<script src="./js/app.js"></script>
+
+
 	</body>
 
 </html>

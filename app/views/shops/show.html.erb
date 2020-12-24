@@ -40,7 +40,7 @@
 					</div>
 					<p class="contentsDetails__desc"><%= @member.comment %></p>
 					
-
+                    <%= link_to("編集", "/shops/#{@shop.userid}/edit") %>
 					<h2 class="contentsDetails__head">店舗情報</h2>
 					
 					<table class="contentsDetails__table">
@@ -76,7 +76,7 @@
 
 						<tr>
 							<th>営業時間(users)</th>
-							<td><%= l @user.businesstime1, format: :hm %>～<%= l @user.businesstime2, format: :hm %></td>
+							<td><%= l(@user.businesstime1, format: :hm) if @user.businesstime1  %>～<%= l(@user.businesstime2, format: :hm) if @user.businesstime2  %></td>
 						</tr>
 					
 						<tr>
@@ -117,17 +117,17 @@
 					
 						<tr>
 							<th>卓種(members)</th>
-							<td><%= safe_join(@member.tabletype.split("\n"),tag(:br)) %></td>
+							<td></td>
 						</tr>
 					
 						<tr>
 							<th>サービス(members)</th>
-							<td><%= safe_join(@member.service.split("\n"),tag(:br)) %></td>
+							<td></td>
 						</tr>
 					
 						<tr>
 							<th>システム・設備(members)</th>
-							<td><%= safe_join(@member.system.split("\n"),tag(:br)) %></td>
+							<td></td>
 						</tr>
 					
 						<tr>
@@ -147,7 +147,7 @@
 					
 						<tr>
 							<th>ルール詳細(members)</th>
-							<td><%= safe_join(@member.rule.split("\n"),tag(:br)) %></td>
+							<td></td>
 						</tr>
 					
 					

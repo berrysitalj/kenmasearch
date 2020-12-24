@@ -1,13 +1,14 @@
 class ShopsController < ApplicationController
   def index
   	@shops = Shop.all.order(created_at: :desc)
+
   end
 
   def show
-  	@shop = Shop.find_by(id: params[:id])
-    @user = User.find_by(id: params[:id])
-    @icon = Icon.find_by(id: params[:id])
-    @member = Member.find_by(id: params[:id])
+  	@shop = Shop.find_by(userid: params[:id])
+    @user = User.find_by(userid: params[:id])
+    @icon = Icon.find_by(userid: params[:id])
+    @member = Member.find_by(userid: params[:id])
   end
 
   def new
@@ -19,24 +20,37 @@ class ShopsController < ApplicationController
 
   def create
   	@shop = Shop.new(userid: params[:userid])
+    @user = User.new(userid: params[:userid])
+    @icon = Icon.new(userid: params[:userid])
+    @member = Member.new(userid: params[:userid])
+
     if @shop.save
-      flash[:notice] = "投稿を作成しました"
+       @user.save
+       @icon.save
+       @member.save
+      flash[:notice] = "新規登録が完了しました"
       redirect_to("/shops/index")
-    else
-      render("shops/new")
+     else
+       render("shops/new")
     end
+ 
+
+
+
   end
 
+
+
   def edit
-  	@shop = Shop.find_by(id: params[:id])
-    @user = User.find_by(id: params[:id])
-    @icon = Icon.find_by(id: params[:id])
-    @member = Member.find_by(id: params[:id])
+  	@shop = Shop.find_by(userid: params[:id])
+    @user = User.find_by(userid: params[:id])
+    @icon = Icon.find_by(userid: params[:id])
+    @member = Member.find_by(userid: params[:id])
   end
   
   def update
-  	@shop = Shop.find_by(id: params[:id])
-  	@shop.userid = params[:userid]
+  	@shop = Shop.find_by(userid: params[:id])
+  	@shop.userid = params[:useridshop]
   	@shop.pass = params[:pass]
   	@shop.shopname = params[:shopname]
   	@shop.shoptel = params[:shoptel]
@@ -46,7 +60,8 @@ class ShopsController < ApplicationController
   	@shop.area = params[:area]
   	@shop.paidmember = params[:paidmember]
 
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(userid: params[:id])
+    @user.userid = params[:useriduser]
   	@user.mail = params[:mail]
     @user.name = params[:name]
     @user.tel = params[:tel]
@@ -60,8 +75,7 @@ class ShopsController < ApplicationController
     @user.agegroup = params[:agegroup]
     @user.reservation = params[:reservation]
 
-    @icon = Icon.find_by(id: params[:id])
-    @icon.userid = params[:userid]
+    @icon = Icon.find_by(userid: params[:id])
     @icon.freeicon1 = params[:freeicon1]
     @icon.freeicon2 = params[:freeicon2]
     @icon.freeicon3 = params[:freeicon3]
@@ -84,10 +98,10 @@ class ShopsController < ApplicationController
     @icon.paidicon1 = params[:paidicon1]
     @icon.paidicon2 = params[:paidicon2]
     @icon.paidicon3 = params[:paidicon3]
-  	@icon.paidicon4 = params[:paidicon4]
+    @icon.paidicon4 = params[:paidicon4]
 
-    @member = Member.find_by(id: params[:id])
-    @member.userid = params[:userid]
+    @member = Member.find_by(userid: params[:id])
+    @member.userid = params[:useridmember]
     @member.topcomment = params[:topcomment]
     @member.comment = params[:comment]
     @member.photo1 = params[:photo1]
@@ -105,24 +119,13 @@ class ShopsController < ApplicationController
     @member.homepage4 = params[:homepage4]
     @member.opening = params[:opening]
 
+    
+
 
     if @shop.save
-      else
-    	 render("shops/edit")
-    end
-
-    if @user.save
-      else
-       render("shops/edit")
-    end
-
-    if @icon.save
-      else
-       render("shops/edit")
-    end
-
-
-    if @member.save
+       @user.save
+       @icon.save
+       
       flash[:notice] = "投稿を編集しました"
         redirect_to("/shops/index")
       else

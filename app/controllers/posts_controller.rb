@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @user = User.all
   end
 
   def show
-  	@post = Post.find_by(id: params[:id])
+  	@user = User.find_by(id: params[:id])
   end
 
   def new
@@ -12,19 +12,19 @@ class PostsController < ApplicationController
   end
 
   def create
-  	@post = Post.new(content: params[:content])
-    @post.save
+  	@user = User.new(userid: params[:userid])
+    @user.save
     redirect_to("/posts/index")
   end
 
   def edit
-    @post = Post.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
   
   def update
-    @post = Post.find_by(id: params[:id])
-    @post.content = params[:content]
-    @post.save
+    @user = User.find_by(id: params[:id])
+    @user.userid = params[:userid]
+    @user.save
     redirect_to("/posts/index")
   end
   

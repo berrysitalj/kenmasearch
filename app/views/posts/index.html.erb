@@ -3,10 +3,10 @@
 
 <div class="main posts-index">
   <div class="container">
-    <% @posts.each do |post| %>
+    <% @user.each do |user| %>
       <div class="posts-index-item">
         <!-- 以下をlink_toメソッドを用いて書き換えてください -->
-        <%= link_to(post.content, "/posts/#{post.id}") %>
+        <%= userid %>
       </div>
     <% end %>
   </div>
