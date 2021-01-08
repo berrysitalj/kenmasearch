@@ -1,2 +1,3 @@
 class Icon < ApplicationRecord
+	
 end

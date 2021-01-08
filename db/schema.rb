@@ -10,9 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_17_082337) do
+ActiveRecord::Schema.define(version: 2020_12_27_064852) do
 
-  create_table "icons", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "pass"
+    t.string "shopname"
+    t.string "shoptel"
+    t.string "yomi"
+    t.string "addres1"
+    t.string "addres2"
+    t.string "area"
+    t.boolean "paidmember"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "userid"
+    t.string "mail"
+    t.string "name"
+    t.string "tel"
+    t.string "station"
+    t.integer "onfoot"
+    t.text "businessday"
+    t.string "businesstime1"
+    t.string "businesstime2"
+    t.string "pricelist"
+    t.string "topphoto"
+    t.string "agegroup"
+    t.boolean "reservation"
     t.boolean "freeicon1"
     t.boolean "freeicon2"
     t.boolean "freeicon3"
@@ -36,12 +65,6 @@ ActiveRecord::Schema.define(version: 2020_12_17_082337) do
     t.boolean "paidicon2"
     t.boolean "paidicon3"
     t.boolean "paidicon4"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "userid"
-  end
-
-  create_table "members", force: :cascade do |t|
     t.text "topcomment"
     t.text "comment"
     t.string "photo1"
@@ -58,47 +81,6 @@ ActiveRecord::Schema.define(version: 2020_12_17_082337) do
     t.string "homepage3"
     t.string "homepage4"
     t.date "opening"
-    t.string "userid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "shops", force: :cascade do |t|
-    t.string "pass"
-    t.string "shopname"
-    t.string "shoptel"
-    t.string "yomi"
-    t.string "addres1"
-    t.string "addres2"
-    t.string "area"
-    t.boolean "paidmember"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "userid"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "mail"
-    t.string "name"
-    t.string "tel"
-    t.string "station"
-    t.integer "onfoot"
-    t.text "businessday"
-    t.time "businesstime1"
-    t.time "businesstime2"
-    t.string "pricelist"
-    t.string "topphoto"
-    t.boolean "reservation"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "userid"
-    t.string "agegroup"
   end
 
 end

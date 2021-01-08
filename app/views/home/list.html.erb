@@ -25,7 +25,7 @@
 	<body class="top">
 
 
-		<div class="contentsKv"><p class="contentsKv__head item--sp">名古屋市の健康麻雀＆ノーレート検索</p>
+		<div class="contentsKv"><p class="contentsKv__head item--sp">全国の健康麻雀＆ノーレート検索</p>
 		</div>
 		<div class="contentsLayout--shop">
 			<div class="contentsMain">
@@ -33,41 +33,52 @@
 				<div class="contentsNewPost--shop">
 					<h1 class="contentsNewPost__head--shop"> 千種区<span>の店舗一覧</span></h1>
 					<div class="contentsNewPost__inner">
+						
+                      
+
+                      <% @shops.each do |shop| %>
+						
 						<div class="contentsNewPost__item">
-							<div class="contentsNewPost__item__head"><a class="contentsNewPost__item__tag" href="#">健康麻雀</a>
-								<h3><a class="contentsNewPost__item__title" href="#">健康麻雀サロンいかさぽ</a></h3>
+							
+							<div class="contentsNewPost__item__head">
+								
+								<a class="contentsNewPost__item__tag" href="#">
+                                  <% if shop.freeicon1 == true %> 
+							        <td>麻雀店</td>
+							      <% end %> 
+							    </a>
+								
+								<h3>
+									<a class="contentsNewPost__item__title" href="#"><%= shop.userid %>
+									</a>
+								</h3>
+							
 							</div>
+							
+
 							<div class="contentsNewPost__item__flex"><a class="contentsNewPost__item__img" href="#"><img src="/assets/post_img01.png" alt=""></a><p class="contentsNewPost__item__desc">麻雀教室しかやっていないと思って、まだ行っていなかったお店。<br>ホームページを見ると1ゲーム500円と書いてある。<br>今度名古屋に行ったときには必ず寄ってみたい。</p>
 							</div>
 							<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="#">店舗詳細はこちら</a></div>
 						</div>
-						<div class="contentsNewPost__item">
-							<div class="contentsNewPost__item__head"><a class="contentsNewPost__item__tag" href="#">健康麻雀</a>
-								<h3><a class="contentsNewPost__item__title" href="#">健康麻雀サロンいかさぽ</a></h3>
-							</div>
-							<div class="contentsNewPost__item__flex"><a class="contentsNewPost__item__img" href="#"><img src="/assets/post_img01.png" alt=""></a><p class="contentsNewPost__item__desc">麻雀教室しかやっていないと思って、まだ行っていなかったお店。<br>ホームページを見ると1ゲーム500円と書いてある。<br>今度名古屋に行ったときには必ず寄ってみたい。</p>
-							</div>
-							<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="#">店舗詳細はこちら</a></div>
-						</div>
-						<div class="contentsNewPost__item">
-							<div class="contentsNewPost__item__head"><a class="contentsNewPost__item__tag" href="#">健康麻雀</a>
-								<h3><a class="contentsNewPost__item__title" href="#">健康麻雀サロンいかさぽ</a></h3>
-							</div>
-							<div class="contentsNewPost__item__flex"><a class="contentsNewPost__item__img" href="#"><img src="/assets/post_img01.png" alt=""></a><p class="contentsNewPost__item__desc">麻雀教室しかやっていないと思って、まだ行っていなかったお店。<br>ホームページを見ると1ゲーム500円と書いてある。<br>今度名古屋に行ったときには必ず寄ってみたい。</p>
-							</div>
-							<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="#">店舗詳細はこちら</a></div>
-						</div>
-						<div class="contentsNewPost__item">
-							<div class="contentsNewPost__item__head"><a class="contentsNewPost__item__tag" href="#">健康麻雀</a>
-								<h3><a class="contentsNewPost__item__title" href="#">健康麻雀サロンいかさぽ</a></h3>
-							</div>
-							<div class="contentsNewPost__item__flex"><a class="contentsNewPost__item__img" href="#"><img src="/assets/post_img01.png" alt=""></a><p class="contentsNewPost__item__desc">麻雀教室しかやっていないと思って、まだ行っていなかったお店。<br>ホームページを見ると1ゲーム500円と書いてある。<br>今度名古屋に行ったときには必ず寄ってみたい。</p>
-							</div>
-							<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="#">店舗詳細はこちら</a></div>
-						</div>
+
+					  <% end %>
+						
+
+                      <%= paginate @shops %>
+						
+
+						
+					
+
 					</div>
+					
 				</div>
 			</div>
+			
+
+
+
+
 			<div class="contentsAd"><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""></div>
 			<div class="contentsRecommendPost">
 				<h2 class="contentsRecommendPost__head">おすすめ店舗<img src="/assets/recommend_mark.svg" alt=""></h2>
@@ -103,14 +114,8 @@
 				</div>
 			</div>
 		</div>
-		<footer class="footer">
-			<div class="footer__inner"><a href="/"><img class="footer__logo" src="/assets/logo.png" alt="けんま〜サーチ"></a>
-				<div class="footer__mapList"><a class="footer__mapItem" href="#">千種区</a><a class="footer__mapItem" href="#">東区</a><a class="footer__mapItem" href="#">北区</a><a class="footer__mapItem" href="#">西区</a><a class="footer__mapItem" href="#">中村区</a><a class="footer__mapItem" href="#">中区</a><a class="footer__mapItem" href="#">昭和区</a><a class="footer__mapItem" href="#">瑞穂区</a><a class="footer__mapItem" href="#">熱田区</a><a class="footer__mapItem" href="#">中川区</a><a class="footer__mapItem" href="#">港区</a><a class="footer__mapItem" href="#">南区</a><a class="footer__mapItem" href="#">守山区</a><a class="footer__mapItem" href="#">緑区</a><a class="footer__mapItem" href="#">名東区</a><a class="footer__mapItem" href="#">天白区</a></div>
-				<div class="footer__pageList"><a class="footer__pageItem" href="#">新着情報</a><a class="footer__pageItem" href="#">おすすめ店舗</a><a class="footer__pageItem" href="#">店舗一覧</a><a class="footer__pageItem" href="#">お問い合わせ</a></div>
-			</div>
-		</footer>
-		<div class="footer__copyright">Copyright© けんま〜サーチ All Rights Reserved.</div>
-		<script src="./js/app.js"></script>
+		
+		
 	</body>
 
 </html>

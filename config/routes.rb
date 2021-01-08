@@ -5,6 +5,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "list" => "home#list"
   get "details" => "home#details"
+  
+  get "hokkaido" => "home#hokkaido"
+  get "tohoku" => "home#tohoku"
+  get "kanto" => "home#kanto"
+  get "chubu" => "home#chubu"
+  get "kansai" => "home#kansai"
+  get "shikoku" => "home#shikoku"
+  get "tyugoku" => "home#tyugoku"
+  get "kyushu" => "home#kyushu"
+
 
 
 

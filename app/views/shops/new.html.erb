@@ -25,11 +25,11 @@
 
 				<div class="contentsDetails">
 					<div class="contentsDetails__flex">
-						<a class="contentsDetails__tag" href="#"><%= @icon.freeicon11 %></a>
-						<a class="contentsDetails__tag" href="#"><%= @icon.freeicon22 %></a>
+						<a class="contentsDetails__tag" href="#"><%= @shop.freeicon11 %></a>
+						<a class="contentsDetails__tag" href="#"><%= @shop.freeicon22 %></a>
 						<h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
 					</div>
-					<p class="contentsDetails__desc"><%= @member.topcomment %></p>
+					<p class="contentsDetails__desc"><%= @shop.topcomment %></p>
 					
 					<div class="contentsDetails__img">
 						<a href="">トップ画像(users)</a>
@@ -38,7 +38,7 @@
 						<a href="">有料画像2(members)</a>
 						<!-- <img src="/assets/details_img02.jpeg" alt=""> -->
 					</div>
-					<p class="contentsDetails__desc"><%= @member.comment %></p>
+					<p class="contentsDetails__desc"><%= @shop.comment %></p>
 					
 
 
@@ -46,187 +46,444 @@
 
                 
                     <%= form_tag("/shops/create") do %>
-					<h2 class="contentsDetails__head">基本情報(非公開)</h2>
+                    
+					<h2 class="contentsDetails__head">基本情報</h2>
 					
 					<table class="contentsDetails__table">
 						
 						
 						<tr>						                           
-						    <th><p>user_id</p><p>(shops,users,icons,members)</p></th>
+						    <th>user_id</th>
 							<td><textarea name="userid"></textarea></td>						
 						</tr>
-						
-						<tr>
-							<th>種別(icons1～5)</th>
-							<td></td>
+
+						<tr>						                           
+						    <th>パスワード</th>
+							<td><textarea name="pass"></textarea></td>
 						</tr>
-					
-						<tr>
-							<th><p>住所(shops)</p><p>地図アイコン</p></th>
-							<td></td>
+
+						<tr>						                           
+						    <th>店舗名</th>
+							<td><textarea name="shopname"></textarea></td>
 						</tr>
-					
-						<tr>
-							<th>電話番号(shops)</th>
-							<td></td>
+
+						<tr>						                           
+						    <th>よみがな</th>
+							<td><textarea name="yomi"></textarea></td>
 						</tr>
-					
-						<tr>
-							<th>交通手段(users)</th>
-							<td>分</td>
+
+						<tr>						                           
+						    <th>店舗電話番号</th>
+							<td><textarea name="shoptel"></textarea></td>
 						</tr>
+
+						<tr>						                           
+						    <th>住所(都道府県)</th>
+							<td><textarea name="addres1"></textarea></td>
+						</tr>
+
+						<tr>						                           
+						    <th>住所(都道府県以下)</th>
+							<td><textarea name="addres2"></textarea></td>
+						</tr>
+
+						<tr>						                           
+						    <th>登録地域</th>
+							<td><textarea name="area"></textarea></td>
+						</tr>
+
+					</table>
 					
+
+            
+
+
+
+					<h2 class="contentsDetails__head">詳細情報</h2>
+					
+					<table class="contentsDetails__table">
 						<tr>
-							<th>営業日(users)</th>
-							<td></td>
+							<th>担当者名</th>
+							<td><textarea name="name"></textarea></td>
 						</tr>
 
 						<tr>
-							<th>営業時間(users)</th>
-							<td>～</td>
+							<th>担当者電話番号</th>
+							<td><textarea name="tel"></textarea></td>
 						</tr>
 					
 						<tr>
-							<th>営業内容(icons)</th>
-							<td></td>
+							<th>担当者メールアドレス</th>
+							<td><textarea name="mail"></textarea></td>
+						</tr>
+					
+						<tr>
+							<th>最寄駅</th>
+							<td><textarea name="station"></textarea>駅</td>
+						</tr>
+					
+						<tr>
+							<th>徒歩時間</th>
+							<td>徒歩　<textarea name="onfoot"></textarea>分</td>
+						</tr>
+					
+						<tr>
+							<th>営業日</th>
+							<td><textarea name="businessday"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>営業時間</th>
+							<td><textarea name="businesstime1"></textarea>～<textarea name="businesstime2"></textarea></td>
+						</tr>
+					
+						<tr>
+							<th>料金</th>
+							<td><textarea name="pricelist"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>TOP写真</th>
+							<td><textarea name="topphoto"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>年齢層</th>
+							<td><textarea name="agegroup"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>事前予約</th>
+							<td><textarea name="reservation"></textarea></td>
+						</tr>
+                <%= form_with(model:@shops, local: true) do |form| %>
+						<tr>
+							<th>有料会員</th>
+							<td>
+						    	
+                                  <%= form.radio_button :paidmember, :false, checked: true %>
+                                  <%= form.label :paidmember, "無料", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :paidmember, :true %>
+                                  <%= form.label :paidmember, "有料", {value: :true, style: "display: inline-block;"} %>
+                                
+						    </td>
+						</tr>
+
+					</table>
+					
+
+					<h2 class="contentsDetails__head">アイコン選択</h2>
+					<table class="contentsDetails__table">
+					
+                        <tr>
+							<th>麻雀荘</th>
+							<td>
+						    	
+                                  <%= form.radio_button :freeicon1, :false, checked: true %>
+                                  <%= form.label :freeicon1, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon1, :true %>
+                                  <%= form.label :freeicon1, "表示", {value: :true, style: "display: inline-block;"} %>
+                                
+						    </td>
+						</tr>
+					
+						<tr>
+							<th>公共施設</th>
+							<td>
+						    	
+                                  <%= form.radio_button :freeicon2, :false, checked: true %>
+                                  <%= form.label :freeicon2, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon2, :true %>
+                                  <%= form.label :freeicon2, "表示", {value: :true, style: "display: inline-block;"} %>
+                                
+						    </td>
+						</tr>
+					
+						<tr>
+							<th>場所3</th>
+							<td>
+                                  <%= form.radio_button :freeicon3, :false, checked: true %>
+                                  <%= form.label :freeicon3, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon3, :true %>
+                                  <%= form.label :freeicon3, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+					
+						<tr>
+							<th>場所4</th>
+							<td>
+                                  <%= form.radio_button :freeicon4, :false, checked: true %>
+                                  <%= form.label :freeicon4, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon4, :true %>
+                                  <%= form.label :freeicon4, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+					
+						<tr>
+							<th>場所5</th>
+							<td>
+                                  <%= form.radio_button :freeicon5, :false, checked: true %>
+                                  <%= form.label :freeicon5, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon5, :true %>
+                                  <%= form.label :freeicon5, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+
+						<tr>
+							<th>場所6</th>
+							<td>
+                                  <%= form.radio_button :freeicon6, :false, checked: true %>
+                                  <%= form.label :freeicon6, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon6, :true %>
+                                  <%= form.label :freeicon6, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>健康麻雀</th>
+							<td>
+                                  <%= form.radio_button :freeicon11, :false, checked: true %>
+                                  <%= form.label :freeicon11, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon11, :true %>
+                                  <%= form.label :freeicon11, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>ノーレートフリー</th>
+							<td>
+                                  <%= form.radio_button :freeicon12, :false, checked: true %>
+                                  <%= form.label :freeicon12, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon12, :true %>
+                                  <%= form.label :freeicon12, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>麻雀教室</th>
+							<td>
+                                  <%= form.radio_button :freeicon13, :false, checked: true %>
+                                  <%= form.label :freeicon13, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon13, :true %>
+                                  <%= form.label :freeicon13, "表示", {value: :true, style: "display: inline-block;"} %>
+
+							</td>
+						</tr>
+						<tr>
+							<th>競技麻雀</th>
+							<td>
+                                  <%= form.radio_button :freeicon14, :false, checked: true %>
+                                  <%= form.label :freeicon14, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon14, :true %>
+                                  <%= form.label :freeicon14, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>麻雀種別5</th>
+							<td>
+                                  <%= form.radio_button :freeicon15, :false, checked: true %>
+                                  <%= form.label :freeicon15, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon15, :true %>
+                                  <%= form.label :freeicon15, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>麻雀種別6</th>
+							<td>
+                                  <%= form.radio_button :freeicon16, :false, checked: true %>
+                                  <%= form.label :freeicon16, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon16, :true %>
+                                  <%= form.label :freeicon16, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>赤牌あり</th>
+							<td>
+                                  <%= form.radio_button :freeicon21, :false, checked: true %>
+                                  <%= form.label :freeicon21, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon21, :true %>
+                                  <%= form.label :freeicon21, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>Mリーグルール</th>
+							<td>
+                                  <%= form.radio_button :freeicon22, :false, checked: true %>
+                                  <%= form.label :freeicon22, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon22, :true %>
+                                  <%= form.label :freeicon22, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>3人打ち</th>
+							<td>
+                                  <%= form.radio_button :freeicon23, :false, checked: true %>
+                                  <%= form.label :freeicon23, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon23, :true %>
+                                  <%= form.label :freeicon23, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>4人打ち</th>
+							<td>
+                                  <%= form.radio_button :freeicon24, :false, checked: true %>
+                                  <%= form.label :freeicon24, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon24, :true %>
+                                  <%= form.label :freeicon24, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>その他5</th>
+							<td>
+                                  <%= form.radio_button :freeicon25, :false, checked: true %>
+                                  <%= form.label :freeicon25, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon25, :true %>
+                                  <%= form.label :freeicon25, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>その他6</th>
+							<td>
+                                  <%= form.radio_button :freeicon26, :false, checked: true %>
+                                  <%= form.label :freeicon26, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon26, :true %>
+                                  <%= form.label :freeicon26, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>その他7</th>
+							<td>
+                                  <%= form.radio_button :freeicon27, :false, checked: true %>
+                                  <%= form.label :freeicon27, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :freeicon27, :true %>
+                                  <%= form.label :freeicon27, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>(有料)おすすめ</th>
+							<td>
+                                  <%= form.radio_button :paidicon1, :false, checked: true %>
+                                  <%= form.label :paidicon1, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :paidicon1, :true %>
+                                  <%= form.label :paidicon1, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>(有料)ピックアップ</th>
+							<td>
+                                  <%= form.radio_button :paidicon2, :false, checked: true %>
+                                  <%= form.label :paidicon2, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :paidicon2, :true %>
+                                  <%= form.label :paidicon2, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>(有料)3</th>
+							<td>
+                                  <%= form.radio_button :paidicon3, :false, checked: true %>
+                                  <%= form.label :paidicon3, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :paidicon3, :true %>
+                                  <%= form.label :paidicon3, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+						<tr>
+							<th>(有料)4</th>
+							<td>
+                                  <%= form.radio_button :paidicon4, :false, checked: true %>
+                                  <%= form.label :paidicon4, "非表示", {value: :false, style: "display: inline-block;"} %>
+                                  <%= form.radio_button :paidicon4, :true %>
+                                  <%= form.label :paidicon4, "表示", {value: :true, style: "display: inline-block;"} %>
+							</td>
+						</tr>
+	<% end %>					
+					
+					</table>
+
+					<h2 class="contentsDetails__head">有料会員情報</h2>
+					<table class="contentsDetails__table">
+					
+						<tr>
+							<th>トップコメント</th>
+							<td><textarea name="topcomment"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>説明コメント</th>
+							<td><textarea name="comment"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>写真2</th>
+							<td><textarea name="photo1"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>写真3</th>
+							<td><textarea name="photo2"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>卓数</th>
+							<td><textarea name="tablenum"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>卓種</th>
+							<td><textarea name="tabletype"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>サービス</th>
+							<td><textarea name="service"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>システム・設備</th>
+							<td><textarea name="system"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>男女比率</th>
+							<td><textarea name="ratio"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>ルール</th>
+							<td><textarea name="rule"></textarea></td>
+						</tr>
+
+						<tr>
+							<th>時間打切</th>
+							<td><textarea name="timeup"></textarea></td>
 						</tr>
 
 						<tr>
 							<th>HP(公式)</th>
-							<td></td>
+							<td><textarea name="homepage1"></textarea></td>
 						</tr>
 
 						<tr>
 							<th>HP(雀サクッ)</th>
-							<td></td>
+							<td><textarea name="homepage2"></textarea></td>
 						</tr>
 
 						<tr>
 							<th>HP(麻雀王国)</th>
-							<td></td>
+							<td><textarea name="homepage3"></textarea></td>
 						</tr>
 
 						<tr>
 							<th>Twitter</th>
-							<td></td>
-						</tr>
-					
-					</table>
-					<input type="submit" name="" value="保存">
-                    <% end %>
-
-					<h2 class="contentsDetails__head">店舗情報(公開)</h2>
-					
-					<table class="contentsDetails__table">
-						<tr>
-							<th>店舗名(サークル名)(shops)</th>
-							<td></td>
+							<td><textarea name="homepage4"></textarea></td>
 						</tr>
 
 						<tr>
-							<th>種別(icons1～5)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th><p>住所(shops)</p><p>地図アイコン</p></th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>電話番号(shops)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>交通手段(users)</th>
-							<td>徒歩　分</td>
-						</tr>
-					
-						<tr>
-							<th>営業日(users)</th>
-							<td></td>
-						</tr>
-
-						<tr>
-							<th>営業時間(users)</th>
-							<td>～</td>
-						</tr>
-					
-						<tr>
-							<th>営業内容(icons)</th>
-							<td></td>
-						</tr>
-
-						<tr>
-							<th>HP(公式)</th>
-							<td></td>
-						</tr>
-
-						<tr>
-							<th>HP(雀サクッ)</th>
-							<td></td>
-						</tr>
-
-						<tr>
-							<th>HP(麻雀王国)</th>
-							<td></td>
-						</tr>
-
-						<tr>
-							<th>Twitter</th>
-							<td></td>
-						</tr>
-					
-					</table>
-					
-
-					<h2 class="contentsDetails__head">サービス(公開)</h2>
-					<table class="contentsDetails__table">
-					
-						<tr>
-							<th>卓数(members)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>卓種(members)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>サービス(members)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>システム・設備(members)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>オープン(members)</th>
-							<td></td>
-						</tr>
-					
-					</table>
-
-					<h2 class="contentsDetails__head">ルール(公開)</h2>
-					<table class="contentsDetails__table">
-					
-						<tr>
-							<th>時間打ち切り(members)</th>
-							<td><%= @member.timeup %></td>
-						</tr>
-					
-						<tr>
-							<th>ルール詳細(members)</th>
-							<td></td>
+							<th>オープン日</th>
+							<td><textarea name="opening"></textarea></td>
 						</tr>
 					
 					
 					</table>
 				
+		<input type="submit" name="" value="保存">
+                <% end %>
 
 				</div>
 				
@@ -243,4 +500,4 @@
 
 	</body>
 
-</html>s
+</html>

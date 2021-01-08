@@ -1,14 +1,356 @@
-<div class="main posts-new">
-  <div class="container">
-    <h1 class="form-heading">投稿する</h1>
-    <%= form_tag("/posts/create") do %>
-      <div class="form">
-        <div class="form-body">
-          <!-- <textarea>タグにname属性を追加してください -->
-          <textarea name="userid"></textarea>
-          <input type="submit" value="投稿">
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+
+
+
+
+<%= form_tag("/shops/#{@shop.userid}/update") do %>
+
+　<% @shop.errors.full_messages.each do |message| %>
+　<%= message %>
+  <% end %>
+
+  <% @user.errors.full_messages.each do |message| %>
+　<%= message %>
+  <% end %>
+
+
+
+  
+
+<h1>Shopテーブル</h1>
+　<div class="edit_form">
+  <a href="">userid</a>
+    <textarea name="useridshop"><%= @shop.userid %></textarea>
+　</div>
+
+
+
+　<div class="edit_form">
+  <a href="">pass</a>
+    <textarea name="pass"><%= @shop.pass %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">shopname</a>
+　<textarea name="shopname"><%= @shop.shopname %></textarea>
+
+　</div>
+
+　<div class="edit_form">
+  <a href="">shoptel</a>
+　<textarea name="shoptel"><%= @shop.shoptel %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">yomi</a>
+　<textarea name="yomi"><%= @shop.yomi %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">addres1</a>
+　<textarea name="addres1"><%= @shop.addres1 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">addres2</a>
+　<textarea name="addres2"><%= @shop.addres2 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">area</a>
+　<textarea name="area"><%= @shop.area %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">paidmember</a>
+　<textarea name="paidmember"><%= @shop.paidmember %></textarea>
+　</div>
+
+<h1>Userテーブル</h1>
+
+ <div class="edit_form">
+  <a href="">userid</a>
+    <textarea name="useriduser"><%= @user.userid %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">mail</a>
+    <textarea name="mail"><%= @user.mail %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">name</a>
+    <textarea name="name"><%= @user.name %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">tel</a>
+    <textarea name="tel"><%= @user.tel %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">station</a>
+    <textarea name="station"><%= @user.station %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">onfoot</a>
+    <textarea name="onfoot"><%= @user.onfoot %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">businessday</a>
+    <textarea name="businessday"><%= @user.businessday %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">businesstime1</a>
+    <textarea name="businesstime1"><%= l(@user.businesstime1, format: :hm) if @user.businesstime1  %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">businesstime2</a>
+    <textarea name="businesstime2"><%= l(@user.businesstime2, format: :hm) if @user.businesstime2  %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">pricelist</a>
+    <textarea name="pricelist"><%= @user.pricelist %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">topphoto</a>
+    <textarea name="topphoto"><%= @user.topphoto %></textarea>
+　</div>
+
+ <div class="edit_form">
+  <a href="">agegroup</a>
+    <textarea name="agegroup"><%= @user.agegroup %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">reservation</a>
+    <textarea name="reservation"><%= @user.reservation %></textarea>
+　</div>
+ 
+
+
+  <h1>Iconテーブル</h1>
+　<div class="edit_form">
+  <a href="">userid</a>
+    
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon1</a>
+    <textarea name="freeicon1"><%= @icon.freeicon1 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon2</a>
+    <textarea name="freeicon2"><%= @icon.freeicon2 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon3</a>
+    <textarea name="freeicon3"><%= @icon.freeicon3 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon4</a>
+    <textarea name="freeicon4"><%= @icon.freeicon4 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon5</a>
+    <textarea name="freeicon5"><%= @icon.freeicon5 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon6</a>
+    <textarea name="freeicon6"><%= @icon.freeicon6 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon11</a>
+    <textarea name="freeicon11"><%= @icon.freeicon11 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon12</a>
+    <textarea name="freeicon12"><%= @icon.freeicon12 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon13</a>
+    <textarea name="freeicon13"><%= @icon.freeicon13 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon14</a>
+    <textarea name="freeicon14"><%= @icon.freeicon14 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon15</a>
+    <textarea name="freeicon15"><%= @icon.freeicon15 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon16</a>
+    <textarea name="freeicon16"><%= @icon.freeicon16 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon21</a>
+    <textarea name="freeicon21"><%= @icon.freeicon21 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon22</a>
+    <textarea name="freeicon22"><%= @icon.freeicon22 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon23</a>
+    <textarea name="freeicon23"><%= @icon.freeicon23 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon24</a>
+    <textarea name="freeicon24"><%= @icon.freeicon24 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon25</a>
+    <textarea name="freeicon25"><%= @icon.freeicon25 %></textarea>
+　</div>
+
+　<div class="edit_form">
+  <a href="">freeicon26</a>
+    <textarea name="freeicon26"><%= @icon.freeicon26 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">freeicon27</a>
+    <textarea name="freeicon27"><%= @icon.freeicon27 %></textarea>
+　</div>
+  
+  <div class="edit_form">
+  <a href="">paidicon1</a>
+    <textarea name="paidicon1"><%= @icon.paidicon1 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">paidicon2</a>
+    <textarea name="paidicon2"><%= @icon.paidicon2 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">paidicon3</a>
+    <textarea name="paidicon3"><%= @icon.paidicon3 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">paidicon4</a>
+    <textarea name="paidicon4"><%= @icon.paidicon4 %></textarea>
+　</div>
+
+<h1>Memberテーブル</h1>
+
+  <div class="edit_form">
+  <a href="">userid</a>
+    <textarea name="useridmember"><%= @member.userid %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">topcomment</a>
+    <textarea name="topcomment"><%= @member.topcomment %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">comment</a>
+    <textarea name="comment"><%= @member.comment %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">photo1</a>
+    <textarea name="photo1"><%= @member.photo1 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">photo2</a>
+    <textarea name="photo2"><%= @member.photo2 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">tablenum</a>
+    <textarea name="tablenum"><%= @member.tablenum %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">tabletype</a>
+    <textarea name="tabletype"><%= @member.tabletype %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">service</a>
+    <textarea name="service"><%= @member.service %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">system</a>
+    <textarea name="system"><%= @member.system %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">ratio</a>
+    <textarea name="ratio"><%= @member.ratio %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">rule</a>
+    <textarea name="rule"><%= @member.rule %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">timeup</a>
+    <textarea name="timeup"><%= @member.timeup %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">homepage1</a>
+    <textarea name="homepage1"><%= @member.homepage1 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">homepage2</a>
+    <textarea name="homepage2"><%= @member.homepage2 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">homepage3</a>
+    <textarea name="homepage3"><%= @member.homepage3 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">homepage4</a>
+    <textarea name="homepage4"><%= @member.homepage4 %></textarea>
+　</div>
+
+  <div class="edit_form">
+  <a href="">opening</a>
+    <textarea name="opening"><%= @member.opening %></textarea>
+　</div>
+
+
+
+
+
+
+
+
+<input type="submit" name="" value="保存">
+
+<% end %>
+
+

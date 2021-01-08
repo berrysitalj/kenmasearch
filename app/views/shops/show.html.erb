@@ -19,137 +19,393 @@
 			<div class="contentsMain">
 			
 				
-				<div class="contentsBreadcrumb"> <a href="#">TOP</a><span>&gt;</span><a href="#">愛知県名古屋市</a><span>&gt;</span><a href="#"><%= @shop.shopname %></a></div>
+				<div class="contentsBreadcrumb"> <a href="/">TOP</a><span>&gt;</span><a href="#">愛知県名古屋市</a><span>&gt;</span><a href="#"><%= @shop.shopname %></a></div>
 				
 
 
 				<div class="contentsDetails">
 					<div class="contentsDetails__flex">
-						<a class="contentsDetails__tag" href="#"><%= @icon.freeicon11 %></a>
-						<a class="contentsDetails__tag" href="#"><%= @icon.freeicon22 %></a>
+						<a class="contentsDetails__tag" href="#"><%= @shop.freeicon11 %></a>
+						<a class="contentsDetails__tag" href="#"><%= @shop.freeicon22 %></a>
 						<h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
 					</div>
-					<p class="contentsDetails__desc"><%= @member.topcomment %></p>
+					<p class="contentsDetails__desc"><%= @shop.topcomment %></p>
 					
 					<div class="contentsDetails__img">
-						<a href="">トップ画像(users)</a>
+						<a href="">トップ画像</a>
 						<!-- <img src="/assets/details_img01.jpeg" alt=""> -->
-						<a href="">有料画像1(members)</a>
-						<a href="">有料画像2(members)</a>
+						<a href="">有料画像1</a>
+						<a href="">有料画像2</a>
 						<!-- <img src="/assets/details_img02.jpeg" alt=""> -->
 					</div>
-					<p class="contentsDetails__desc"><%= @member.comment %></p>
+					<p class="contentsDetails__desc"><%= @shop.comment %></p>
 					
                     <%= link_to("編集", "/shops/#{@shop.userid}/edit") %>
-					<h2 class="contentsDetails__head">店舗情報</h2>
+					<h2 class="contentsDetails__head">基本情報</h2>
 					
 					<table class="contentsDetails__table">
 						<tr>
-							<th>店舗名(サークル名)(shops)</th>
-							<td><%= @shop.shopname %></td>
+							<th>店舗id</th>
+							<td><%= @shop.userid %></td>
 						</tr>
 
 						<tr>
-							<th>種別(icons1～5)</th>
-							<td><%= @icon.freeicon1 %></td>
+							<th>パスワード</th>
+							<td><%= @shop.pass %></td>
 						</tr>
 					
 						<tr>
-							<th><p>住所(shops)</p><p>地図アイコン</p></th>
-							<td><%= @shop.addres1 %><%= @shop.addres2 %></td>
+							<th>店舗名</th>
+							<td><%= @shop.shopname %></td>
 						</tr>
 					
+					    <tr>                                       
+                            <th>よみがな</th>
+                            <td><%= @shop.yomi %></td>
+                        </tr>
+						
 						<tr>
-							<th>電話番号(shops)</th>
+							<th>電話番号</th>
 							<td><%= @shop.shoptel %></td>
 						</tr>
 					
-						<tr>
-							<th>交通手段(users)</th>
-							<td><%= @user.station %>駅　徒歩<%= @user.onfoot %>分</td>
-						</tr>
-					
-						<tr>
-							<th>営業日(users)</th>
-							<td><%= @user.businessday %></td>
-						</tr>
+						<tr>                                       
+                            <th>住所(都道府県)</th>
+                            <td><%= @shop.addres1 %></td>
+                        </tr>
 
-						<tr>
-							<th>営業時間(users)</th>
-							<td><%= l(@user.businesstime1, format: :hm) if @user.businesstime1  %>～<%= l(@user.businesstime2, format: :hm) if @user.businesstime2  %></td>
-						</tr>
-					
-						<tr>
-							<th>営業内容(icons)</th>
-							<td><%= @icon.freeicon11 %></td>
-						</tr>
+                        <tr>                                       
+                            <th>住所(都道府県以下)</th>
+                            <td><%= @shop.addres2 %></td>
+                        </tr>
 
-						<tr>
-							<th>HP(公式)</th>
-							<td><%= @member.homepage1 %></td>
-						</tr>
-
-						<tr>
-							<th>HP(雀サクッ)</th>
-							<td><%= @member.homepage2 %></td>
-						</tr>
-
-						<tr>
-							<th>HP(麻雀王国)</th>
-							<td><%= @member.homepage3 %></td>
-						</tr>
-
-						<tr>
-							<th>Twitter</th>
-							<td><%= @member.homepage4 %></td>
-						</tr>
+                        <tr>                                       
+                            <th>登録地域</th>
+                            <td><%= @shop.area %></td>
+                        </tr>
 					
 					</table>
 					
 
-					<h2 class="contentsDetails__head">サービス</h2>
+					<h2 class="contentsDetails__head">詳細情報</h2>
 					<table class="contentsDetails__table">
 					
 						<tr>
-							<th>卓数(members)</th>
-							<td><%= @member.tablenum %></td>
-						</tr>
-					
-						<tr>
-							<th>卓種(members)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>サービス(members)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>システム・設備(members)</th>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<th>オープン(members)</th>
-							<td><%= @member.opening %></td>
-						</tr>
+                            <th>担当者名</th>
+                            <td><%= @shop.name %></td>
+                        </tr>
+
+                        <tr>
+                            <th>担当者電話番号</th>
+                            <td><%= @shop.tel %></td>
+                        </tr>
+          
+                        <tr>
+                            <th>担当者メールアドレス</th>
+                            <td><%= @shop.mail %></td>
+                        </tr>
+          
+                        <tr>
+                            <th>最寄駅</th>
+                            <td><%= @shop.station %>駅</td>
+                        </tr>
+          
+                        <tr>
+                            <th>徒歩時間</th>
+                            <td>徒歩　<%= @shop.onfoot %>分</td>
+                        </tr>
+          
+                        <tr>
+                            <th>営業日</th>
+                            <td><%= @shop.businessday %></td>
+                        </tr>
+
+                        <tr>
+                            <th>営業時間</th>
+                            <td><%= @shop.businesstime1 %>～<%= @shop.businesstime2 %></td>
+                        </tr>
+          
+                        <tr>
+                            <th>料金</th>
+                            <td><%= @shop.pricelist %></td>
+                        </tr>
+
+                        <tr>
+                             <th>TOP写真</th>
+                             <td><%= @shop.topphoto %></td>
+                        </tr>
+
+                        <tr>
+                             <th>年齢層</th>
+                             <td><%= @shop.agegroup %></td>
+                        </tr>
+
+                        <tr>
+                             <th>事前予約</th>
+                             <td><%= @shop.reservation %></td>
+                        </tr>
+
+                        <tr>
+                             <th>有料会員</th>
+                             <% if @shop.paidmember == true %> 
+							<td>〇</td>
+							<% end %> 
+                        </tr>
+                
 					
 					</table>
 
-					<h2 class="contentsDetails__head">ルール</h2>
+					<h2 class="contentsDetails__head">アイコン選択</h2>
 					<table class="contentsDetails__table">
 					
 						<tr>
-							<th>時間打ち切り(members)</th>
-							<td><%= @member.timeup %></td>
+							<th>麻雀荘</th>
+							<% if @shop.freeicon1 == true %> 
+							<td>〇</td>
+							<% end %> 
 						</tr>
 					
 						<tr>
-							<th>ルール詳細(members)</th>
-							<td></td>
+							<th>公共施設</th>
+							<% if @shop.freeicon2 == true %> 
+							<td>〇</td>
+							<% end %> 
 						</tr>
+
+						<tr>
+							<th>場所3</th>
+							<% if @shop.freeicon3 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>場所4</th>
+							<% if @shop.freeicon4 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>場所5</th>
+							<% if @shop.freeicon5 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>場所6</th>
+							<% if @shop.freeicon6 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>健康麻雀</th>
+							<% if @shop.freeicon11 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>ノーレートフリー</th>
+							<% if @shop.freeicon12 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>麻雀教室</th>
+							<% if @shop.freeicon13 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>競技麻雀</th>
+							<% if @shop.freeicon14 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>麻雀種別5</th>
+							<% if @shop.freeicon15 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>麻雀種別6</th>
+							<% if @shop.freeicon16 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>赤牌あり</th>
+							<% if @shop.freeicon21 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>Mリーグルール</th>
+							<% if @shop.freeicon22 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>3人打ち</th>
+							<% if @shop.freeicon23 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>4人打ち</th>
+							<% if @shop.freeicon24 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>その他5</th>
+							<% if @shop.freeicon25 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>その他6</th>
+							<% if @shop.freeicon26 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>その他7</th>
+							<% if @shop.freeicon27 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>(有料)おすすめ</th>
+							<% if @shop.paidicon1 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>(有料)ピックアップ</th>
+							<% if @shop.paidicon2 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>(有料)3</th>
+							<% if @shop.paidicon3 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>(有料)4</th>
+							<% if @shop.paidicon4 == true %> 
+							<td>〇</td>
+							<% end %> 
+						</tr>
+
+
+					</table>
+
+
+
+					<h2 class="contentsDetails__head">有料会員情報</h2>
+					<table class="contentsDetails__table">
 					
+                        <tr>
+                            <th>トップコメント</th>
+                            <td><%= @shop.topcomment %></td>
+                        </tr>
+
+                        <tr>
+                            <th>説明コメント</th>
+                            <td><%= @shop.comment %></td>
+                        </tr>
+
+                        <tr>
+                            <th>写真2</th>
+                            <td><%= @shop.photo1 %></td>
+                        </tr>
+
+                        <tr>
+                            <th>写真3</th>
+                            <td><%= @shop.photo2 %></td>
+                        </tr>
+
+                        <tr>
+                            <th>卓数</th>
+                            <td><%= @shop.tablenum %></td>
+                        </tr>
+
+                        <tr>
+                            <th>卓種</th>
+                            <td><%= @shop.tabletype %></td>
+                        </tr>
+
+                        <tr>
+                            <th>サービス</th>
+                            <td><%= @shop.service %></td>
+                        </tr>
+
+                        <tr>
+                            <th>システム・設備</th>
+                            <td><%= @shop.system %></td>
+                        </tr>
+
+                        <tr>
+                            <th>男女比率</th>
+                            <td><%= @shop.ratio %></td>
+                        </tr>
+
+                        <tr>
+                            <th>ルール</th>
+                            <td><%= @shop.rule %></td>
+                        </tr>
+
+                        <tr>
+                            <th>時間打切</th>
+                            <td><%= @shop.timeup %></td>
+                        </tr>
+
+                        <tr>
+                            <th>HP(公式)</th>
+                            <td><%= @shop.homepage1 %></td>
+                        </tr>
+
+                        <tr>
+                            <th>HP(雀サクッ)</th>
+                            <td><%= @shop.homepage2 %></td>
+                        </tr>
+
+                        <tr>
+                            <th>HP(麻雀王国)</th>
+                            <td><%= @shop.homepage3 %></td>
+                        </tr>
+
+                        <tr>
+                            <th>Twitter</th>
+                            <td><%= @shop.homepage4 %></td>
+                        </tr>
+
+                        <tr>
+                            <th>オープン日</th>
+                            <td><%= @shop.opening %></td>
+                        </tr>					
 					
 					</table>
 				</div>

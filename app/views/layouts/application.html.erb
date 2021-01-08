@@ -7,6 +7,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- コード追加　Bootstrap JavaScript読み込みコード-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -29,16 +34,23 @@
     <p style="font-size: 200%; color: blue;"></p>
     <div><%= link_to("/shops/index", "/shops/index") %></div>
     <div><%= link_to("/shops/new", "/shops/new") %></div>
-    <div><%= link_to("/shops/1", "/shops/1") %></div>
-    <div><%= link_to("/shops/1/edit", "/shops/1/edit") %></div>
-    <div><%= link_to("/shops/2", "/shops/2") %></div>
-    <div><%= link_to("/shops/3", "/shops/3") %></div>
+    <div><%= link_to("/list", "/list") %></div>
+    <div><%= link_to("/chubu", "/chubu") %></div>
 
     <%= yield %>
 
     <footer class="footer">
       <div class="footer__inner"><a href="/"><img class="footer__logo" src="/assets/logo.png" alt="けんま〜サーチ"></a>
-        <div class="footer__mapList"><a class="footer__mapItem" href="#">千種区</a><a class="footer__mapItem" href="#">東区</a><a class="footer__mapItem" href="#">北区</a><a class="footer__mapItem" href="#">西区</a><a class="footer__mapItem" href="#">中村区</a><a class="footer__mapItem" href="#">中区</a><a class="footer__mapItem" href="#">昭和区</a><a class="footer__mapItem" href="#">瑞穂区</a><a class="footer__mapItem" href="#">熱田区</a><a class="footer__mapItem" href="#">中川区</a><a class="footer__mapItem" href="#">港区</a><a class="footer__mapItem" href="#">南区</a><a class="footer__mapItem" href="#">守山区</a><a class="footer__mapItem" href="#">緑区</a><a class="footer__mapItem" href="#">名東区</a><a class="footer__mapItem" href="#">天白区</a></div>
+        <div class="footer__mapList">
+          <a class="footer__mapItem" href="/hokkaido">北海道</a>
+          <a class="footer__mapItem" href="/tohoku">東北</a>
+          <a class="footer__mapItem" href="/kanto">関東</a>
+          <a class="footer__mapItem" href="/chubu">中部</a>
+          <a class="footer__mapItem" href="/kansai">関西</a>
+          <a class="footer__mapItem" href="/shikoku">四国</a>
+          <a class="footer__mapItem" href="/tyugoku">中国</a>
+          <a class="footer__mapItem" href="/kyushu">九州・沖縄</a>
+        </div>
         <div class="footer__pageList"><a class="footer__pageItem" href="#">新着情報</a><a class="footer__pageItem" href="#">おすすめ店舗</a><a class="footer__pageItem" href="#">店舗一覧</a><a class="footer__pageItem" href="#">お問い合わせ</a></div>
       </div>
     </footer>
