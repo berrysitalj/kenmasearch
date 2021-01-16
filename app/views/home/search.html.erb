@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ja">
+
+	<body class="top">
+		<div class="contentsKv">
+			<p class="contentsKv__head item--sp">全国の健康麻雀＆ノーレート検索</p>
+		</div>
+		<div class="contentsLayout--shop">
+			<div class="contentsMain">
+				<%= form_tag("/shops/search") do %>
+                  <%= text_field_tag :search %>
+                  <%= submit_tag '再検索', :name => nil %>
+                <% end %>
+
+				<div class="contentsBreadcrumb"> <a href="/">TOP</a><span>&gt;</span><a>検索結果</a></div>
+				<div class="contentsNewPost--shop">
+					<h1 class="contentsNewPost__head--shop"> 「 <%= @keyword %> 」<span>の店舗一覧</span></h1>
+					<div class="contentsNewPost__inner">
+
+                      <% @shops.each do |shop| %>						
+						<div class="contentsNewPost__item">							
+							<div class="contentsNewPost__item__head">
+								<a class="contentsNewPost__item__tag">
+                                  <% if shop.freeicon1 == true %>
+					                <td>麻雀店</td>
+					              <% elsif %>
+					            	<% shop.freeicon2 == true %>
+					            	<td>公共施設</td>
+					              <% elsif %>
+					            	<% shop.freeicon3 == true %>
+					            	<td>貸スペース</td>
+					              <% elsif %>
+					                <% shop.freeicon4 == true %>
+					            	<td>サークル</td>
+					              <% elsif %>
+					                <% shop.freeicon5 == true %>
+					            	<td>個人募集</td>
+					            	<% else %>
+					            	<td>その他の場所</td>
+					              <% end %> 
+							    </a>
+								
+								<h3>
+									<a class="contentsNewPost__item__title" href="#"><%= shop.shopname %>
+									</a>
+								</h3>
+							
+							</div>
+							
+
+							<div class="contentsNewPost__item__flex"><a class="contentsNewPost__item__img" href="#"><img src="/assets/post_img01.png" alt=""></a><p class="contentsNewPost__item__desc">麻雀教室しかやっていないと思って、まだ行っていなかったお店。<br>ホームページを見ると1ゲーム500円と書いてある。<br>今度名古屋に行ったときには必ず寄ってみたい。</p>
+							</div>
+							<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="#">店舗詳細はこちら</a></div>
+						</div>
+
+					  <% end %>
+
+                      <%= paginate @shops %>
+
+                      <%= form_tag("/shops/search") do %>
+                        <%= text_field_tag :search %>
+                        <%= submit_tag '再検索', :name => nil %>
+                      <% end %>
+
+					</div>
+					
+				</div>
+			</div>
+			
+
+
+
+
+			<%= render 'shared/advertising' %>
+			
+			<%= render 'shared/pickup_shop' %>
+			
+
+
+
+
+
+
+		</div>
+		
+		
+	</body>
+
+</html>

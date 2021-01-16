@@ -21,15 +21,28 @@
           <div class="header__btn">
             <div id="nav-open"><span></span></div>
           </div>
-          <div id="nav-list"><a class="nav__item" href="#"><img src="./assets/menu_icon01.svg" alt="">サイトTOP</a><a class="nav__item" href="#"><img src="./assets/menu_icon02.svg" alt="">新着店舗</a><a class="nav__item" href="#"><img src="./assets/menu_icon03.svg" alt="">おすすめ店舗</a><a class="nav__item" href="#"><img src="./assets/menu_icon04.svg" alt="">店舗一覧</a><a class="nav__item" href="#"><img src="./assets/menu_icon05.svg" alt="">お問い合わせ </a></div>
+          <div id="nav-list">
+            <a class="nav__item" href="/"><img src="./assets/menu_icon01.svg" alt="">TOP</a>
+            <a class="nav__item" href="#"><img src="./assets/menu_icon02.svg" alt="">新着店舗</a>
+            <a class="nav__item" href="#"><img src="./assets/menu_icon03.svg" alt="">ピックアップ</a>
+            <a class="nav__item" href="#"><img src="./assets/menu_icon04.svg" alt="">店舗ログイン</a>
+            <a class="nav__item" href="#"><img src="./assets/menu_icon05.svg" alt="">広告掲載 </a>
+          </div>
         </div>
       </div>
       <div class="menu">
         <div class="menu__inner">
-          <div class="menu__list"><a class="menu__item" href="#"><img src="./assets/menu_icon01.svg" alt="">サイトTOP</a><a class="menu__item" href="#"><img src="./assets/menu_icon02.svg" alt="">新着店舗</a><a class="menu__item" href="#"><img src="./assets/menu_icon03.svg" alt="">おすすめ店舗</a><a class="menu__item" href="#"><img src="./assets/menu_icon04.svg" alt="">店舗一覧</a><a class="menu__item" href="#"><img src="./assets/menu_icon05.svg" alt="">お問い合わせ </a></div>
+          <div class="menu__list">
+            <a class="menu__item" href="/"><img src="./assets/menu_icon01.svg" alt="">サイトTOP</a>
+            <a class="menu__item" href="#"><img src="./assets/menu_icon02.svg" alt="">新着店舗</a>
+            <a class="menu__item" href="#"><img src="./assets/menu_icon03.svg" alt="">ピックアップ</a>
+            <a class="menu__item" href="#"><img src="./assets/menu_icon04.svg" alt="">店舗ログイン</a>
+            <a class="menu__item" href="#"><img src="./assets/menu_icon05.svg" alt="">広告掲載 </a>
+          </div>
         </div>
       </div>
     </header>
+
     <p style="font-size: 200%; color: blue;">kenmasarch制作中！！</p>
     <p style="font-size: 200%; color: blue;"></p>
     <div><%= link_to("/shops/index", "/shops/index") %></div>
@@ -40,18 +53,14 @@
     <%= yield %>
 
     <footer class="footer">
-      <div class="footer__inner"><a href="/"><img class="footer__logo" src="/assets/logo.png" alt="けんま〜サーチ"></a>
-        <div class="footer__mapList">
-          <a class="footer__mapItem" href="/hokkaido">北海道</a>
-          <a class="footer__mapItem" href="/tohoku">東北</a>
-          <a class="footer__mapItem" href="/kanto">関東</a>
-          <a class="footer__mapItem" href="/chubu">中部</a>
-          <a class="footer__mapItem" href="/kansai">関西</a>
-          <a class="footer__mapItem" href="/shikoku">四国</a>
-          <a class="footer__mapItem" href="/tyugoku">中国</a>
-          <a class="footer__mapItem" href="/kyushu">九州・沖縄</a>
-        </div>
-        <div class="footer__pageList"><a class="footer__pageItem" href="#">新着情報</a><a class="footer__pageItem" href="#">おすすめ店舗</a><a class="footer__pageItem" href="#">店舗一覧</a><a class="footer__pageItem" href="#">お問い合わせ</a></div>
+      <div class="footer__inner">
+        <a href="/"><img class="footer__logo" src="/assets/logo.png" alt="けんま〜サーチ"></a>
+        <div class="footer__mapList"></div>
+        <div class="footer__pageList">
+          <a class="footer__pageItem" href="#">新着店舗</a>
+          <a class="footer__pageItem" href="#">ピックアップ</a>
+          <a class="footer__pageItem" href="#">店舗ログイン</a>
+          <a class="footer__pageItem" href="#">広告掲載</a></div>
       </div>
     </footer>
     <div class="footer__copyright">Copyright© けんま〜サーチ All Rights Reserved.</div>

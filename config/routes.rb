@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  get "owner/index" => "owner#index"
+  get "owner/new" => "owner#new"
+  post "owner/create" => "owner#create"
+
+
   resources :home
   root 'home#top' #トップページをhomeコントローラのindexアクションに設定
   # get 'home/top'  #デフォルト
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "list" => "home#list"
   get "details" => "home#details"
-  
+  get "search" => "home#search"
   get "hokkaido" => "home#hokkaido"
   get "tohoku" => "home#tohoku"
   get "kanto" => "home#kanto"
@@ -14,6 +19,10 @@ Rails.application.routes.draw do
   get "shikoku" => "home#shikoku"
   get "tyugoku" => "home#tyugoku"
   get "kyushu" => "home#kyushu"
+  get "login" => "home#login_form"
+  post "login" => "home#login"
+  get "owner_new" => "home#owner_new"
+  post "owner_create" => "home#owner_create"
 
 
 

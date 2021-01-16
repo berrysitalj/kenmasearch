@@ -1509,14 +1509,16 @@ display:inline-block;
 background:#d8ec8a;
 color:#3c2008;
 padding:5px 20px;
-border-radius:25px;
+/*border-radius:25px;*/
 -webkit-transition:.5s;
 transition:.5s
 }
 
+/*
 .contentsNewPost__item__tag:hover{
 opacity:.7
 }
+*/
 
 @media screen and (min-width:769px){
 .contentsNewPost__item__tag{

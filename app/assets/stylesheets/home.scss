@@ -1503,6 +1503,7 @@ background:#d8ec8a
 }}
 
 .contentsNewPost__item__tag{
+pointer-events: none;
 display:inline-block;
 background:#d8ec8a;
 color:#3c2008;
@@ -1723,6 +1724,7 @@ margin-top:8px
 }
 
 .contentsRecommendPost__item__tag{
+pointer-events: none;
 display:inline-block;
 background:#d8ec8a;
 padding:3px 20px;
