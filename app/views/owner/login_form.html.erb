@@ -1,0 +1,22 @@
+<% if session[:id] %>
+      <!-- ログインしている場合の処理 -->
+
+      <% else %>
+
+
+<% if @error_message %>
+<p><%= @error_message %></p>
+<% end %>
+
+      <%= form_tag("/login") do %>
+
+        <p>ログイン</p>
+        <p>メールアドレス</p>
+        <input name="name" value="<%= @name %>">
+
+        <p>パスワード</p>
+        <input type="password" name="pass" >
+        <%= submit_tag 'login' %>
+        <% end %>
+
+<% end %>

@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+
+
+
+
+
+
   <head>
     <title>KenmaSearchApp</title>
     <%= csrf_meta_tags %>
@@ -13,6 +19,14 @@
     <!-- コード追加　Bootstrap JavaScript読み込みコード-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
+
+
+
+    
+
+<% if session[:id] %>
+
+
 
   <body>
         <header>
@@ -43,12 +57,28 @@
       </div>
     </header>
 
-    <p style="font-size: 200%; color: blue;">kenmasarch制作中！！</p>
-    <p style="font-size: 200%; color: blue;"></p>
-    <div><%= link_to("/shops/index", "/shops/index") %></div>
-    <div><%= link_to("/shops/new", "/shops/new") %></div>
-    <div><%= link_to("/list", "/list") %></div>
-    <div><%= link_to("/chubu", "/chubu") %></div>
+    
+
+
+      <%= form_tag("/logout") do %>
+      <%= submit_tag 'ログアウト' %>
+      <% end %>
+      <li>ログインユーザーid:<%= session[:id] %></li>
+      <p style="font-size: 200%; color: blue;">kenmasearch制作中！！</p>
+      <div><%= link_to("/shops/index", "/shops/index") %></div>
+      <div><%= link_to("/shops/new", "/shops/new") %></div>
+      <div><%= link_to("/list", "/list") %></div>
+      <div><%= link_to("/chubu", "/chubu") %></div>
+    
+    
+<% else %>
+      <!-- ログインしていない場合の処理 -->
+     
+      <p style="font-size: 200%; color: blue;"></p>
+  
+    <% end %>
+
+    
 
     <%= yield %>
 
@@ -67,4 +97,13 @@
     <script src="./js/app.js"></script>
 
   </body>
+
+ 
+
+
+    
+
+
+
+
 </html>

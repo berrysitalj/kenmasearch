@@ -1,7 +1,10 @@
 class HomeController < ApplicationController
   
+  
   before_action :set_shop, only: [:top, :hokkaido, :tohoku, :kanto, :chubu, :kansai, :shikoku, :tyugoku, :kyushu]
-   
+  
+
+
   def top
   	
   end
@@ -49,30 +52,7 @@ class HomeController < ApplicationController
     @shops = Shop.all.order(created_at: :desc)
   end
 
-  def login_form
-    
-  end
-
-  def login
-    
-  end
-
-  def owner_new
-    @owner = Owner.new
-  end
-
-  def owner_create
-    @owner = Owner.new(name: params[:name])
-    @owner.pass = params[:pass]
-
-    if @owner.save
-      flash[:notice] = "新規登録が完了しました"
-      redirect_to("/")
-     else
-       render("owner_new")
-    end
-
-  end
+  
 
 
 

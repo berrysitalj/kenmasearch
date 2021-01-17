@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   get "owner/index" => "owner#index"
   get "owner/new" => "owner#new"
   post "owner/create" => "owner#create"
+  get "login" => "owner#login_form"
+  post "login" => "owner#login"
+  post "logout" => "owner#logout"
 
 
   resources :home
@@ -19,10 +22,7 @@ Rails.application.routes.draw do
   get "shikoku" => "home#shikoku"
   get "tyugoku" => "home#tyugoku"
   get "kyushu" => "home#kyushu"
-  get "login" => "home#login_form"
-  post "login" => "home#login"
-  get "owner_new" => "home#owner_new"
-  post "owner_create" => "home#owner_create"
+  
 
 
 
