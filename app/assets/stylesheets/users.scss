@@ -1,8 +1,10 @@
-// Place all the styles related to the home controller here.
+// Place all the styles related to the shops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @charset "utf-8";
+
+
 
 dd,dl,h1,h2,h3,p{
 margin:0
@@ -296,19 +298,6 @@ width:20%;
 -ms-flex-align:center;
 align-items:center;
 color:#000;
-padding:12px 0;
-font-size:14px;
-border-left:1px solid #ccc;
--webkit-transition:.5s;
-transition:.5s
-}
-
-.menu__item__login{
-width:20%;
--webkit-box-align:center;
--ms-flex-align:center;
-align-items:center;
-color:red;
 padding:12px 0;
 font-size:14px;
 border-left:1px solid #ccc;
@@ -1221,7 +1210,6 @@ padding:3px 0
 }
 
 .contentsKv__img{
-margin-top: 10px;
 width:100%;
 height:260px;
 -o-object-fit:cover;
@@ -1285,7 +1273,7 @@ top:-80px
 
 .contentsMap__map{
 width:100%;
-padding:0 0px
+padding:0 10px
 }
 
 @media screen and (min-width:769px){
@@ -1533,19 +1521,20 @@ background:#d8ec8a
 }}
 
 .contentsNewPost__item__tag{
-pointer-events: none;
 display:inline-block;
 background:#d8ec8a;
 color:#3c2008;
 padding:5px 20px;
-border-radius:25px;
+/*border-radius:25px;*/
 -webkit-transition:.5s;
 transition:.5s
 }
 
+/*
 .contentsNewPost__item__tag:hover{
 opacity:.7
 }
+*/
 
 @media screen and (min-width:769px){
 .contentsNewPost__item__tag{
@@ -1754,7 +1743,6 @@ margin-top:8px
 }
 
 .contentsRecommendPost__item__tag{
-pointer-events: none;
 display:inline-block;
 background:#d8ec8a;
 padding:3px 20px;
@@ -1853,13 +1841,6 @@ margin-top:10px;
 width:100%
 }}
 
-.search_input_breadcrumb{
-display:flex;
-flex-flow: column;
-}
-
-
-
 .contentsBreadcrumb{
 font-size:12px;
 margin:10px 20px
@@ -1925,12 +1906,20 @@ font-size:28px
 
 .contentsDetails__desc{
 font-size:14px;
-margin-top:15px
+margin-top:15px;
+white-space: pre-wrap
+}
+
+.contentsDetails__desc_topcomment{
+font-size:14px;
+width: 100%;
+white-space: pre-wrap
 }
 
 @media screen and (min-width:769px){
 .contentsDetails__desc{
-font-size:16px
+font-size:16px;
+white-space: pre-wrap
 }}
 
 @media screen and (min-width:769px){
@@ -2046,40 +2035,135 @@ padding-left:20px
 
 
 
-.search_input_form{
-	padding: 1em;
-}
-
-
-dl.search2{
+.edit_form{
 	position:relative;
-	float: left;
+	padding:10px 10px 10px 120px;
+	min-height:80px;
+	border:solid 1px #E6FFE9;
 }
-dl.search2 dt{
-	margin-right:105px;
-	padding:8px;
-	background-color:#fff;
-	border:1px solid #aaa;
+.edit_form p{
+	display: inline-block;
 }
-dl.search2 dt input{
-	width:100%;
-	height:24px;
-	line-height:24px;
-	background:none;
-	border:none;
+
+.edit_link{
+	display: inline-block;
 }
-dl.search2 dd{
+
+
+.edit_form_title{
 	position:absolute;
-	top:0;
-	right:0;
+	left:10px;
+	top:10px;
+	border:solid 1px #808080;
 }
-dl.search2 dd button{
-	display:block;
-	width:100px;
-	height:42px;
-	color:#fff;
-	line-height:40px;
-	text-align:center;
-	background-color:#f66;
-	border:1px solid #c66;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+.user_login_form {
+  background: #456;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+/* Reset top and bottom margins from certain elements */
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #28d;
+}
+
+.login-header {
+  background: #28d;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+.user_login_form_error {
+	color: red;
+}
+/* Every row inside .login-container is defined with p tags */
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #17c;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #05a;
 }

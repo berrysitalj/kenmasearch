@@ -23,7 +23,7 @@ class OwnerController < ApplicationController
   	if @owner
   		session[:id] = @owner.id
   		flash[:notice] = "ログインしました"
-  		redirect_to("/owner/index")
+  		redirect_to("/")
   	else
   		@error_message = "nameまたはpassが間違っています"
   		@name = params[:name]

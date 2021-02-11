@@ -2,20 +2,29 @@
 <html lang="ja">
 
 	
+    
+
 
 	<body class="top">
+<div class="search_input_form">
+<%= form_tag("/search", :method => 'get') do %>
+  <dl class="search2">
+    <dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt>
+    <dd><button>検索</button></dd>
+  </dl>
+<% end %>
+</div>
 
-		<p>キーワード検索</p>
-         <%= form_tag("/search", method: :get) do %>
-           <%= text_field_tag :search %>
-           <%= submit_tag '検索', :name => nil %>
-         <% end %>
-         
+
+
+
+
+
 
 
 		<div class="contentsKv">
 			<p class="contentsKv__head item--sp">全国の健康麻雀＆ノーレート検索</p>
-			<img class="contentsKv__img" src="" alt="">
+			<img class="contentsKv__img" src="/" alt="">
 		</div>
 		
 		<div class="contentsLayout">

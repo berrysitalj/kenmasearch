@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get "user_home" => "users#user_home"
+  get "user_login" => "users#user_login_form"
+  post "user_login" => "users#user_login"
+  post "user_logout" => "users#user_logout"
+  get "user/:id/user_edit" => "users#user_edit"
+  post "user/:id/user_update" => "users#user_update"
+
+
+
+
   get "owner/index" => "owner#index"
   get "owner/new" => "owner#new"
   post "owner/create" => "owner#create"

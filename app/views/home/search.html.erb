@@ -5,14 +5,39 @@
 		<div class="contentsKv">
 			<p class="contentsKv__head item--sp">全国の健康麻雀＆ノーレート検索</p>
 		</div>
+		
 		<div class="contentsLayout--shop">
 			<div class="contentsMain">
-				<%= form_tag("/shops/search") do %>
-                  <%= text_field_tag :search %>
-                  <%= submit_tag '再検索', :name => nil %>
-                <% end %>
 
-				<div class="contentsBreadcrumb"> <a href="/">TOP</a><span>&gt;</span><a>検索結果</a></div>
+
+                    <div class="search_input_breadcrumb">
+
+
+
+                    <div class="search_input_form">
+                    <%= form_tag("/search", :method => 'get') do %>
+                      <dl class="search2">
+                        <dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt>
+                        <dd><button>検索</button></dd>
+                      </dl>
+                    <% end %>
+                    </div>
+
+				
+
+
+				
+
+
+				<div class="contentsBreadcrumb"><a href="/">TOP</a><span>&gt;</span><a>検索結果</a></div>
+
+
+
+                </div>
+
+				
+
+
 				<div class="contentsNewPost--shop">
 					<h1 class="contentsNewPost__head--shop"> 「 <%= @keyword %> 」<span>の店舗一覧</span></h1>
 					<div class="contentsNewPost__inner">
@@ -57,10 +82,15 @@
 
                       <%= paginate @shops %>
 
-                      <%= form_tag("/shops/search") do %>
-                        <%= text_field_tag :search %>
-                        <%= submit_tag '再検索', :name => nil %>
-                      <% end %>
+                      <div class="search_input_form">
+                    <%= form_tag("/search", :method => 'get') do %>
+                      <dl class="search2">
+                        <dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt>
+                        <dd><button>検索</button></dd>
+                      </dl>
+                    <% end %>
+                    </div>
+                    
 
 					</div>
 					

@@ -1,240 +1,221 @@
 <!doctype html>
 
-
-
 <html lang="ja">
+	<body class="top">
 
-  
+		<div class="contentsKv"><p class="contentsKv__head item--sp">全国の健康麻雀＆ノーレート検索</p>
+		</div>
 
-  <body class="top">
+		<div class="contentsLayout--shop">
+			
+			<div class="contentsMain">
+				
+				<div class="contentsBreadcrumb"> <a href="/">TOP</a><span>&gt;</span><a>店舗ログイン</a><span>&gt;</span><a><%= @shop.shopname %></a></div>
+				
+<%= form_tag("/user/#{@shop.id}/user_update") do %>
 
-    <div class="contentsKv"><p class="contentsKv__head item--sp">全国の健康麻雀＆ノーレート検索</p>
-    </div>
-    
+				<div class="contentsDetails">
+					<div class="contentsDetails__flex">
+						<a class="contentsDetails__tag" ><%= @shop.freeicon11 %></a>
+						<a class="contentsDetails__tag" ><%= @shop.freeicon22 %></a>
+						<h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
+					</div>
 
+					<p class="contentsDetails__desc">
+						<textarea class="contentsDetails__desc_topcomment" style="height: 80px" name="topcomment"><%= @shop.topcomment %></textarea>
+					</p>
+					
+					<div class="contentsDetails__img">
+						<a href="">
+							<textarea name="topphoto"><%= @shop.topphoto %></textarea>トップ画像
+						</a>
+						<!-- <img src="/assets/details_img01.jpeg" alt=""> -->
+						<a href="">
+							<textarea name="photo1"><%= @shop.photo1 %></textarea>有料画像1
+						</a>
+						<a href=""><textarea name="photo2"><%= @shop.photo2 %></textarea>有料画像2</a>
+						<!-- <img src="/assets/details_img02.jpeg" alt=""> -->
+					</div>
+					<p class="contentsDetails__desc">
+						<textarea name="comment"><%= @shop.comment %></textarea>
+					</p>
+					
 
-
-    <div class="contentsLayout--shop">
-      
-      <div class="contentsMain">
-      
-        
-        <div class="contentsBreadcrumb"> <a href="/">TOP</a><span>&gt;</span><a href="#">愛知県名古屋市</a><span>&gt;</span><a href="#"><%= @shop.shopname %></a></div>
-        
-
-
-        <div class="contentsDetails">
-          <div class="contentsDetails__flex">
-            <a class="contentsDetails__tag" href="#"><%= @shop.freeicon11 %></a>
-            <a class="contentsDetails__tag" href="#"><%= @shop.freeicon22 %></a>
-            <h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
-          </div>
-          <p class="contentsDetails__desc"><%= @shop.topcomment %></p>
-          
-          <div class="contentsDetails__img">
-            <a href="">トップ画像(users)</a>
-            <!-- <img src="/assets/details_img01.jpeg" alt=""> -->
-            <a href="">有料画像1(members)</a>
-            <a href="">有料画像2(members)</a>
-            <!-- <img src="/assets/details_img02.jpeg" alt=""> -->
-          </div>
-          <p class="contentsDetails__desc"><%= @shop.comment %></p>
-          
-
-
-
-
-                
-        <%= form_tag("/shops/#{@shop.userid}/update") do %>
                     
-          <h2 class="contentsDetails__head">基本情報</h2>
+					<h2 class="contentsDetails__head">基本情報</h2>
+					
+					<table class="contentsDetails__table">
+						<tr>
+							<th>店舗id</th>
+							<td><%= @shop.userid %></td>
+						</tr>
+
+						<tr>
+							<th>パスワード</th>
+							<td><%= @shop.pass %></td>
+						</tr>
+					
+						<tr>
+							<th>店舗名</th>
+							<td><%= @shop.shopname %></td>
+						</tr>
+					
+					    <tr>                                       
+                            <th>よみがな</th>
+                            <td><%= @shop.yomi %></td>
+                        </tr>
+						
+						<tr>
+							<th>電話番号</th>
+							<td><%= @shop.shoptel %></td>
+						</tr>
+					
+						<tr>                                       
+                            <th>住所(都道府県)</th>
+                            <td><%= @shop.addres1 %></td>
+                        </tr>
+
+                        <tr>                                       
+                            <th>住所(都道府県以下)</th>
+                            <td><%= @shop.addres2 %></td>
+                        </tr>
+
+                        <tr>                                       
+                            <th>登録地域</th>
+                            <td><%= @shop.area %></td>
+                        </tr>
+					
+					</table>
+					
+
+					<h2 class="contentsDetails__head">詳細情報</h2>
+					<table class="contentsDetails__table">
+					
+						<tr>
+                            <th>担当者名</th>
+                            <td><textarea name="name"><%= @shop.name %></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <th>担当者電話番号</th>
+                            <td><textarea name="tel"><%= @shop.tel %></textarea></td>
+                        </tr>
           
-          <table class="contentsDetails__table">
-            
-            
-            <tr>                                       
-                <th>id確認</th>
-              <td><%= @shop.userid %></td>            
-            </tr>
-
-            <tr>                                       
-                <th>パスワード</th>
-              <td><textarea name="pass"><%= @shop.pass %></textarea></td>
-            </tr>
-
-            <tr>                                       
-                <th>店舗名</th>
-              <td><textarea name="shopname"><%= @shop.shopname %></textarea></td>
-            </tr>
-
-            <tr>                                       
-                <th>よみがな</th>
-              <td><textarea name="yomi"><%= @shop.yomi %></textarea></td>
-            </tr>
-
-            <tr>                                       
-                <th>店舗電話番号</th>
-              <td><textarea name="shoptel"><%= @shop.shoptel %></textarea></td>
-            </tr>
-
-            <tr>                                       
-                <th>住所(都道府県)</th>
-              <td><textarea name="addres1"><%= @shop.addres1 %></textarea></td>
-            </tr>
-
-            <tr>                                       
-                <th>住所(都道府県以下)</th>
-              <td><textarea name="addres2"><%= @shop.addres2 %></textarea></td>
-            </tr>
-
-            <tr>                                       
-                <th>登録地域</th>
-              <td><textarea name="area"><%= @shop.area %></textarea></td>
-            </tr>
-
-          </table>
+                        <tr>
+                            <th>担当者メールアドレス</th>
+                            <td><textarea name="mail"><%= @shop.mail %></textarea></td>
+                        </tr>
           
-
-            
-
-
-
-          <h2 class="contentsDetails__head">詳細情報</h2>
+                        <tr>
+                            <th>最寄駅</th>
+                            <td><textarea name="station"><%= @shop.station %></textarea>駅</td>
+                        </tr>
           
-          <table class="contentsDetails__table">
-            <tr>
-              <th>担当者名</th>
-              <td><textarea name="name"><%= @shop.name %></textarea></td>
-            </tr>
+                        <tr>
+                            <th>徒歩時間</th>
+                            <td>徒歩　<textarea name="onfoot"><%= @shop.onfoot %></textarea>分</td>
+                        </tr>
+          
+                        <tr>
+                            <th>営業日</th>
+                            <td><textarea name="businessday"><%= @shop.businessday %></textarea></td>
+                        </tr>
 
-            <tr>
-              <th>担当者電話番号</th>
-              <td><textarea name="tel"><%= @shop.tel %></textarea></td>
-            </tr>
+                        <tr>
+                            <th>営業時間</th>
+                            <td><textarea name="businesstime1"><%= @shop.businesstime1 %></textarea>～<textarea name="businesstime2"><%= @shop.businesstime2 %></textarea></td>
+                        </tr>
           
-            <tr>
-              <th>担当者メールアドレス</th>
-              <td><textarea name="mail"><%= @shop.mail %></textarea></td>
-            </tr>
-          
-            <tr>
-              <th>最寄駅</th>
-              <td><textarea name="station"><%= @shop.station %></textarea>駅</td>
-            </tr>
-          
-            <tr>
-              <th>徒歩時間</th>
-              <td>徒歩　<textarea name="onfoot"><%= @shop.onfoot %></textarea>分</td>
-            </tr>
-          
-            <tr>
-              <th>営業日</th>
-              <td><textarea name="businessday"><%= @shop.businessday %></textarea></td>
-            </tr>
+                        <tr>
+                            <th>料金</th>
+                            <td><textarea name="pricelist"><%= @shop.pricelist %></textarea></td>
+                        </tr>
 
-            <tr>
-              <th>営業時間</th>
-              <td><textarea name="businesstime1"><%= @shop.businesstime1 %></textarea>～<textarea name="businesstime2"><%= @shop.businesstime2 %></textarea></td>
-            </tr>
-          
-            <tr>
-              <th>料金</th>
-              <td><textarea name="pricelist"><%= @shop.pricelist %></textarea></td>
-            </tr>
+                        <tr>
+                             <th>TOP写真</th>
+                             <td><textarea name="topphoto"><%= @shop.topphoto %></textarea></td>
+                        </tr>
 
-            <tr>
-              <th>TOP写真</th>
-              <td><textarea name="topphoto"><%= @shop.topphoto %></textarea></td>
-            </tr>
+                        <tr>
+                             <th>年齢層</th>
+                             <td><textarea name="agegroup"><%= @shop.agegroup %></textarea></td>
+                        </tr>
 
-            <tr>
-              <th>年齢層</th>
-              <td><textarea name="agegroup"><%= @shop.agegroup %></textarea></td>
-            </tr>
+                        <tr>
+                             <th>事前予約</th>
+                             <td><textarea name="reservation"><%= @shop.reservation %></textarea></td>
+                        </tr>
+                      <%= form_with(model:@shops, local: true) do |form| %>
+                        <tr>
+                             <th>会員種別</th>
+                             <% if @shop.paidmember == true %>
+                             <td>有料会員</td>
+							<% else %> 
+							<td>無料会員</td>
+							<% end %> 
+                        </tr>
+                
+					
+					</table>
 
-            <tr>
-              <th>事前予約</th>
-              <td><textarea name="reservation"><%= @shop.reservation %></textarea></td>
-            </tr>
-                <%= form_with(model:@shops, local: true) do |form| %>
-            <tr>
-              <th>有料会員</th>
-              <td>
-                  
-                                  <%= form.radio_button :paidmember, :false, checked: true %>
-                                  <%= form.label :paidmember, "無料", {value: :false, style: "display: inline-block;"} %>
-                                  <%= form.radio_button :paidmember, :true, checked: @shop.paidmember %>
-                                  <%= form.label :paidmember, "有料", {value: :true, style: "display: inline-block;"} %>
-                                
-                </td>
-            </tr>
+					<h2 class="contentsDetails__head">アイコン選択</h2>
+					<table class="contentsDetails__table">
+					
+						<tr>
+							<th>麻雀荘</th>
+							<% if @shop.freeicon1 == true %> 
+							<td>〇</td>
+							<% else %> 
+							<td>------</td>
+							<% end %> 
+						</tr>
+					
+						<tr>
+							<th>公共施設</th>
+							<% if @shop.freeicon2 == true %> 
+							<td>〇</td>
+							<% else %> 
+							<td>------</td>
+							<% end %> 
+						</tr>
 
-          </table>
-          
+						<tr>
+							<th>場所3</th>
+							<% if @shop.freeicon3 == true %> 
+							<td>〇</td>
+							<% else %> 
+							<td>------</td>
+							<% end %> 
+						</tr>
 
-          <h2 class="contentsDetails__head">アイコン選択</h2>
-          <table class="contentsDetails__table">
-          
-<tr>
-              <th>麻雀荘</th>
-              <td>
-                                  <%= form.radio_button :freeicon1, :false, checked: true %>
-                                  <%= form.label :freeicon1, "非表示", {value: :false, style: "display: inline-block;"} %>
-                                  <%= form.radio_button :freeicon1, :true, checked: @shop.freeicon1 %>
-                                  <%= form.label :freeicon1, "表示", {value: :true, style: "display: inline-block;"} %>
-              </td>
-            </tr>
-          
-            <tr>
-              <th>公共施設</th>
-              <td>
-                                  <%= form.radio_button :freeicon2, :false, checked: true %>
-                                  <%= form.label :freeicon2, "非表示", {value: :false, style: "display: inline-block;"} %>
-                                  <%= form.radio_button :freeicon2, :true, checked: @shop.freeicon2 %>
-                                  <%= form.label :freeicon2, "表示", {value: :true, style: "display: inline-block;"} %>
-              </td>
-            </tr>
-          
-            <tr>
-              <th>場所3</th>
-              <td>
-                                  <%= form.radio_button :freeicon3, :false, checked: true %>
-                                  <%= form.label :freeicon3, "非表示", {value: :false, style: "display: inline-block;"} %>
-                                  <%= form.radio_button :freeicon3, :true, checked: @shop.freeicon3 %>
-                                  <%= form.label :freeicon3, "表示", {value: :true, style: "display: inline-block;"} %>
-              </td>
-            </tr>
-          
-            <tr>
-              <th>場所4</th>
-              <td>
-                                  <%= form.radio_button :freeicon4, :false, checked: true %>
-                                  <%= form.label :freeicon4, "非表示", {value: :false, style: "display: inline-block;"} %>
-                                  <%= form.radio_button :freeicon4, :true, checked: @shop.freeicon4 %>
-                                  <%= form.label :freeicon4, "表示", {value: :true, style: "display: inline-block;"} %>
-              </td>
-            </tr>
-          
-            <tr>
-              <th>場所5</th>
-              <td>
-                                  <%= form.radio_button :freeicon5, :false, checked: true %>
-                                  <%= form.label :freeicon5, "非表示", {value: :false, style: "display: inline-block;"} %>
-                                  <%= form.radio_button :freeicon5, :true, checked: @shop.freeicon5 %>
-                                  <%= form.label :freeicon5, "表示", {value: :true, style: "display: inline-block;"} %>
-              </td>
-            </tr>
+						<tr>
+							<th>場所4</th>
+							<% if @shop.freeicon4 == true %> 
+							<td>〇</td>
+							<% else %> 
+							<td>------</td>
+							<% end %> 
+						</tr>
 
-            <tr>
-              <th>場所6</th>
-              <td>
-                                  <%= form.radio_button :freeicon6, :false, checked: true %>
-                                  <%= form.label :freeicon6, "非表示", {value: :false, style: "display: inline-block;"} %>
-                                  <%= form.radio_button :freeicon6, :true, checked: @shop.freeicon6 %>
-                                  <%= form.label :freeicon6, "表示", {value: :true, style: "display: inline-block;"} %>
-              </td>
-            </tr>
-            <tr>
+						<tr>
+							<th>場所5</th>
+							<% if @shop.freeicon5 == true %> 
+							<td>〇</td>
+							<% else %> 
+							<td>------</td>
+							<% end %> 
+						</tr>
+
+						<tr>
+							<th>場所6</th>
+							<% if @shop.freeicon6 == true %> 
+							<td>〇</td>
+							<% else %>
+							<td>------</td>
+							<% end %>
+						</tr>
+
+						<tr>
               <th>健康麻雀</th>
               <td>
                                   <%= form.radio_button :freeicon11, :false, checked: true %>
@@ -387,32 +368,18 @@
                                   <%= form.label :paidicon4, "表示", {value: :true, style: "display: inline-block;"} %>
               </td>
             </tr>
-  <% end %>         
-          
-          </table>
 
-          <h2 class="contentsDetails__head">有料会員情報</h2>
-          <table class="contentsDetails__table">
-          
-            <tr>
-              <th>トップコメント</th>
-              <td><textarea name="topcomment"><%= @shop.topcomment %></textarea></td>
-            </tr>
+<% end %>
 
-            <tr>
-              <th>説明コメント</th>
-              <td><textarea name="comment"><%= @shop.comment %></textarea></td>
-            </tr>
+					</table>
 
-            <tr>
-              <th>写真2</th>
-              <td><textarea name="photo1"><%= @shop.photo1 %></textarea></td>
-            </tr>
 
-            <tr>
-              <th>写真3</th>
-              <td><textarea name="photo2"><%= @shop.photo2 %></textarea></td>
-            </tr>
+					<h2 class="contentsDetails__head">有料会員情報</h2>
+					<table class="contentsDetails__table">
+					
+            
+
+            
 
             <tr>
               <th>卓数</th>
@@ -474,25 +441,22 @@
               <td><textarea name="opening"><%= @shop.opening %></textarea></td>
             </tr>
           
-          
-          </table>
-        
-    <input type="submit" name="" value="保存">
-                <% end %>
-
-        </div>
-        
+					</table>
+				</div>
+	<input type="submit" name="" value="保存">
+    <% end %>
+            
             </div>
 
-      <div class="contentsAd">
+			<div class="contentsAd">
 
-      </div>
-      
-      <div class="contentsRecommendPost">
-      </div>
+			</div>
+			
+			<div class="contentsRecommendPost">
+			</div>
 
-    </div>
+		</div>
 
-  </body>
+	</body>
 
 </html>

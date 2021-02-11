@@ -378,6 +378,22 @@ padding:0 20px;
 position:relative
 }
 
+.nav__item__login{
+color: red;
+font-size:15px;
+font-weight:700;
+display:-webkit-box;
+display:-ms-flexbox;
+display:flex;
+-webkit-box-align:center;
+-ms-flex-align:center;
+align-items:center;
+height:65px;
+border-bottom:1px solid #c7c7c7;
+padding:0 20px;
+position:relative
+}
+
 .nav__item img{
 width:23px;
 height:23px;

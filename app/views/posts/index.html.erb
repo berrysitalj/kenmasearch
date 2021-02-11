@@ -1,13 +1,3 @@
 <%= link_to("投稿一覧","/posts/index") %>
 <%= link_to("投稿一覧","/posts/index") %>
 
-<div class="main posts-index">
-  <div class="container">
-    <% @user.each do |user| %>
-      <div class="posts-index-item">
-        <!-- 以下をlink_toメソッドを用いて書き換えてください -->
-        <%= userid %>
-      </div>
-    <% end %>
-  </div>
-</div>
