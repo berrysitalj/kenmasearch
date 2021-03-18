@@ -83,13 +83,20 @@
       </g>
     </g>
     <g id="text" transform="translate(-745 46)">
-      <text id="茨城" transform="translate(11128 -1060)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP"><tspan x="0" y="0">茨城</tspan></text>
-      <text id="栃木" transform="translate(11067 -1133)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP"><tspan x="0" y="0">栃木</tspan></text>
-      <text id="群馬" transform="translate(10959 -1118)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP"><tspan x="0" y="0">群馬</tspan></text>
-      <text id="埼玉" transform="translate(10991 -1043)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP"><tspan x="0" y="0">埼玉</tspan></text>
-      <text id="東京" transform="translate(11002 -991)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP"><tspan x="0" y="0">東京</tspan></text>
-      <text id="千葉" transform="translate(11101 -942)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP"><tspan x="0" y="0">千葉</tspan></text>
-      <text id="神奈川" transform="translate(10978 -952)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP"><tspan x="0" y="0">神奈川</tspan></text>
+      <text id="茨城" transform="translate(11128 -1060)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP">
+        <tspan x="0" y="0"><a href="/search?utf8=✓&search=茨城県" onmouseout="this.style.fill='#000'" onmouseover="this.style.fill='#849055'" style="fill: rgb(0,0,0);">茨城</a></tspan></text>
+      <text id="栃木" transform="translate(11067 -1133)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP">
+        <tspan x="0" y="0"><a href="/search?utf8=✓&search=栃木県" onmouseout="this.style.fill='#000'" onmouseover="this.style.fill='#849055'" style="fill: rgb(0,0,0);">栃木</a></tspan></text>
+      <text id="群馬" transform="translate(10959 -1118)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP">
+        <tspan x="0" y="0"><a href="/search?utf8=✓&search=群馬県" onmouseout="this.style.fill='#000'" onmouseover="this.style.fill='#849055'" style="fill: rgb(0,0,0);">群馬</a></tspan></text>
+      <text id="埼玉" transform="translate(10991 -1043)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP">
+        <tspan x="0" y="0"><a href="/search?utf8=✓&search=埼玉県" onmouseout="this.style.fill='#000'" onmouseover="this.style.fill='#849055'" style="fill: rgb(0,0,0);">埼玉</a></tspan></text>
+      <text id="東京" transform="translate(11002 -991)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP">
+        <tspan x="0" y="0"><a href="/search?utf8=✓&search=東京都" onmouseout="this.style.fill='#000'" onmouseover="this.style.fill='#849055'" style="fill: rgb(0,0,0);">東京</a></tspan></text>
+      <text id="千葉" transform="translate(11101 -942)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP">
+        <tspan x="0" y="0"><a href="/search?utf8=✓&search=千葉県" onmouseout="this.style.fill='#000'" onmouseover="this.style.fill='#849055'" style="fill: rgb(0,0,0);">千葉</a></tspan></text>
+      <text id="神奈川" transform="translate(10978 -952)" font-size="15" font-family="NotoSansJP-Regular, Noto Sans JP">
+        <tspan x="0" y="0"><a href="/search?utf8=✓&search=神奈川県" onmouseout="this.style.fill='#000'" onmouseover="this.style.fill='#849055'" style="fill: rgb(0,0,0);">神奈川</a></tspan></text>
     </g>
   </g>
 </svg>
@@ -105,43 +112,43 @@
 						<a class="contentsMap__item" href="#">
 							<img class="contentsMap__item__arw" src="/assets/map_arw.svg" alt="">
 							<h3 class="contentsMap__item__title">東京</h3>
-							<p class="contentsMap__item__num">(20)</p>
+							<p class="contentsMap__item__num">(<%= @number_of_stores_tokyo %>)</p>
 						</a>
 
 						<a class="contentsMap__item" href="#">
 							<img class="contentsMap__item__arw" src="/assets/map_arw.svg" alt="">
 							<h3 class="contentsMap__item__title">神奈川</h3>
-							<p class="contentsMap__item__num">(20)</p>
+							<p class="contentsMap__item__num">(<%= @number_of_stores_kanagawa %>)</p>
 						</a>
 
 						<a class="contentsMap__item" href="#">
 							<img class="contentsMap__item__arw" src="/assets/map_arw.svg" alt="">
 							<h3 class="contentsMap__item__title">千葉</h3>
-							<p class="contentsMap__item__num">(20)</p>
+							<p class="contentsMap__item__num">(<%= @number_of_stores_chiba %>)</p>
 						</a>
 
 						<a class="contentsMap__item" href="#">
 							<img class="contentsMap__item__arw" src="/assets/map_arw.svg" alt="">
 							<h3 class="contentsMap__item__title">埼玉</h3>
-							<p class="contentsMap__item__num">(20)</p>
+							<p class="contentsMap__item__num">(<%= @number_of_stores_saitama %>)</p>
 						</a>
 
 						<a class="contentsMap__item" href="#">
 							<img class="contentsMap__item__arw" src="/assets/map_arw.svg" alt="">
 							<h3 class="contentsMap__item__title">群馬</h3>
-							<p class="contentsMap__item__num">(20)</p>
+							<p class="contentsMap__item__num">(<%= @number_of_stores_gunma %>)</p>
 						</a>
 
 						<a class="contentsMap__item" href="#">
 							<img class="contentsMap__item__arw" src="/assets/map_arw.svg" alt="">
 							<h3 class="contentsMap__item__title">茨城</h3>
-							<p class="contentsMap__item__num">(20)</p>
+							<p class="contentsMap__item__num">(<%= @number_of_stores_ibaraki %>)</p>
 						</a>
 
 						<a class="contentsMap__item" href="#">
 							<img class="contentsMap__item__arw" src="/assets/map_arw.svg" alt="">
 							<h3 class="contentsMap__item__title">栃木</h3>
-							<p class="contentsMap__item__num">(20)</p>
+							<p class="contentsMap__item__num">(<%= @number_of_stores_tochigi %>)</p>
 						</a>
 
 						
@@ -149,77 +156,16 @@
 					</div>
 				</div>
 				
+            <%= render 'shared/new_shop' %>
+
+      </div>
 
 
+      <div class="contentsAd"><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""></div>
+      
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-				<div class="contentsNewPost">
-					<h2 class="contentsNewPost__head">新着店舗情報</h2>
-					<div class="contentsNewPost__inner">
-						
-						<% @shops.first(5).each do |shop| %>
-						<div class="contentsNewPost__item">
-							<div class="contentsNewPost__item__head">
-								<a class="contentsNewPost__item__tag" href="#">健康麻雀</a>
-								<h3>
-									<a class="contentsNewPost__item__title" href="/shops/<%= shop.userid %>">
-										<%= link_to(shop.shopname, "/shops/#{shop.userid}") %>
-									</a>
-								</h3>
-							</div>
-							<div class="contentsNewPost__item__flex">
-								<a class="contentsNewPost__item__img" href="/shops/<%= shop.userid %>">
-									<img src="/assets/post_img01.png" alt=""></a>
-									<p class="contentsNewPost__item__desc"><%= shop.addres1 %> <%= shop.area %>
-										<br><%= shop.station %>
-										<br><%= shop.topcomment %></p>
-							</div>
-							<div class="contentsNewPost__item__btn__inner">
-								<a class="contentsNewPost__item__btn" href="/shops/<%= shop.userid %>">店舗詳細はこちら</a></div>
-						</div>
-						<% end %>					
-						
-					</div>
-				</div>
-			</div>
-
-
-			<div class="contentsAd"><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""></div>
-			<div class="contentsRecommendPost">
-				<h2 class="contentsRecommendPost__head">おすすめ店舗<img src="/assets/recommend_mark.svg" alt=""></h2>
-
-				
-				<% @shops.first(6).each do |shop| %>
-				<div class="contentsRecommendPost__item"> <a class="contentsRecommendPost__item__tag" href="#">健康麻雀</a>
-					<h3><a class="contentsRecommendPost__item__title">
-						<%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a>
-					</h3>
-					
-					<div class="contentsRecommendPost__item__flex">
-						<a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
-							<img src="/assets/post_img01.png" alt="">
-						</a>
-						<p class="contentsRecommendPost__item__desc"><%= shop.addres1 %> <%= shop.area %>
-							<br><%= shop.station %>
-							<br><%= shop.topcomment %>
-						</p>
-					</div>
-				</div>
-				<% end %>
-			</div>
+            <%= render 'shared/pickup_shop' %>
 		</div>
 
 	</body>

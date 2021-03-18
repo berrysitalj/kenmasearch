@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 	before_action :owner_logged_in?
-  before_action :set_current_user
+  before_action :user_logged_in?
   
   def owner_logged_in?
     if session[:id]
@@ -21,15 +21,25 @@ class ApplicationController < ActionController::Base
     @current_owner = nil
   end
 
-  def set_current_user
-    @current_user = Shop.find_by(id: session[:id])
-  end
 
-  def authenticate_user
-    if @current_user == nil
-      flash[:notice] = "ログインが必要です"
-      redirect_to("/user_login")
+
+  def user_logged_in?
+    if session[:user_id]
+      begin
+        @current_owner = Shop.find_by(id: session[:user_id])
+      rescue ActiveRecord::RecordNotFound
+        reset_user_session
+      end
     end
+    return if @current_user
+    # @current_userが取得できなかった場合はログイン画面にリダイレクト
+    flash[:referer] = request.fullpath
+    redirect_to("/user_login")
+  end
+  
+  def reset_user_session
+    session[:user_id] = nil
+    @current_user = nil
   end
 
 end

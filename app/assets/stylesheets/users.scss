@@ -67,7 +67,7 @@ a{
 cursor:pointer
 }
 
-table{
+.contentsDetails table{
 border-collapse:collapse
 }
 
@@ -2009,15 +2009,17 @@ border-bottom:1px solid #c7c7c7
 }}
 
 .contentsDetails__table th{
+text-align: center;
 background:#f3f5e9;
-padding:5px 0;
+padding:5px 5px;
 font-weight:400
 }
 
 @media screen and (min-width:769px){
 .contentsDetails__table th{
+text-align: center;
 width:23%;
-padding:10px 0;
+padding:10px 10px;
 border-bottom:1px solid #c7c7c7
 }}
 

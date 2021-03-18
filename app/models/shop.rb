@@ -4,7 +4,7 @@ class Shop < ApplicationRecord
 
 	def self.search(search)
       return Shop.all unless search
-      Shop.where(['addres1 LIKE ? or addres2 LIKE ? or shopname LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
+      Shop.where(['yomi LIKE ? or addres1 LIKE ? or addres2 LIKE ? or shopname LIKE ? or station LIKE ? ', "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"])
     end
 
 end

@@ -1,0 +1,85 @@
+<h1>Owner#show</h1>
+
+  <div class="owner_show_contentsMain">
+
+     <h2 class="contentsDetails__head">申込・問合せ内容</h2>
+    
+     <table class="contentsDetails__table">
+       <tr>
+         <td class="table_td">会員種別</td>
+         <% if @sender.category == 0 %>
+          <td class="table_td_content">無料</td>
+         <% elsif %>
+          <% @sender.category == 1 %>
+          <td class="table_td_content" style="color: red;">有料</td>
+          <% elsif %>
+          <% @sender.category == 2 %>
+         <td class="table_td_content">非営利</td>
+         <% elsif %>
+          <% @sender.category == 3 %>
+         <td class="table_td_content" style="color: red;">広告申込・お問合せ</td>
+         <% else %>
+          <td class="table_td_content">no_category</td>
+         <% end %>
+       </tr>
+       <tr>
+         <td class="table_td">受信日時</td>
+         <td class="table_td_content"><%= @sender.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+       </tr>
+       <tr>
+         <td class="table_td">店舗名または名称</td>
+         <td class="table_td_content"><%= @sender.shopname %></td>
+       </tr>
+       <tr>
+         <td class="table_td">よみがな</td>
+         <td class="table_td_content"><%= @sender.yomi %></td>
+       </tr>
+         <td class="table_td">店舗電話番号</td>
+         <td class="table_td_content"><%= @sender.tel1 %>-<%= @sender.tel2 %>-<%= @sender.tel3 %></td>
+       </tr>
+       </tr>
+         <td class="table_td">住所</td>
+         <td class="table_td_content"><%= @sender.area %><%= @sender.addres %></td>
+       </tr>
+       </tr>
+         <td class="table_td">担当者名</td>
+         <td class="table_td_content"><%= @sender.charge %></td>
+       </tr>         
+       </tr>
+         <td class="table_td">担当者連絡先</td>
+         <td class="table_td_content"><%= @sender.tel4 %>-<%= @sender.tel5 %>-<%= @sender.tel6 %></td>
+       </tr>
+       </tr>
+         <td class="table_td">メールアドレス</td>
+         <td class="table_td_content">
+            <input id="copyTarget" type="text" value="<%= @sender.chargemail %>" readonly>
+    <button onclick="copyToClipboard()" style="border: solid; border-radius: 8px;">コピー</button>
+          </td>
+       </tr>
+       </tr>
+         <td class="table_td">申込み内容・質問等</td>
+         <td class="table_td_content"><%= @sender.question %></td>
+       </tr>
+
+     </table>
+
+  </div>
+
+ 
+
+
+    <script>
+        function copyToClipboard() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("copyTarget");
+
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+
+            // コピーをお知らせする
+            alert("コピーできました！ : " + copyTarget.value);
+        }
+    </script>

@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  skip_before_action :owner_logged_in?
+  skip_before_action :user_logged_in?
+  
   def index
     @user = User.all
   end

@@ -1,10 +1,20 @@
 class OwnerController < ApplicationController
-	skip_before_action :owner_logged_in?
+	before_action :owner_logged_in?, only: [:index, :new, :member_list, :show, :create]
+  skip_before_action :user_logged_in?
+  
   def index
   end
 
   def new
   	
+  end
+
+  def member_list
+    @sender = Sender.all.order(created_at: :desc).page(params[:page]).per(10)
+  end
+
+  def show
+    @sender = Sender.find_by(id: params[:id])
   end
 
   def create
@@ -23,7 +33,7 @@ class OwnerController < ApplicationController
   	if @owner
   		session[:id] = @owner.id
   		flash[:notice] = "ログインしました"
-  		redirect_to("/")
+  		redirect_to("/owner/index")
   	else
   		@error_message = "nameまたはpassが間違っています"
   		@name = params[:name]

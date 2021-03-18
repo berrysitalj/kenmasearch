@@ -66,16 +66,16 @@
 							    </a>
 								
 								<h3>
-									<a class="contentsNewPost__item__title" href="#"><%= shop.shopname %>
+									<a class="contentsNewPost__item__title" href="/shops/<%= shop.userid %>"><%= shop.shopname %>
 									</a>
 								</h3>
 							
 							</div>
 							
 
-							<div class="contentsNewPost__item__flex"><a class="contentsNewPost__item__img" href="#"><img src="/assets/post_img01.png" alt=""></a><p class="contentsNewPost__item__desc">麻雀教室しかやっていないと思って、まだ行っていなかったお店。<br>ホームページを見ると1ゲーム500円と書いてある。<br>今度名古屋に行ったときには必ず寄ってみたい。</p>
+							<div class="contentsNewPost__item__flex"><a class="contentsNewPost__item__img" href="/shops/<%= shop.userid %>"><img src="/assets/post_img01.png" alt=""></a><p class="contentsNewPost__item__desc">麻雀教室しかやっていないと思って、まだ行っていなかったお店。<br>ホームページを見ると1ゲーム500円と書いてある。<br>今度名古屋に行ったときには必ず寄ってみたい。</p>
 							</div>
-							<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="#">店舗詳細はこちら</a></div>
+							<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="/shops/<%= shop.userid %>">店舗詳細はこちら</a></div>
 						</div>
 
 					  <% end %>

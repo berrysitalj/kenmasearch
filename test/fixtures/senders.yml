@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: 1
+  shopname: MyString
+  yomi: MyString
+  tel1: 1
+  tel2: 1
+  tel3: 1
+  area: MyString
+  addres: MyString
+  charge: MyString
+  tel4: 1
+  tel5: 1
+  tel6: 1
+  chargemail: MyString
+  question: MyString
+
+two:
+  category: 1
+  shopname: MyString
+  yomi: MyString
+  tel1: 1
+  tel2: 1
+  tel3: 1
+  area: MyString
+  addres: MyString
+  charge: MyString
+  tel4: 1
+  tel5: 1
+  tel6: 1
+  chargemail: MyString
+  question: MyString

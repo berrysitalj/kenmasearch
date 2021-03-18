@@ -1,3 +1,116 @@
 // Place all the styles related to the Owner controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.owner_table_content{
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width:600px) { 
+    /*　画面サイズが900pxからはここを読み込む　*/
+.owner_table_content{
+  width: 60%;
+  margin: 0 auto;
+}}
+
+
+
+table{
+  border-collapse:collapse;
+  margin:0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+td,th{
+  border:1px solid #666;
+  padding:10px 20px 10px 20px;
+}
+tr:last-child td,
+tr:last-child th{
+  border-bottom:1px solid #666;  
+}
+
+.owner_table_top{
+	background-color: #EEEEEE;
+	text-align: center;
+}
+
+div.paginate{
+  width:20em;
+  padding-left:30px;
+  margin:0 auto;
+}
+
+
+/*show*/
+
+.owner_show_contentsMain{
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width:600px) { 
+    /*　画面サイズが600pxからはここを読み込む　*/
+.owner_show_contentsMain{
+  width: 60%;
+  margin: 0 auto;
+}}
+
+.contentsDetails__head{
+margin-top:40px;
+background:#d8ec8a;
+padding:8px 10px;
+font-size:16px;
+font-weight:700;
+color:#333
+}
+
+
+
+.contentsDetails__table{
+margin-top:20px;
+width:100%
+}
+
+.contentsDetails__table td,.contentsDetails__table th{
+width:100%;
+display:block;
+font-size:14px
+}
+
+
+
+.contentsDetails__table th{
+background:#f3f5e9;
+padding:5px 0;
+font-weight:400
+}
+
+
+
+.contentsDetails__table td{
+padding:9px;
+border-bottom:1px solid #c7c7c7
+}
+
+
+
+.table_td{
+  background:#f3f5e9;
+}
+
+.table_td_content{
+  text-align: left;
+}
+
+.copy_button{
+    font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
