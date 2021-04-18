@@ -40,7 +40,7 @@
 						<tr>
 							<th><%= link_to("編集", "/shops/#{shop.userid}/edit") %>    <%= link_to(shop.userid, "/shops/#{shop.userid}") %></th>
 							<td><%= shop.shopname %></td>
-
+							<td><%= link_to("削除", "/shops/#{shop.id}/destroy", {method:"post"}) %></td>
 						</tr>
 					<% end %>
 					</table>

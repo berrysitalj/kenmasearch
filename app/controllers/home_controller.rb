@@ -4,6 +4,10 @@ class HomeController < ApplicationController
   skip_before_action :owner_logged_in?
   skip_before_action :user_logged_in?
 
+  def toptop
+    
+  end
+
   def top
   	@shops_random_top = Shop.where(paidmember: 1).order("RANDOM()").limit(6)
     # mysqlは"RAND"にしないといけない

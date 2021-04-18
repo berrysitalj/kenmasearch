@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "toptop" => "home#toptop"
+
+  
   get "user_home" => "users#user_home"
   get "user_login" => "users#user_login_form"
   post "user_login" => "users#user_login"

@@ -132,11 +132,15 @@
     </header>
 
     
-
-
-     <%= form_tag("/logout", data: {confirm: "ログアウトしますか？"}) do %>
+<% if session[:id] %>
+            <%= form_tag("/logout", data: {confirm: "ログアウトしますか？"}) do %>
      <%= submit_tag '管理者ログアウト' %>
      <% end %>
+     <% else %>
+            
+     <% end %>
+
+     
 
      
 

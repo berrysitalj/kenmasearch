@@ -67,10 +67,14 @@
 							<td><textarea name="shopname"></textarea></td>
 						</tr>
 
+<!--
+
 						<tr>						                           
 						    <th>よみがな</th>
 							<td><textarea name="yomi"></textarea></td>
 						</tr>
+
+-->
 
 						<tr>						                           
 						    <th>店舗電話番号</th>
@@ -102,6 +106,8 @@
 					<h2 class="contentsDetails__head">詳細情報</h2>
 					
 					<table class="contentsDetails__table">
+
+<!--
 						<tr>
 							<th>担当者名</th>
 							<td><textarea name="name"></textarea></td>
@@ -117,10 +123,14 @@
 							<td><textarea name="mail"></textarea></td>
 						</tr>
 					
+
+-->
 						<tr>
 							<th>最寄駅</th>
 							<td><textarea name="station"></textarea>駅</td>
 						</tr>
+
+<!--
 					
 						<tr>
 							<th>徒歩時間</th>
@@ -156,7 +166,9 @@
 							<th>事前予約</th>
 							<td><textarea name="reservation"></textarea></td>
 						</tr>
-                <%= form_with(model:@shops, local: true) do |form| %>
+                
+-->
+                        <%= form_with(model:@shops, local: true) do |form| %>
 						<tr>
 							<th>有料会員</th>
 							<td>
@@ -198,6 +210,8 @@
                                 
 						    </td>
 						</tr>
+
+<!--
 					
 						<tr>
 							<th>場所3</th>
@@ -238,6 +252,9 @@
                                   <%= form.label :freeicon6, "表示", {value: :true, style: "display: inline-block;"} %>
 							</td>
 						</tr>
+
+-->
+
 						<tr>
 							<th>健康麻雀</th>
 							<td>
@@ -275,6 +292,10 @@
                                   <%= form.label :freeicon14, "表示", {value: :true, style: "display: inline-block;"} %>
 							</td>
 						</tr>
+<!--
+
+
+
 						<tr>
 							<th>麻雀種別5</th>
 							<td>
@@ -392,12 +413,18 @@
                                   <%= form.label :paidicon4, "表示", {value: :true, style: "display: inline-block;"} %>
 							</td>
 						</tr>
+-->
+	
+
 	<% end %>					
 					
 					</table>
 
 					<h2 class="contentsDetails__head">有料会員情報</h2>
 					<table class="contentsDetails__table">
+
+<!--
+
 					
 						<tr>
 							<th>トップコメント</th>
@@ -479,6 +506,7 @@
 							<td><textarea name="opening"></textarea></td>
 						</tr>
 					
+-->
 					
 					</table>
 				
