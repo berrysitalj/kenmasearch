@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get "toptop" => "home#toptop"
-
+  get "stores/index" => "stores#index"
+  get "stores/new" => "stores#new"
+  get "stores/:id" => "stores#show"
+  post "stores/create" => "stores#create"
+  get "stores/:id/edit" => "stores#edit"
+  post "stores/:id/update" => "stores#update"
+  post "stores/:id/destroy" => "stores#destroy"
   
   get "user_home" => "users#user_home"
   get "user_login" => "users#user_login_form"

@@ -39,24 +39,31 @@ class HomeController < ApplicationController
   end
 
   def search
+    # 検索窓に入力された場合
   	@shops = Shop.search(params[:search]).order(updated_at: :desc).page(params[:page]).per(5)
+    # 入力されたキーワードその1
     @keyword = params[:search]
+    # 入力されたキーワードその2
     @searchword = params[:search]
 
     if @searchword = nil then
-    # nilの場合
-      @shops_random_top = Shop.where(paidmember: 1).order("RANDOM()").limit(6)
+    # 入力されたキーワードその2がnilの場合、ランダムですべてを表示する
+      @shops_random_top = Shop.where(paidmember: 0).order("RANDOM()").limit(6)
+    
     else
-    # それ以外の場合
+      
+    # 入力されたキーワードその2がnilではない場合、@shops_firstに、最初に検索にヒットしたshopを代入
       @shops_first = Shop.search(params[:search]).first
        begin
+        # @shops_first_columnに@shops_firstのaddres1を代入(都道府県が代入された)
           @shops_first_column = @shops_first.addres1
         rescue
-          @shops_random_top = Shop.where(paidmember: 1).order("RANDOM()").limit(6)
+          # 失敗時はランダムですべてを表示する
+          @shops_random_top = Shop.where(paidmember: 0).order("RANDOM()").limit(6)
         end
-      @shops_random_top = Shop.where(paidmember: 1, addres1: @shops_first_column).order("RANDOM()").limit(6)
-        # mysqlは"RAND"にしないといけない
       
+      @shops_random_top = Shop.where(paidmember: 0, addres1: @shops_first_column).order("RANDOM()").limit(6)
+        # mysqlは"RAND"にしないといけない
     end
     
     @shops_new_top = Shop.where(paidmember: 1).order(created_at: :desc)
@@ -70,10 +77,10 @@ class HomeController < ApplicationController
   end
 
   def hokkaido
-    @number_of_stores_douou = Shop.where(area:["道央"]).count
-    @number_of_stores_dounan = Shop.where(area:["道南"]).count
-    @number_of_stores_doutou = Shop.where(area:["道東"]).count
-    @number_of_stores_douhoku = Shop.where(area:["道北"]).count
+    @number_of_stores_douou = Shop.where(area2:["道央"]).count
+    @number_of_stores_dounan = Shop.where(area2:["道南"]).count
+    @number_of_stores_doutou = Shop.where(area2:["道東"]).count
+    @number_of_stores_douhoku = Shop.where(area2:["道北"]).count
     @shops_new_top = Shop.where(paidmember: 1, addres1: ["道央","道南","道東",
                                                          "道北"]).order(created_at: :desc)
     @shops_random_top = Shop.where(paidmember: 1, addres1: ["道央","道南","道東",

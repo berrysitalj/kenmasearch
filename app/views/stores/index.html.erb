@@ -1,0 +1,37 @@
+<h1>Stores#index</h1>
+
+
+
+<div class="owner_table_content">
+<p><%= link_to("owner/index", "/owner/index") %></p>
+<p><%= link_to("stores/new", "stores/new") %></p>
+
+<table>
+	<tr class="owner_table_top">
+		<td>日時</th>
+		<td>ID</td>
+		<td>店舗名</td>
+		<td>都道府県</td>
+		<td>登録地域</td>
+	</tr>
+<% @shop.each do |shop| %>
+  <tr>
+
+  	<td class="owner_table_th">
+  	  <%= link_to(shop.created_at.strftime('%Y/%m/%d %H:%M'), "/shops/#{shop.id}") %>
+  	</td>
+
+    <td><%= shop.userid %></td>
+    
+    <td><%= shop.shopname %></td>
+    <td><%= shop.addres1 %></td>
+    <td><%= shop.area %></td>
+  
+  </tr>
+<% end %>
+</table>
+
+</div>
+<div class="paginate"><%= paginate @shop %></div>
+
+
