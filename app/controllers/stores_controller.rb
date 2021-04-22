@@ -21,7 +21,6 @@ class StoresController < ApplicationController
                          addres1:params[:addres1],
                          addres2:params[:addres2],
                          area:params[:area],
-                         area2:params[:area2],
                          station:params[:station],
                          freeicon1:params[:freeicon1],
                          freeicon2:params[:freeicon2],

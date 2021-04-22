@@ -16,11 +16,9 @@ end
       return Shop.all unless search
       Shop.where(['yomi LIKE ? or 
                    addres1 LIKE ? or 
-                   addres2 LIKE ? or 
-                   area2 LIKE ? or 
+                   addres2 LIKE ? or
                    shopname LIKE ? or 
                    station LIKE ?', 
-                   "%#{search}%", 
                    "%#{search}%", 
                    "%#{search}%", 
                    "%#{search}%", 

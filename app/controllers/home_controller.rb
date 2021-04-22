@@ -26,7 +26,8 @@ class HomeController < ApplicationController
     @number_of_stores_tohoku = Shop.where(addres1:["青森県", "秋田県", "岩手県", "山形県", 
                                                   "宮城県", "福島県"]
                                         ).count
-    @number_of_stores_hokkaido = Shop.where(addres1:["北海道"]
+    @number_of_stores_hokkaido = Shop.where(addres1:["北海道道央", "北海道道南", "北海道道東",
+                                                     "北海道道北",]
                                         ).count
     @number_of_stores_tyugoku = Shop.where(addres1:["岡山県", "広島県", "鳥取県", "島根県", 
                                                   "山口県"]
@@ -77,14 +78,14 @@ class HomeController < ApplicationController
   end
 
   def hokkaido
-    @number_of_stores_douou = Shop.where(area2:["道央"]).count
-    @number_of_stores_dounan = Shop.where(area2:["道南"]).count
-    @number_of_stores_doutou = Shop.where(area2:["道東"]).count
-    @number_of_stores_douhoku = Shop.where(area2:["道北"]).count
-    @shops_new_top = Shop.where(paidmember: 1, addres1: ["道央","道南","道東",
-                                                         "道北"]).order(created_at: :desc)
-    @shops_random_top = Shop.where(paidmember: 1, addres1: ["道央","道南","道東",
-                                                            "道北"]).order("RANDOM()").limit(6)
+    @number_of_stores_douou = Shop.where(addres1:["北海道道央"]).count
+    @number_of_stores_dounan = Shop.where(addres1:["北海道道南"]).count
+    @number_of_stores_doutou = Shop.where(addres1:["北海道道東"]).count
+    @number_of_stores_douhoku = Shop.where(addres1:["北海道道北"]).count
+    @shops_new_top = Shop.where(paidmember: 1, addres1: ["北海道道央","北海道道南","北海道道東",
+                                                         "北海道道北"]).order(created_at: :desc)
+    @shops_random_top = Shop.where(paidmember: 1, addres1: ["北海道道央","北海道道南","北海道道東",
+                                                            "北海道道北"]).order("RANDOM()").limit(6)
   end
 
   def tohoku
