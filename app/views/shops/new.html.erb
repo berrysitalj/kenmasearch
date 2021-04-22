@@ -18,9 +18,13 @@
 			
 			<div class="contentsMain">
 			
+			<% @shop.errors.full_messages.each do |message| %>
+			<%= message %>
+			<% end %>
 				
 				<div class="contentsBreadcrumb">
-					<a href="/">TOP</a><span>&gt;</span><a href="/owner_index">オーナーメニュー</a><span>&gt;</span><a>新規登録</a></div>
+					<a href="/">TOP</a><span>&gt;</span><a href="/owner_index">オーナーメニュー</a><span>&gt;</span><a>新規登録</a>
+				</div>
 				
 
 
