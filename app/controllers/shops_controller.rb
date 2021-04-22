@@ -28,7 +28,6 @@ class ShopsController < ApplicationController
     @shop.addres1 = params[:addres1]
     @shop.addres2 = params[:addres2]
     @shop.area = params[:area]
-    @shop.area2 = params[:area2]
     
 
     @shop.station = params[:station]
