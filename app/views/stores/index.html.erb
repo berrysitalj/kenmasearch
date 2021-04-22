@@ -3,8 +3,8 @@
 
 
 <div class="owner_table_content">
-<p><%= link_to("owner/index", "/owner/index") %></p>
-<p><%= link_to("stores/new", "stores/new") %></p>
+  <p><%= link_to("stores/new", "/stores/new") %></p>
+  <p><%= link_to("owner/index", "/owner/index") %></p>
 
 <table>
 	<tr class="owner_table_top">
@@ -13,6 +13,8 @@
 		<td>店舗名</td>
 		<td>都道府県</td>
 		<td>登録地域</td>
+    <td></td>
+    <td></td>
 	</tr>
 <% @shop.each do |shop| %>
   <tr>
@@ -26,6 +28,8 @@
     <td><%= shop.shopname %></td>
     <td><%= shop.addres1 %></td>
     <td><%= shop.area %></td>
+    <td><%= link_to("編集", "/stores/#{shop.userid}/edit") %></td>
+    <td><%= link_to("削除", "/stores/#{shop.id}/destroy", {method:"post"}) %></td>
   
   </tr>
 <% end %>

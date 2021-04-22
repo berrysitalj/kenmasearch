@@ -38,14 +38,37 @@ class StoresController < ApplicationController
   end
 
   def edit
-  	
+  	@shop = Shop.find_by(userid: params[:id])
   end
 
   def update
-  	
+  	@shop = Shop.find_by(userid:params[:id])
+    @shop.pass = params[:pass]
+    @shop.shopname = params[:shopname]
+    @shop.shoptel = params[:shoptel]
+    @shop.addres1 = params[:addres1]
+    @shop.addres2 = params[:addres2]
+    @shop.area = params[:area]
+    @shop.station = params[:station]
+    @shop.freeicon1 = params[:freeicon1]
+    @shop.freeicon2 = params[:freeicon2]
+    @shop.freeicon3 = params[:freeicon3]
+    @shop.freeicon11 = params[:freeicon11]
+    @shop.freeicon12 = params[:freeicon12]
+    @shop.freeicon13 = params[:freeicon13]
+    @shop.freeicon14 = params[:freeicon14]
+
+    if @shop.save
+      redirect_to("/stores/index")
+    else
+      render("stores/update")
+    end
   end
 
   def destroy
-  	
+  	@shop = Shop.find_by(id: params[:id])
+    @shop.destroy
+    flash[:notice] = "削除しました"
+    redirect_to("/stores/index")
   end
 end

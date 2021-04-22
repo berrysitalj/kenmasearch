@@ -49,7 +49,7 @@
 					
 						<tr>                                       
                             <th>住所</th>
-                            <td><%= @shop.addres1 %><%= @shop.addres2 %></td>
+                            <td><%=safe_join(@shop.addres2.split("\n"),tag(:br))%></td>
                         </tr>                        				
 					</table>
 					
