@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_082235) do
+ActiveRecord::Schema.define(version: 2021_04_25_055010) do
 
   create_table "owners", force: :cascade do |t|
     t.string "name"
@@ -60,14 +60,14 @@ ActiveRecord::Schema.define(version: 2021_04_18_082235) do
     t.string "name"
     t.string "tel"
     t.string "station"
-    t.integer "onfoot"
-    t.text "businessday"
+    t.string "onfoot"
+    t.string "businessday"
     t.string "businesstime1"
     t.string "businesstime2"
     t.string "pricelist"
     t.string "topphoto"
     t.string "agegroup"
-    t.boolean "reservation"
+    t.string "reservation"
     t.boolean "freeicon1"
     t.boolean "freeicon2"
     t.boolean "freeicon3"
@@ -91,22 +91,22 @@ ActiveRecord::Schema.define(version: 2021_04_18_082235) do
     t.boolean "paidicon2"
     t.boolean "paidicon3"
     t.boolean "paidicon4"
-    t.text "topcomment"
-    t.text "comment"
+    t.string "topcomment"
+    t.string "comment"
     t.string "photo1"
     t.string "photo2"
-    t.integer "tablenum"
-    t.text "tabletype"
-    t.text "service"
-    t.text "system"
+    t.string "tablenum"
+    t.string "tabletype"
+    t.string "service"
+    t.string "system"
     t.string "ratio"
-    t.text "rule"
+    t.string "rule"
     t.string "timeup"
     t.string "homepage1"
     t.string "homepage2"
     t.string "homepage3"
     t.string "homepage4"
-    t.date "opening"
+    t.string "opening"
     t.string "area2"
   end
 

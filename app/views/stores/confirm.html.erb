@@ -1,0 +1,203 @@
+<h1>Stores#confirm</h1>
+
+
+
+<div class="owner_table_content">
+  <p><%= link_to("stores/new", "/stores/new") %></p>
+  <p><%= link_to("owner/index", "/owner/index") %></p>
+
+<table>
+	<tr class="owner_table_top">
+		<td>列</th>
+		<td>型名</td>
+		
+	</tr>
+
+  <tr>
+  	<td class="owner_table_th">userid</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['userid'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">pass</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['pass'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">shopname</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['shopname'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">shoptel</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['shoptel'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">yomi</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['yomi'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">addres1</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['addres1'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">addres2</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['addres2'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">area</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['area'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">area2</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['area2'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">mail</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['mail'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">name</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['name'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">tel</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['tel'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">station</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['station'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">onfoot</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['onfoot'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">businessday</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['businessday'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">businesstime1</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['businesstime1'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">businesstime2</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['businesstime2'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">pricelist</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['pricelist'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">topphoto</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['topphoto'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">agegroup</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['agegroup'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">reservation</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['reservation'].type %></td>
+  </tr>
+  
+  <tr>
+    <td class="owner_table_th">topcomment</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['topcomment'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">comment</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['comment'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">photp1</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['photo1'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">photp2</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['photo2'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">tablenum</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['tablenum'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">tabletype</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['tabletype'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">service</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['service'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">system</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['system'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">ratio</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['ratio'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">rule</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['rule'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">timeup</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['timeup'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">homepage1</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['homepage1'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">homepage2</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['homepage2'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">homepage3</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['homepage3'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">homepage4</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['homepage4'].type %></td>
+  </tr>
+
+  <tr>
+    <td class="owner_table_th">opening</td>  
+    <td class="owner_table_th"><%= @shop.columns_hash['opening'].type %></td>
+  </tr>
+
+</table>
+
+

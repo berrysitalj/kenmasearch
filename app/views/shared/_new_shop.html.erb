@@ -36,8 +36,7 @@
 			</a>
 			<p class="contentsNewPost__item__desc">
 				<%= shop.addres1 %> <%= shop.area %>
-				<br><%= shop.station %>
-				<br><%= shop.topcomment %>
+				<br><%=safe_join(shop.topcomment.split("\n"),tag(:br))%>
 			</p>
 		</div>
 		<div class="contentsNewPost__item__btn__inner">

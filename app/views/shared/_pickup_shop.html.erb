@@ -32,9 +32,9 @@
 						<a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
 							<img src="/assets/post_img01.png" alt="">
 						</a>
-						<p class="contentsRecommendPost__item__desc"><%= shop.addres1 %> <%= shop.area %>
-							<br><%= shop.station %>
-							<br><%= shop.topcomment %>
+						<p class="contentsRecommendPost__item__desc">
+							    <%= shop.addres1 %> <%= shop.area %>
+				            <br><%=safe_join(shop.topcomment.split("\n"),tag(:br))%>
 						</p>
 					</div>
 				</div>

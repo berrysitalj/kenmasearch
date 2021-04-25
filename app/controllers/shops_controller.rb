@@ -10,7 +10,7 @@ class ShopsController < ApplicationController
 
   def show
   	@shop = Shop.find_by(userid: params[:id])
-    @shops_new_top = Shop.where(paidmember: 1, addres1: @shop.addres1).order(created_at: :desc)
+    @shops_new_top = Shop.where(paidmember: 0, addres1: @shop.addres1).order(created_at: :desc)
     @shops_random_top = Shop.where(paidmember: 1, addres1: @shop.addres1).order("RANDOM()").limit(6)
     
   end

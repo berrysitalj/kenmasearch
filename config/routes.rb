@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "stores/index" => "stores#index"
+  get "stores/confirm" => "stores#confirm"
   get "stores/new" => "stores#new"
   get "stores/:id" => "stores#show"
   post "stores/create" => "stores#create"

@@ -9,6 +9,10 @@ class StoresController < ApplicationController
   	
   end
 
+  def confirm
+    @shop = Shop.all
+  end
+
   def new
   	@shop = Shop.new
   end
@@ -28,7 +32,35 @@ class StoresController < ApplicationController
                          freeicon11:params[:freeicon11],
                          freeicon12:params[:freeicon12],
                          freeicon13:params[:freeicon13],
-                         freeicon14:params[:freeicon14]
+                         freeicon14:params[:freeicon14],
+                         topcomment: "",
+                         yomi: "",
+                         paidmember: "0",
+                         mail: "",
+                         tel: "",
+                         name: "",
+                         onfoot: "",
+                         businessday: "",
+                         businesstime1: "",
+                         businesstime2: "",
+                         pricelist: "",
+                         topphoto: "",
+                         agegroup: "",
+                         reservation: "",
+                         comment: "",
+                         tablenum: "",
+                         tabletype: "",
+                         service: "",
+                         system: "",
+                         ratio: "",
+                         rule: "",
+                         timeup: "",
+                         homepage1: "",
+                         homepage2: "",
+                         homepage3: "",
+                         homepage4: "",
+                         opening: "",
+                         area2: ""
                          )
     if @shop.save
       redirect_to("/stores/index")

@@ -17,7 +17,7 @@
 						<a class="contentsDetails__tag"><%= @shop.freeicon22 %></a>
 						<h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
 					</div>
-					<p class="contentsDetails__desc"><%= @shop.topcomment %></p>
+					<p class="contentsDetails__desc"><%= safe_join(@shop.topcomment.split("\n"),tag(:br)) %></p>
 					
 					<div class="contentsDetails__img">
 						<a href="">トップ画像</a>
@@ -26,7 +26,7 @@
 						<a href="">有料画像2</a>
 						<!-- <img src="/assets/details_img02.jpeg" alt=""> -->
 					</div>
-					<p class="contentsDetails__desc"><%= @shop.comment %></p>
+					<p class="contentsDetails__desc"><%= safe_join(@shop.comment.split("\n"),tag(:br)) %></p>
 					
                     <!-- <%= link_to("編集", "/shops/#{@shop.userid}/edit") %> -->
 					<h2 class="contentsDetails__head">基本情報</h2>
@@ -44,7 +44,7 @@
 						
 						<tr>
 							<th>電話番号</th>
-							<td><%= @shop.shoptel %></td>
+							<td><%=safe_join(@shop.shoptel.split("\n"),tag(:br))%></td>
 						</tr>
 					
 						<tr>                                       
@@ -58,97 +58,97 @@
 					<table class="contentsDetails__table">          
                         <tr>
                             <th>最寄駅</th>
-                            <td><%= @shop.station %></td>
+                            <td><%=safe_join(@shop.station.split("\n"),tag(:br))%></td>
                         </tr>
           
                         <tr>
                             <th>徒歩時間</th>
-                            <td>徒歩　<%= @shop.onfoot %>分</td>
+                            <td><%=safe_join(@shop.onfoot.split("\n"),tag(:br))%></td>
                         </tr>
           
                         <tr>
                             <th>営業日</th>
-                            <td><%= @shop.businessday %></td>
+                            <td><%= safe_join(@shop.businessday.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>営業時間</th>
-                            <td><%= @shop.businesstime1 %>～<%= @shop.businesstime2 %></td>
+                            <td><%= safe_join(@shop.businesstime1.split("\n"),tag(:br)) %></td>
                         </tr>
           
                         <tr>
                             <th>料金</th>
-                            <td><%= @shop.pricelist %></td>
+                            <td><%= safe_join(@shop.pricelist.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>HP(公式)</th>
-                            <td><%= @shop.homepage1 %></td>
+                            <td><%= safe_join(@shop.homepage1.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>HP(雀サクッ)</th>
-                            <td><%= @shop.homepage2 %></td>
+                            <td><%= safe_join(@shop.homepage2.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>HP(麻雀王国)</th>
-                            <td><%= @shop.homepage3 %></td>
+                            <td><%= safe_join(@shop.homepage3.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>Twitter</th>
-                            <td><%= @shop.homepage4 %></td>
+                            <td><%= safe_join(@shop.homepage4.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                              <th>年齢層</th>
-                             <td><%= @shop.agegroup %></td>
+                             <td><%= safe_join(@shop.agegroup.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                              <th>事前予約</th>
-                             <td><%= @shop.reservation %></td>
+                             <td><%= safe_join(@shop.reservation.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>卓数</th>
-                            <td><%= @shop.tablenum %></td>
+                            <td><%= safe_join(@shop.tablenum.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>卓種</th>
-                            <td><%= @shop.tabletype %></td>
+                            <td><%= safe_join(@shop.tabletype.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>サービス</th>
-                            <td><%= @shop.service %></td>
+                            <td><%= safe_join(@shop.service.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>システム・設備</th>
-                            <td><%= @shop.system %></td>
+                            <td><%= safe_join(@shop.system.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>男女比率</th>
-                            <td><%= @shop.ratio %></td>
+                            <td><%= safe_join(@shop.ratio.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>ルール</th>
-                            <td><%= @shop.rule %></td>
+                            <td><%= safe_join(@shop.rule.split("\n"),tag(:br)) %></td>
                         </tr>
 
                         <tr>
                             <th>時間打切</th>
-                            <td><%= @shop.timeup %></td>
+                            <td><%= safe_join(@shop.timeup.split("\n"),tag(:br)) %></td>
                         </tr>                       
 
                         <tr>
                             <th>オープン日</th>
-                            <td><%= @shop.opening %></td>
+                            <td><%= safe_join(@shop.opening.split("\n"),tag(:br)) %></td>
                         </tr>					
 					</table>
 
