@@ -1,10 +1,15 @@
 <h1>Stores#confirm</h1>
 
-
+<%= @columns_name %>
 
 <div class="owner_table_content">
   <p><%= link_to("stores/new", "/stores/new") %></p>
   <p><%= link_to("owner/index", "/owner/index") %></p>
+
+
+
+
+
 
 <table>
 	<tr class="owner_table_top">
@@ -51,11 +56,6 @@
   <tr>
     <td class="owner_table_th">area</td>  
     <td class="owner_table_th"><%= @shop.columns_hash['area'].type %></td>
-  </tr>
-
-  <tr>
-    <td class="owner_table_th">area2</td>  
-    <td class="owner_table_th"><%= @shop.columns_hash['area2'].type %></td>
   </tr>
 
   <tr>

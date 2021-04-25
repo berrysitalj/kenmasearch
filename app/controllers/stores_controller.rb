@@ -11,6 +11,7 @@ class StoresController < ApplicationController
 
   def confirm
     @shop = Shop.all
+    @columns_name = Shop.attribute_names
   end
 
   def new
@@ -59,8 +60,7 @@ class StoresController < ApplicationController
                          homepage2: "",
                          homepage3: "",
                          homepage4: "",
-                         opening: "",
-                         area2: ""
+                         opening: ""
                          )
     if @shop.save
       redirect_to("/stores/index")
