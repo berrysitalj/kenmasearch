@@ -1,5 +1,5 @@
 class OwnerController < ApplicationController
-	skip_before_action :owner_logged_in?, only: [:index, :new, :member_list, :show, :create]
+	before_action :owner_logged_in?, only: [:index, :new, :member_list, :show, :create]
   skip_before_action :user_logged_in?
   
   def index
