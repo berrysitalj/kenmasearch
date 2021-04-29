@@ -1,45 +1,50 @@
 <div class="contentsRecommendPost">
-				<h2 class="contentsRecommendPost__head">おすすめ店舗<img src="/assets/recommend_mark.svg" alt=""></h2>
+  <h2 class="contentsRecommendPost__head">おすすめ店舗<img src="/assets/recommend_mark.svg" alt=""></h2>
 
-				
-				<% @shops_random_top.each do |shop| %>
+  <% @shops_random_top.each do |shop| %>
+    <div class="contentsRecommendPost__item">
+	  <% if shop.freeicon14 == true %>
+		<a class="contentsRecommendPost__item__tag" style="background-color: #FFCC33;"><td>競技麻雀</td></a>
+	  <% else %>
+	  <% end %>
 
-				<div class="contentsRecommendPost__item">
-					<a class="contentsRecommendPost__item__tag">					  
-					  <% if shop.freeicon1 == true %>
-					    <td>麻雀店</td>
-					  <% elsif %>
-						<% shop.freeicon2 == true %>
-						<td>公共施設</td>
-					  <% elsif %>
-						<% shop.freeicon3 == true %>
-						<td>貸スペース</td>
-					  <% elsif %>
-					    <% shop.freeicon4 == true %>
-						<td>サークル</td>
-					  <% elsif %>
-					    <% shop.freeicon5 == true %>
-						<td>個人募集</td>
-						<% else %>
-						<td>その他の場所</td>
-					  <% end %> 					
-				    </a>
-					<h3><a class="contentsRecommendPost__item__title">
-						<%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a>
-					</h3>
+	  <% if shop.freeicon13 == true %>
+		<a class="contentsRecommendPost__item__tag"><td>麻雀教室</td></a>
+	  <% else %>
+	  <% end %>
+
+	  <% if shop.freeicon12 == true %>
+		<a class="contentsRecommendPost__item__tag" style="background-color: #FFFF99;"><td>ノーレートフリー</td></a>
+	  <% else %>
+	  <% end %>
+
+      <% if shop.freeicon11 == true %>
+		<a class="contentsRecommendPost__item__tag"><td>健康麻雀</td></a>
+	  <% else %>
+	  <% end %>
+
+	  <% if shop.freeicon1 == true %>
+		<a class="contentsRecommendPost__item__tag"><td>麻雀店</td></a>
+	  <% elsif %>
+	  <% shop.freeicon2 == true %>
+		<a class="contentsRecommendPost__item__tag" style="background-color: #CCFFFF;"><td>公共施設</td></a>
+	  <% elsif %>
+	  <% shop.freeicon3 == true %>
+		<a class="contentsRecommendPost__item__tag"><td>サークル・個人</td></a>
+	  <% else %>
+		<a class="contentsRecommendPost__item__tag"><td>その他の場所</td></a>
+	  <% end %>
+
+      <h3><a class="contentsRecommendPost__item__title"><%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a></h3>
 					
-					<div class="contentsRecommendPost__item__flex">
-						<a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
-							<img src="/assets/post_img01.png" alt="">
-						</a>
-						<p class="contentsRecommendPost__item__desc">
-							    <%= shop.addres1 %> <%= shop.area %>
-				            <br><%=safe_join(shop.topcomment.split("\n"),tag(:br))%>
-						</p>
-					</div>
-				</div>
-				<% end %>
-				
-				
-
-			</div>
+	    <div class="contentsRecommendPost__item__flex">
+	      <% if shop.topphoto == "" %>
+		    <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>"><img src="/assets/post_img01.png" alt=""></a>
+		  <% else %>
+		    <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>"><img src="<%= shop.topphoto %>" alt=""></a>
+		  <% end %>
+		  <p class="contentsRecommendPost__item__desc"><%= shop.addres1 %> <%= shop.area %><br><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>
+		</div>
+	</div>
+  <% end %>
+</div>
