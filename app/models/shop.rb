@@ -1,5 +1,16 @@
 class Shop < ApplicationRecord
-	validates :pass, {presence: true}
+
+	with_options presence: true do
+		validates :userid
+		validates :pass
+		validates :shopname
+		validates :area
+	end
+
+	with_options uniqueness: true do
+		validates :userid
+		validates :shopname
+	end
 
 	def self.search(search)
       return Shop.all unless search

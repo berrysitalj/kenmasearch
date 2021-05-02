@@ -6,14 +6,13 @@
 
 <div class="form-style-2">
   <div class="form-style-2-heading" style="color: blue;">店舗登録</div>
-    <%= form_tag("/stores/create") do %>
-    <form>
-
-      <label for="field1" style="color: red;">
+  <div style="color: red;">
         <% @shop.errors.full_messages.each do |message| %>
         <%= message %><br>
         <% end %>
-      </label>
+  </div>
+    <%= form_tag("/stores/create") do %>
+    <form>
 
       <label for="field1">
       	<span>ID <span class="required">*</span></span>

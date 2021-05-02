@@ -9,4 +9,5 @@ class Sender < ApplicationRecord
 		validates :addres
 		validates :charge
 		validates :chargemail
+	end
 end
