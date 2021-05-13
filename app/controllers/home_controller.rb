@@ -94,7 +94,7 @@ class HomeController < ApplicationController
     @number_of_stores_iwate = Shop.where(addres1:["岩手県"]).count
     @number_of_stores_yamagata = Shop.where(addres1:["山形県"]).count
     @number_of_stores_miyagi = Shop.where(addres1:["宮城県"]).count
-    @number_of_stores_hukushima = Shop.where(addres1:["福島県"]).count
+    @number_of_stores_fukushima = Shop.where(addres1:["福島県"]).count
     @shops_new_top = Shop.where(paidmember: 0, addres1: ["青森県","秋田県","岩手県",
                                                          "山形県","宮城県","福島県"]).order(created_at: :desc)
     @shops_random_top = Shop.where(paidmember: 1, addres1: ["青森県","秋田県","岩手県",
