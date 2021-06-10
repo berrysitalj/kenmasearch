@@ -6,150 +6,372 @@
 
 <div class="form-style-2">
   <div class="form-style-2-heading" style="color: blue;">店舗情報編集</div>
-    <%= form_tag("/stores/#{@shop.userid}/update") do %>
-    <form>
+  <%= form_tag("/stores/#{@shop.userid}/update") do %>
+  
+  <form>
+    <label for="field1" style="color: red;">
+      <% @shop.errors.full_messages.each do |message| %>
+      <%= message %><br>
+      <% end %>
+    </label>
 
-      <label for="field1" style="color: red;">
-        <% @shop.errors.full_messages.each do |message| %>
-        <%= message %><br>
-        <% end %>
-      </label>
-
-      <label for="field1">
-      	<span>ID <span class="required">*</span></span>
-      	<input type="text" class="input-field" name="userid" value="<%= @shop.userid %>" />
-      </label>
+    <label for="field1">
+      <span>ID <span class="required"></span></span>
+      <input type="text" class="input-field" name="userid" value="<%= @shop.userid %>" />
+    </label>
       
-      <label for="field2">
-      	<span>パスワード <span class="required">*</span></span>
-      	<input type="text" class="input-field" name="pass" value="<%= @shop.pass %>" />
-      </label>
+    <label for="field2">
+      <span>パスワード <span class="required"></span></span>
+      <input type="text" class="input-field" name="pass" value="<%= @shop.pass %>" />
+    </label>
       
-      <label for="field2">
-        <span>店舗名 <span class="required">*</span></span>
-        <input type="text" class="input-field" name="shopname" value="<%= @shop.shopname %>" />
-      </label>
+    <label for="field2">
+      <span>店舗名 <span class="required"></span></span>
+      <input type="text" class="input-field" name="shopname" value="<%= @shop.shopname %>" />
+    </label>
 
-      <label for="field2">
-        <span>電話番号 <span class="required">*</span></span>
-        <input type="text" class="input-field" name="shoptel" value="<%= @shop.shoptel %>" />
-      </label>
+    <label for="field2">
+      <span>電話番号 <span class="required"></span></span>
+      <textarea name="shoptel" class="textarea-field"><%= @shop.shoptel %></textarea>
+    </label>
 
-      <label for="field4">
-      	<span>都道府県<span class="required">*</span></span>
-      	<select name="addres1" class="select-field" >
-          <option value="<%= @shop.addres1 %>"><%= @shop.addres1 %></option>
-          <option value="北海道道央">北海道道央</option>
-          <option value="北海道道南">北海道道南</option>
-          <option value="北海道道東">北海道道東</option>
-          <option value="北海道道北">北海道道北</option>
-          <option value="青森県">青森県</option>
-          <option value="岩手県">岩手県</option>
-          <option value="宮城県">宮城県</option>
-          <option value="秋田県">秋田県</option>
-          <option value="山形県">山形県</option>
-          <option value="福島県">福島県</option>
-          <option value="茨城県">茨城県</option>
-          <option value="栃木県">栃木県</option>
-          <option value="群馬県">群馬県</option>
-          <option value="埼玉県">埼玉県</option>
-          <option value="千葉県">千葉県</option>
-          <option value="東京都">東京都</option>
-          <option value="神奈川県">神奈川県</option>
-          <option value="新潟県">新潟県</option>
-          <option value="富山県">富山県</option>
-          <option value="石川県">石川県</option>
-          <option value="福井県">福井県</option>
-          <option value="山梨県">山梨県</option>
-          <option value="長野県">長野県</option>
-          <option value="岐阜県">岐阜県</option>
-          <option value="静岡県">静岡県</option>
-          <option value="愛知県">愛知県</option>
-          <option value="三重県">三重県</option>
-          <option value="滋賀県">滋賀県</option>
-          <option value="京都府">京都府</option>
-          <option value="大阪府">大阪府</option>
-          <option value="兵庫県">兵庫県</option>
-          <option value="奈良県">奈良県</option>
-          <option value="和歌山県">和歌山県</option>
-          <option value="鳥取県">鳥取県</option>
-          <option value="島根県">島根県</option>
-          <option value="岡山県">岡山県</option>
-          <option value="広島県">広島県</option>
-          <option value="山口県">山口県</option>
-          <option value="徳島県">徳島県</option>
-          <option value="香川県">香川県</option>
-          <option value="愛媛県">愛媛県</option>
-          <option value="高知県">高知県</option>
-          <option value="福岡県">福岡県</option>
-          <option value="佐賀県">佐賀県</option>
-          <option value="長崎県">長崎県</option>
-          <option value="熊本県">熊本県</option>
-          <option value="大分県">大分県</option>
-          <option value="宮崎県">宮崎県</option>
-          <option value="鹿児島県">鹿児島県</option>
-          <option value="沖縄県">沖縄県</option>
-        </select>
-      </label>
+    <label for="field2">
+      <span>よみがな <span class="required"></span></span>
+      <input type="text" class="input-field" name="yomi" value="<%= @shop.yomi %>" />
+    </label>
 
-      <label for="field2">
-      	<span>住所 <span class="required">*</span></span>
-      	<input type="text" class="input-field" name="addres2" value="<%= @shop.addres2 %>" />
-      </label>
+    <label for="field4">
+      <span>都道府県<span class="required"></span></span>
+      <select name="addres1" class="select-field" >
+        <option value="<%= @shop.addres1 %>"><%= @shop.addres1 %></option>
+        <option value="北海道道央">北海道道央</option>
+        <option value="北海道道南">北海道道南</option>
+        <option value="北海道道東">北海道道東</option>
+        <option value="北海道道北">北海道道北</option>
+        <option value="青森県">青森県</option>
+        <option value="岩手県">岩手県</option>
+        <option value="宮城県">宮城県</option>
+        <option value="秋田県">秋田県</option>
+        <option value="山形県">山形県</option>
+        <option value="福島県">福島県</option>
+        <option value="茨城県">茨城県</option>
+        <option value="栃木県">栃木県</option>
+        <option value="群馬県">群馬県</option>
+        <option value="埼玉県">埼玉県</option>
+        <option value="千葉県">千葉県</option>
+        <option value="東京都">東京都</option>
+        <option value="神奈川県">神奈川県</option>
+        <option value="新潟県">新潟県</option>
+        <option value="富山県">富山県</option>
+        <option value="石川県">石川県</option>
+        <option value="福井県">福井県</option>
+        <option value="山梨県">山梨県</option>
+        <option value="長野県">長野県</option>
+        <option value="岐阜県">岐阜県</option>
+        <option value="静岡県">静岡県</option>
+        <option value="愛知県">愛知県</option>
+        <option value="三重県">三重県</option>
+        <option value="滋賀県">滋賀県</option>
+        <option value="京都府">京都府</option>
+        <option value="大阪府">大阪府</option>
+        <option value="兵庫県">兵庫県</option>
+        <option value="奈良県">奈良県</option>
+        <option value="和歌山県">和歌山県</option>
+        <option value="鳥取県">鳥取県</option>
+        <option value="島根県">島根県</option>
+        <option value="岡山県">岡山県</option>
+        <option value="広島県">広島県</option>
+        <option value="山口県">山口県</option>
+        <option value="徳島県">徳島県</option>
+        <option value="香川県">香川県</option>
+        <option value="愛媛県">愛媛県</option>
+        <option value="高知県">高知県</option>
+        <option value="福岡県">福岡県</option>
+        <option value="佐賀県">佐賀県</option>
+        <option value="長崎県">長崎県</option>
+        <option value="熊本県">熊本県</option>
+        <option value="大分県">大分県</option>
+        <option value="宮崎県">宮崎県</option>
+        <option value="鹿児島県">鹿児島県</option>
+        <option value="沖縄県">沖縄県</option>
+      </select>
+    </label>
 
-      <label for="field2">
-      	<span>登録地域 <span class="required">*</span></span>
-      	<input type="text" class="input-field" name="area" value="<%= @shop.area %>" />
-      </label>
+    <label for="field2">
+      <span>住所 <span class="required"></span></span>
+      <textarea name="addres2" class="textarea-field"><%= @shop.addres2 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>登録地域 <span class="required"></span></span>
+      <input type="text" class="input-field" name="area" value="<%= @shop.area %>" />
+    </label>
       
+    <label for="field2">
+      <span>有料会員 <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidmember" value="<%= @shop.paidmember %>" />
+    </label>
+
+    <label for="field2">
+      <span>メール <span class="required"></span></span>
+      <input type="text" class="input-field" name="mail" value="<%= @shop.mail %>" />
+    </label>
+
+    <label for="field2">
+      <span>担当者名 <span class="required"></span></span>
+      <input type="text" class="input-field" name="name" value="<%= @shop.name %>" />
+    </label>
+
+    <label for="field2">
+      <span>担当者電話番号 <span class="required"></span></span>
+      <input type="text" class="input-field" name="tel" value="<%= @shop.tel %>" />
+    </label>
       
+    <label for="field2">
+      <span>最寄駅 <span class="required"></span></span>
+      <textarea name="station" class="textarea-field"><%= @shop.station %></textarea>
+    </label>
 
-      <label for="field2">
-      	<span>最寄駅 <span class="required">*</span></span>
-      	<input type="text" class="input-field" name="station" value="<%= @shop.station %>" />
-      </label>
+    <label for="field2">
+      <span>徒歩時間 <span class="required"></span></span>
+      <textarea name="onfoot" class="textarea-field"><%= @shop.onfoot %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業日 <span class="required"></span></span>
+      <textarea name="businessday" class="textarea-field"><%= @shop.businessday %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業時間1 <span class="required"></span></span>
+      <textarea name="businesstime1" class="textarea-field"><%= @shop.businesstime1 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業時間2 <span class="required"></span></span>
+      <textarea name="businesstime2" class="textarea-field"><%= @shop.businesstime2 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>料金 <span class="required"></span></span>
+      <textarea name="pricelist" class="textarea-field"><%= @shop.pricelist %></textarea>
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">トップ写真 <span class="required"></span></span>
+      <input type="text" class="input-field" name="topphoto" value="<%= @shop.topphoto %>" />
+    </label>
+
+    <label for="field2">
+      <span>年齢層 <span class="required"></span></span>
+      <textarea name="agegroup" class="textarea-field"><%= @shop.agegroup %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>事前予約 <span class="required"></span></span>
+      <textarea name="reservation" class="textarea-field"><%= @shop.reservation %></textarea>
+    </label>
       
-      <label for="field2">
-        <span>麻雀店 <span class="required"></span></span>
-        <input type="text" class="input-field" name="freeicon1" value="<%= @shop.freeicon1 %>" />
-      </label>
+    <label for="field2">
+      <span style="color: blue;">麻雀店 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon1" value="<%= @shop.freeicon1 %>" />
+    </label>
 
-      <label for="field2">
-        <span>公共施設 <span class="required"></span></span>
-        <input type="text" class="input-field" name="freeicon2" value="<%= @shop.freeicon2 %>" />
-      </label>
+    <label for="field2">
+      <span style="color: blue;">公共施設 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon2" value="<%= @shop.freeicon2 %>" />
+    </label>
 
-      <label for="field2">
-        <span>サークル・個人 <span class="required"></span></span>
-        <input type="text" class="input-field" name="freeicon3" value="<%= @shop.freeicon3 %>" />
-      </label>
+    <label for="field2">
+      <span style="color: blue;">商業施設内 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon3" value="<%= @shop.freeicon3 %>" />
+    </label>
 
-      <label for="field2">
-        <span>健康麻雀 <span class="required"></span></span>
-        <input type="text" class="input-field" name="freeicon11" value="<%= @shop.freeicon11 %>" />
-      </label>
+    <label for="field2">
+      <span style="color: blue;">サークル・個人 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon4" value="<%= @shop.freeicon4 %>" />
+    </label>
 
-      <label for="field2">
-        <span>ノーレートフリー <span class="required"></span></span>
-        <input type="text" class="input-field" name="freeicon12" value="<%= @shop.freeicon12 %>" />
-      </label>
+    <label for="field2">
+      <span style="color: blue;">freeicon5 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon5" value="<%= @shop.freeicon5 %>" />
+    </label>
 
-      <label for="field2">
-        <span>麻雀教室 <span class="required"></span></span>
-        <input type="text" class="input-field" name="freeicon13" value="<%= @shop.freeicon13 %>" />
-      </label>
+    <label for="field2">
+      <span style="color: blue;">freeicon6 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon6" value="<%= @shop.freeicon6 %>" />
+    </label>
 
-      <label for="field2">
-        <span>競技麻雀 <span class="required"></span></span>
-        <input type="text" class="input-field" name="freeicon14" value="<%= @shop.freeicon14 %>" />
-      </label>
+    <label for="field2">
+      <span style="color: green;">健康麻雀 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon11" value="<%= @shop.freeicon11 %>" />
+    </label>
 
-      <label>
-      	<span> </span>
-      	<input type="submit" name="" value="登録" />
-      </label>
+    <label for="field2">
+      <span style="color: green;">ノーレートフリー <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon12" value="<%= @shop.freeicon12 %>" />
+    </label>
 
-    
-    </form>
-    <% end %>
+    <label for="field2">
+      <span style="color: green;">麻雀教室 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon13" value="<%= @shop.freeicon13 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">競技麻雀 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon14" value="<%= @shop.freeicon14 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">freeicon15 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon15" value="<%= @shop.freeicon15 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">競技麻雀 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon16" value="<%= @shop.freeicon16 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">禁煙 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon21" value="<%= @shop.freeicon21 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">喫煙 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon22" value="<%= @shop.freeicon22 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">セット可 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon23" value="<%= @shop.freeicon23 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">女性限定 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon24" value="<%= @shop.freeicon24 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">要予約 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon25" value="<%= @shop.freeicon25 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">Mリーグルール <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon26" value="<%= @shop.freeicon26 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">freeicon27 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon27" value="<%= @shop.freeicon27 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: red;">おすすめ <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon1" value="<%= @shop.paidicon1 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: red;">ピックアップ <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon2" value="<%= @shop.paidicon2 %>" />
+    </label>
+
+    <label for="paidicon3">
+      <span style="color: red;">paidicon3 <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon3" value="<%= @shop.paidicon3 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: red;">paidicon4 <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon4" value="<%= @shop.paidicon4 %>" />
+    </label>
+
+    <label for="field2">
+      <span>トップコメント <span class="required"></span></span>
+      <textarea name="topcomment" class="textarea-field" style="height:150px;"><%= @shop.topcomment %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>説明文 <span class="required"></span></span>
+      <textarea name="comment" class="textarea-field" style="height:300px;"><%= @shop.comment %></textarea>
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">写真1 <span class="required"></span></span>
+      <input type="text" class="input-field" name="photo1" value="<%= @shop.photo1 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">写真2 <span class="required"></span></span>
+      <input type="text" class="input-field" name="photo2" value="<%= @shop.photo2 %>" />
+    </label>
+
+    <label for="field2">
+      <span>卓数 <span class="required"></span></span>
+      <textarea name="tablenum" class="textarea-field"><%= @shop.tablenum %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>卓種 <span class="required"></span></span>
+      <textarea name="tabletype" class="textarea-field"><%= @shop.tabletype %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>サービス <span class="required"></span></span>
+      <textarea name="service" class="textarea-field"><%= @shop.service %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>システム <span class="required"></span></span>
+      <textarea name="system" class="textarea-field"><%= @shop.system %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>男女比率 <span class="required"></span></span>
+      <textarea name="ratio" class="textarea-field"><%= @shop.ratio %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>ルール <span class="required"></span></span>
+      <textarea name="rule" class="textarea-field"><%= @shop.rule %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>時間打切り <span class="required"></span></span>
+      <textarea name="timeup" class="textarea-field"><%= @shop.timeup %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>HP1(公式HP) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage1" value="<%= @shop.homepage1 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP2(雀サクッ) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage2" value="<%= @shop.homepage2 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP3(麻雀王国) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage3" value="<%= @shop.homepage3 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP4(SNS) <span class="required"></span></span>
+      <textarea name="homepage4" class="textarea-field"><%= @shop.homepage4 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>オープン日 <span class="required"></span></span>
+      <textarea name="opening" class="textarea-field"><%= @shop.opening %></textarea>
+    </label>
+
+    <label>
+      <span> </span>
+      <input type="submit" name="" value="登録" />
+    </label>
+
+  </form>
+  <% end %>
 </div>

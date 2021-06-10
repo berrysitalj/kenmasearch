@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-
-
-
-
-
   <head>
     <title>KenmaSearchApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -21,145 +16,75 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
-
-
-    
-
-
-
-
-
   <body>
-        <header>
+    <header>
       <div class="header">
         <div class="header__inner">
-          <a class="header__logo" href="/">
-            <img src="/assets/header_logo.png" alt="けんま〜サーチ">
-          </a>
-
-          <p>
-          <!-- <%= form_tag("/search", method: :get, class:"search_box_field") do %> -->
-           <!-- <%= text_field_tag :search, "", {placeholder: "キーワードを入力：都道府県、駅名", class: "search_box"} %> -->
-           <!-- <%= submit_tag '検索', :name => nil, class: "search_box_submit" %> -->
-         <!-- <% end %> -->
-          </p>
-
+          <a class="header__logo" href="/"><img src="/assets/header_logo.png" alt="けんま〜サーチ"></a>
           <p class="header__txt">全国<span>の健康麻雀＆ノーレート検索</span></p>
-          
-
-
-    <div id="nav-drawer">
-      <input id="nav-input" type="checkbox" class="nav-unshown">
-      <label id="nav-open" for="nav-input"><span></span></label>
-      <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-      
-      <div id="nav-content">
-                   <a class="nav__item" href="/">
-              <img src="./assets/menu_icon01.svg" alt="">TOP</a>
-            <a class="nav__item" href="/search">
-              <img src="./assets/menu_icon02.svg" alt="">検索</a>
-            <a class="nav__item" href="/recruit">
-              <img src="./assets/menu_icon03.svg" alt="">掲載店舗 募集中</a>
-            <a class="nav__item" href="/adv">
-              <img src="./assets/menu_icon05.svg" alt="">広告掲載 </a>
+          <div id="nav-drawer">
+            <input id="nav-input" type="checkbox" class="nav-unshown">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+              <a class="nav__item" href="/"><img src="/assets/menu_icon01.svg" alt="">TOP</a>
+              <a class="nav__item" href="/search"><img src="/assets/menu_icon02.svg" alt="">検索</a>
+              <a class="nav__item" href="/recruit"><img src="/assets/menu_icon03.svg" alt="">掲載店舗 募集中</a>
+              <a class="nav__item" href="/adv"><img src="/assets/menu_icon05.svg" alt="">広告掲載 </a>
             
+              <% if session[:user_id] %>
+              <a class="nav__item" data-method="post" href="/user_logout" style="color: red;">
+                <img src="/assets/menu_icon04.svg" alt="">店舗ログアウト</a>
+              <% else %>
+              <a class="nav__item" href="/user_login">
+                <img src="/assets/menu_icon04.svg" alt="">店舗ログイン</a>
+              <% end %>
 
-
-
-            <% if session[:user_id] %>
-            <a class="nav__item" data-method="post" href="/user_logout" style="color: red;">
-              <img src="./assets/menu_icon04.svg" alt="">店舗ログアウト</a>
-            <% else %>
-            <a class="nav__item" href="/user_login">
-              <img src="./assets/menu_icon04.svg" alt="">店舗ログイン</a>
-            <% end %>
-
-
-
-
-
-      </div>
-  
-    </div>
-
-  
-
-
- 
-
-
-         <!-- <div class="header__btn"> -->
-            <!-- <div id="nav-open"><span></span> -->
-            <!-- </div> -->
-          <!-- </div> -->
-
-
- 
-          
-
-
-
-
-        
-
-
+            </div>
+          </div>
         </div>
       </div>
+    
       <div class="menu">
         <div class="menu__inner">
           <div class="menu__list">
-            <a class="menu__item" href="/">
-              <img src="./assets/menu_icon01.svg" alt="">TOP</a>
-            <a class="menu__item" href="/search">
-              <img src="./assets/menu_icon02.svg" alt="">検索</a>
-            <a class="menu__item" href="/recruit">
-              <img src="./assets/menu_icon03.svg" alt="">掲載店舗 募集中</a>
-            <a class="menu__item" href="/adv">
-              <img src="./assets/menu_icon05.svg" alt="">広告掲載 </a>
+            <a class="menu__item" href="/"><img src="/assets/menu_icon01.svg" alt="">TOP</a>
+            <a class="menu__item" href="/search"><img src="/assets/menu_icon02.svg" alt="">検索</a>
+            <a class="menu__item" href="/recruit"><img src="/assets/menu_icon03.svg" alt="">掲載店舗 募集中</a>
+            <a class="menu__item" href="/adv"><img src="/assets/menu_icon05.svg" alt="">広告掲載 </a>
 
-
-
-     <% if session[:user_id] %>
-            <a class="menu__item" data-method="post" href="/user_logout" style="color: red;">
-              <img src="./assets/menu_icon04.svg" alt="">ログアウト</a>
-     <% else %>
-            <a class="menu__item" href="/user_login">
-              <img src="./assets/menu_icon04.svg" alt="">店舗ログイン</a>
-     <% end %>
+            <% if session[:user_id] %>
+              <a class="menu__item" data-method="post" href="/user_logout" style="color: red;">
+                <img src="/assets/menu_icon04.svg" alt="">ログアウト</a>
+            <% else %>
+              <a class="menu__item" href="/user_login">
+                <img src="/assets/menu_icon04.svg" alt="">店舗ログイン</a>
+            <% end %>
           </div>
         </div>
       </div>
     </header>
 
-    
-<% if session[:id] %>
-            <%= form_tag("/logout", data: {confirm: "ログアウトしますか？"}) do %>
-     <%= submit_tag '管理者ログアウト' %>
-     <% end %>
-     <% else %>
-            
-     <% end %>
+    <% if session[:id] %>
+      <%= form_tag("/logout", data: {confirm: "ログアウトしますか？"}) do %>
+      <%= submit_tag '管理者ログアウト' %>
+      <% end %>
+    <% else %>
+    <% end %>
 
-     
-
-     
-
-
+    <% if session[:id] %>
       <li>ログイン管理者id:<%= session[:id] %></li>
+    <% else %>
+    <% end %>
+
+    <% if session[:user_id] %>
       <li>ログイン店舗id:<%= session[:user_id] %></li>
-     
-      <!-- <p style="font-size: 200%; color: blue;">kenmasearch制作中！！</p> -->
-      <!-- <div><%= link_to("/shops/index", "/shops/index") %></div> -->
-      <!-- <div><%= link_to("/shops/new", "/shops/new") %></div> -->
-      <!-- <div><%= link_to("/list", "/list") %></div> -->
-      <!-- <div><%= link_to("/chubu", "/chubu") %></div> -->
-    
-    
+    <% else %>
+    <% end %>
 
-
-    
 
     <%= yield %>
+
 
     <footer class="footer">
       <div class="footer__inner">
@@ -174,16 +99,7 @@
       </div>
     </footer>
     <div class="footer__copyright">Copyright© けんま〜サーチ All Rights Reserved.</div>
-    <script src="./js/app.js"></script>
+    <script src="/js/app.js"></script>
 
   </body>
-
- 
-
-
-    
-
-
-
-
 </html>

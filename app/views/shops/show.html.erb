@@ -1,170 +1,183 @@
+<div class="contentsLayout--shop">			
+  
+  <div class="contentsMain">
 
-
-
-
-		<div class="contentsLayout--shop">
-			
-			<div class="contentsMain">
-			
-				
-				<div class="contentsBreadcrumb"> <a href="/">TOP</a><span>&gt;</span><a href="/search?utf8=✓&search=<%= @shop.addres1 %>"><%= @shop.addres1 %></a><span>&gt;</span><a><%= @shop.shopname %></a></div>
-				
-
-
-				<div class="contentsDetails">
-					<div class="contentsDetails__flex">
-						<a class="contentsDetails__tag"><%= @shop.freeicon11 %></a>
-						<a class="contentsDetails__tag"><%= @shop.freeicon22 %></a>
-						<h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
-					</div>
-					<p class="contentsDetails__desc"><%= safe_join(@shop.topcomment.split("\n"),tag(:br)) %></p>
+    <div class="contentsBreadcrumb">
+      <a href="/">TOP</a>
+      <span>&gt;</span>
+      <a href="/search?utf8=✓&search=<%= @shop.addres1 %>"><%= @shop.addres1 %></a>
+      <span>&gt;</span>
+      <a><%= @shop.shopname %></a>
+    </div>
+  
+    <div class="contentsDetails">
+ 	  <div class="contentsDetails__flex">
+	    <a class="contentsDetails__tag"><%= @shop.freeicon11 %></a>
+	    <a class="contentsDetails__tag"><%= @shop.freeicon22 %></a>
+	    <h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
+	  </div>
+	  <p class="contentsDetails__desc"><%= safe_join(@shop.topcomment.split("\n"),tag(:br)) %></p>
 					
-					<div class="contentsDetails__img">
-						<a href="">トップ画像</a>
-						<!-- <img src="/assets/details_img01.jpeg" alt=""> -->
-						<a href="">有料画像1</a>
-						<a href="">有料画像2</a>
-						<!-- <img src="/assets/details_img02.jpeg" alt=""> -->
-					</div>
-					<p class="contentsDetails__desc"><%= safe_join(@shop.comment.split("\n"),tag(:br)) %></p>
+	  <div class="contentsDetails__img">
+        <% if @shop.topphoto == "" %>
+	      <img src="/topphoto_images/default_user.png" alt="">
+          <% elsif @shop.topphoto == nil %>
+          <img src="/topphoto_images/default_user.png" alt="">
+        <% else %>
+          <img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
+        <% end %>
+
+	    <% if @shop.photo1 == "" %>
+          <% elsif @shop.photo1 == nil %>
+        <% else %>
+          <img src="/photo1_images/<%= @shop.photo1 %>" alt="">
+        <% end %>
+
+	    <% if @shop.photo2 == "" %>
+          <% elsif @shop.photo2 == nil %>
+        <% else %>
+          <img src="/photo2_images/<%= @shop.photo2 %>" alt="">
+        <% end %>
+	  </div>
+	  <p class="contentsDetails__desc"><%= safe_join(@shop.comment.split("\n"),tag(:br)) %></p>
+      <!-- <%= link_to("編集", "/shops/#{@shop.userid}/edit") %> -->
+	
+      <h2 class="contentsDetails__head">基本情報</h2>
 					
-                    <!-- <%= link_to("編集", "/shops/#{@shop.userid}/edit") %> -->
-					<h2 class="contentsDetails__head">基本情報</h2>
+	  <table class="contentsDetails__table">
+	    <tr>
+          <th>店舗名</th>
+		  <td><%= @shop.shopname %></td>
+	    </tr>
+	
+	    <tr>                                       
+          <th>よみがな</th>
+          <td><%= @shop.yomi %></td>
+        </tr>
+		
+	    <tr>
+		  <th>電話番号</th>
+		  <td><%=safe_join(@shop.shoptel.split("\n"),tag(:br))%></td>
+	    </tr>
 					
-					<table class="contentsDetails__table">
-	                    <tr>
-							<th>店舗名</th>
-							<td><%= @shop.shopname %></td>
-						</tr>
-					
-					    <tr>                                       
-                            <th>よみがな</th>
-                            <td><%= @shop.yomi %></td>
-                        </tr>
-						
-						<tr>
-							<th>電話番号</th>
-							<td><%=safe_join(@shop.shoptel.split("\n"),tag(:br))%></td>
-						</tr>
-					
-						<tr>                                       
-                            <th>住所</th>
-                            <td><%=safe_join(@shop.addres2.split("\n"),tag(:br))%></td>
-                        </tr>                        				
-					</table>
+	    <tr>                                       
+          <th>住所</th>
+          <td><%=safe_join(@shop.addres2.split("\n"),tag(:br))%></td>
+        </tr>                        				
+	  </table>
 					
 
-					<h2 class="contentsDetails__head">詳細情報</h2>
-					<table class="contentsDetails__table">          
-                        <tr>
-                            <th>最寄駅</th>
-                            <td><%=safe_join(@shop.station.split("\n"),tag(:br))%></td>
-                        </tr>
+	  <h2 class="contentsDetails__head">詳細情報</h2>
+	  <table class="contentsDetails__table">          
+        <tr>
+          <th>最寄駅</th>
+          <td><%=safe_join(@shop.station.split("\n"),tag(:br))%></td>
+        </tr>
           
-                        <tr>
-                            <th>徒歩時間</th>
-                            <td><%=safe_join(@shop.onfoot.split("\n"),tag(:br))%></td>
-                        </tr>
+        <tr>
+          <th>徒歩時間</th>
+          <td><%=safe_join(@shop.onfoot.split("\n"),tag(:br))%></td>
+        </tr>
           
-                        <tr>
-                            <th>営業日</th>
-                            <td><%= safe_join(@shop.businessday.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>営業日</th>
+          <td><%= safe_join(@shop.businessday.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>営業時間</th>
-                            <td><%= safe_join(@shop.businesstime1.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>営業時間</th>
+          <td><%= safe_join(@shop.businesstime1.split("\n"),tag(:br)) %></td>
+        </tr>
           
-                        <tr>
-                            <th>料金</th>
-                            <td><%= safe_join(@shop.pricelist.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>料金</th>
+          <td><%= safe_join(@shop.pricelist.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>HP(公式)</th>
-                            <td><%= safe_join(@shop.homepage1.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>HP(公式)</th>
+          <td><%= safe_join(@shop.homepage1.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>HP(雀サクッ)</th>
-                            <td><%= safe_join(@shop.homepage2.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>HP(雀サクッ)</th>
+          <td><%= safe_join(@shop.homepage2.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>HP(麻雀王国)</th>
-                            <td><%= safe_join(@shop.homepage3.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>HP(麻雀王国)</th>
+          <td><%= safe_join(@shop.homepage3.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>Twitter</th>
-                            <td><%= safe_join(@shop.homepage4.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>Twitter</th>
+          <td><%= safe_join(@shop.homepage4.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                             <th>年齢層</th>
-                             <td><%= safe_join(@shop.agegroup.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>年齢層</th>
+          <td><%= safe_join(@shop.agegroup.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                             <th>事前予約</th>
-                             <td><%= safe_join(@shop.reservation.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>事前予約</th>
+          <td><%= safe_join(@shop.reservation.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>卓数</th>
-                            <td><%= safe_join(@shop.tablenum.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>卓数</th>
+          <td><%= safe_join(@shop.tablenum.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>卓種</th>
-                            <td><%= safe_join(@shop.tabletype.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>卓種</th>
+          <td><%= safe_join(@shop.tabletype.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>サービス</th>
-                            <td><%= safe_join(@shop.service.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>サービス</th>
+          <td><%= safe_join(@shop.service.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>システム・設備</th>
-                            <td><%= safe_join(@shop.system.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>システム・設備</th>
+          <td><%= safe_join(@shop.system.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>男女比率</th>
-                            <td><%= safe_join(@shop.ratio.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>男女比率</th>
+          <td><%= safe_join(@shop.ratio.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>ルール</th>
-                            <td><%= safe_join(@shop.rule.split("\n"),tag(:br)) %></td>
-                        </tr>
+        <tr>
+          <th>ルール</th>
+          <td><%= safe_join(@shop.rule.split("\n"),tag(:br)) %></td>
+        </tr>
 
-                        <tr>
-                            <th>時間打切</th>
-                            <td><%= safe_join(@shop.timeup.split("\n"),tag(:br)) %></td>
-                        </tr>                       
+        <tr>
+          <th>時間打切</th>
+          <td><%= safe_join(@shop.timeup.split("\n"),tag(:br)) %></td>
+        </tr>                       
 
-                        <tr>
-                            <th>オープン日</th>
-                            <td><%= safe_join(@shop.opening.split("\n"),tag(:br)) %></td>
-                        </tr>					
-					</table>
+        <tr>
+          <th>オープン日</th>
+          <td><%= safe_join(@shop.opening.split("\n"),tag(:br)) %></td>
+        </tr>					
+	  </table>
 
+    </div>				
+  
+    <%= render 'shared/new_shop' %>
 
-					
-				</div>
-				
-            <%= render 'shared/new_shop' %>
+  </div>
 
-      </div>
+  <div class="contentsAd">
+    <img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt="">
+    <img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt="">
+    <img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt="">
+    <img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt="">
+  </div>
 
+  <%= render 'shared/pickup_shop' %>
 
-      <div class="contentsAd"><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--sp" src="/assets/ad_img.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""><img class="contentsAd__item item--pc" src="/assets/ad_img_pc.png" alt=""></div>
-      
-
-
-            <%= render 'shared/pickup_shop' %>
-		</div>
-
+</div>

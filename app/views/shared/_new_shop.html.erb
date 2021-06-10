@@ -11,38 +11,44 @@
 		  <% end %>
 
 		  <% if shop.freeicon13 == true %>
-			<a class="contentsNewPost__item__tag"><td>麻雀教室</td></a>
+			  <a class="contentsNewPost__item__tag"><td>麻雀教室</td></a>
 		  <% else %>
 		  <% end %>
 
 		  <% if shop.freeicon12 == true %>
-			<a class="contentsNewPost__item__tag" style="background-color: #FFFF99;"><td>ノーレートフリー</td></a>
+			  <a class="contentsNewPost__item__tag" style="background-color: #FFFF99;"><td>ノーレートフリー</td></a>
 		  <% else %>
 		  <% end %>
 
-          <% if shop.freeicon11 == true %>
-			<a class="contentsNewPost__item__tag"><td>健康麻雀</td></a>
+      <% if shop.freeicon11 == true %>
+			  <a class="contentsNewPost__item__tag"><td>健康麻雀</td></a>
 		  <% else %>
 		  <% end %>
 
 		  <% if shop.freeicon1 == true %>
-			<a class="contentsNewPost__item__tag"><td>麻雀店</td></a>
+			  <a class="contentsNewPost__item__tag"><td>麻雀店</td></a>
 		  <% elsif %>
 			<% shop.freeicon2 == true %>
-			<a class="contentsNewPost__item__tag" style="background-color: #CCFFFF;"><td>公共施設</td></a>
+			  <a class="contentsNewPost__item__tag" style="background-color: #CCFFFF;"><td>公共施設</td></a>
 		  <% elsif %>
 			<% shop.freeicon3 == true %>
-			<a class="contentsNewPost__item__tag"><td>サークル・個人</td></a>
+			  <a class="contentsNewPost__item__tag"><td>サークル・個人</td></a>
 		  <% else %>
-			<a class="contentsNewPost__item__tag"><td>その他の場所</td></a>
+			  <a class="contentsNewPost__item__tag"><td>その他の場所</td></a>
 		  <% end %>
 		  		                
-	      <h3><a class="contentsNewPost__item__title" href="/shops/<%= shop.userid %>"><%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a></h3>
+	    <h3><a class="contentsNewPost__item__title" href="/shops/<%= shop.userid %>"><%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a></h3>
 		</div>
 		
 		<div class="contentsNewPost__item__flex">
 		  <a class="contentsNewPost__item__img" href="/shops/<%= shop.userid %>">
-			<img src="/assets/post_img01.png" alt="">
+			<% if shop.topphoto == "" %>
+	      <img src="/topphoto_images/default_user.png" alt="">
+      <% elsif shop.topphoto == nil %>
+        <img src="/topphoto_images/default_user.png" alt="">
+      <% else %>
+        <img src="/topphoto_images/<%= shop.topphoto %>" alt="">
+      <% end %>
 		  </a>
 		  <p class="contentsNewPost__item__desc">
 			<%= shop.addres1 %> <%= shop.area %>
