@@ -6,7 +6,7 @@ class StoresController < ApplicationController
   end
 
   def show
-  	
+  	@shop = Shop.all.order(created_at: :desc).page(params[:page]).per(50)
   end
 
   def confirm

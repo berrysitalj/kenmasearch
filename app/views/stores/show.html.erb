@@ -1,0 +1,18 @@
+<div class="stores_show_table_area">
+<table class="stores_show_table">
+  <tr>
+    <th>ID</th>
+    <th>店舗名</th>
+    <th>電話番号</th>
+    <th>有料会員</th>
+  </tr>
+  <% @shop.each do |shop| %>
+  <tr>
+    <td><%= shop.userid %></td>
+    <td><%= shop.shopname %></td>
+    <td><%= shop.shoptel %></td>
+    <td><%= shop.paidmember %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
