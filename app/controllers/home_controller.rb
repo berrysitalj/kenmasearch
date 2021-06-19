@@ -334,6 +334,16 @@ class HomeController < ApplicationController
 
   private
 
+  def user_params
+    params.require(:sender).permit(
+      :shopname, :yomi, :tel1,
+      :tel2, :tel3, :area,
+      :addres, :charge, :tel4,
+      :tel5, :tel6, :chargemail,
+      :question, 
+      )
+  end
+
   def set_shop
     @shops = Shop.all.order(created_at: :desc)
   end
