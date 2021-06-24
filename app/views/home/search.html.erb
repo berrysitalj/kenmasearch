@@ -93,7 +93,10 @@
                 <img src="/topphoto_images/<%= shop.topphoto %>" alt="">
                 <% end %>
 							</a>
-							<p class="contentsNewPost__item__desc"><%= shop.addres1 %> <%= shop.area %><br><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>
+							<div class="contentsNewPost__item__desc">
+                <p class="contentsNewPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p>
+                <p><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>
+              </div>
 						</div>
 						<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="/shops/<%= shop.userid %>">店舗詳細はこちら</a></div>
 					</div>
