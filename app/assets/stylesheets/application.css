@@ -1640,7 +1640,7 @@ font-family:"object-fit: cover;"
 }
 
 .contentsNewPost__item__desc{
-font-size:12px;
+font-size:16px;
 margin-top:10px;
 display:block;
 display:-webkit-box;
@@ -1666,6 +1666,15 @@ font-size:16px
 height:7.2em;
 -webkit-line-clamp:4
 }}
+
+.contentsNewPost__item__desc__arddres{
+    font-size:16px;
+    margin-bottom: 20px;
+}
+
+.contentsNewPost__item__desc__arddres span{
+    margin-right : 10px;
+}
 
 .contentsNewPost__item__btn__inner{
 text-align:center;
@@ -1872,6 +1881,15 @@ margin-left:0;
 margin-top:10px;
 width:100%
 }}
+
+.contentsRecommendPost__item__desc__arddres{
+    font-size:16px;
+    margin-bottom: 20px;
+}
+
+.contentsRecommendPost__item__desc__arddres span{
+    margin-right : 10px;
+}
 
 .search_input_breadcrumb{
 display:flex;

@@ -109,14 +109,5 @@ class UsersController < ApplicationController
        render("shops/edit")
     end
   end
-
-  private
-
-  def user_params
-    params.require(:shop).permit(
-      :userid, :pass,
-      )
-  end
-
   
 end
