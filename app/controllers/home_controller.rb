@@ -73,9 +73,6 @@ class HomeController < ApplicationController
   def list
   	@shops = Shop.all.order(created_at: :desc).page(params[:page]).per(5)
   end
-  
-  def details
-  end
 
   def hokkaido
     @number_of_stores_douou = Shop.where(addres1:["北海道道央"]).count

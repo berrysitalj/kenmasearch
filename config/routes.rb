@@ -29,7 +29,6 @@ Rails.application.routes.draw do
   # get 'home/top'  #デフォルト
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "list" => "home#list"
-  get "details" => "home#details"
   get "search" => "home#search"
   get "hokkaido" => "home#hokkaido"
   get "tohoku" => "home#tohoku"
