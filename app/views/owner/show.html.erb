@@ -18,6 +18,9 @@
          <% elsif %>
           <% @sender.category == 3 %>
          <td class="table_td_content" style="color: red;">広告申込・お問合せ</td>
+         <% elsif %>
+         <% @sender.category == 4 %>
+         <td style="color: green;">会員問合せ</td>
          <% else %>
           <td class="table_td_content">no_category</td>
          <% end %>

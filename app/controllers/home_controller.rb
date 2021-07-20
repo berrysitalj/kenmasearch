@@ -216,6 +216,11 @@ class HomeController < ApplicationController
 
   end
 
+  def member_inquiry
+    @shop = Shop.find_by(id: session[:user_id])
+    @sender = Sender.new
+  end
+
   def free_create
     @sender = Sender.new(category:"0",
                          shopname:params[:shopname], 
@@ -308,8 +313,28 @@ class HomeController < ApplicationController
     end
   end
 
-  def inquiry_create
-    
+  def member_inquiry_create
+    @shop = Shop.find_by(id: session[:user_id])
+    @sender = Sender.new(category:"4",
+                         shopname:@shop.shopname, 
+                         yomi:"-",
+                         tel1:"000",
+                         tel2:"0000",
+                         tel3:"0000",
+                         area:@shop.area,
+                         addres:@shop.addres,
+                         charge:@shop.name,
+                         tel4:"000",
+                         tel5:"0000",
+                         tel6:"0000",
+                         chargemail:@shop.mail,
+                         question:params[:question]
+                         )
+    if @sender.save
+      redirect_to("/recruit/send_completely")
+    else
+      render("member_inquiry")
+    end
   end
 
   def send_completely

@@ -5,19 +5,22 @@ class ShopsController < ApplicationController
 
   def index
   	@shops = Shop.all.order(created_at: :desc).page(params[:page]).per(10)
-
   end
 
   def show
   	@shop = Shop.find_by(userid: params[:id])
     @shops_new_top = Shop.where(paidmember: 0, addres1: @shop.addres1).order(created_at: :desc)
-    @shops_random_top = Shop.where(paidmember: 1, addres1: @shop.addres1).order("RANDOM()").limit(6)
-    
+    @shops_random = Shop.where(paidmember: 1, addres1: @shop.addres1).order("RANDOM()").limit(6)
+    # 有料会員がひとつもなければ無料会員を表示する
+    if @shops_random.present?
+      @shops_random_top = @shops_random
+    else
+      @shops_random_top = Shop.where(paidmember: 0, addres1: @shop.addres1).order("RANDOM()").limit(6)
+    end    
   end
 
   def new
   	@shop = Shop.new
-    
   end
 
   def create
@@ -28,32 +31,21 @@ class ShopsController < ApplicationController
     @shop.addres1 = params[:addres1]
     @shop.addres2 = params[:addres2]
     @shop.area = params[:area]
-    
-
     @shop.station = params[:station]
     @shop.topphoto = params[:topphoto]
-
     @shop.freeicon1 = params[:freeicon1]
     @shop.freeicon2 = params[:freeicon2]
     @shop.freeicon11 = params[:freeicon11]
     @shop.freeicon12 = params[:freeicon12]
     @shop.freeicon13 = params[:freeicon13]
     @shop.freeicon14 = params[:freeicon14]
-
-
     if @shop.save
       flash[:notice] = "新規登録が完了しました"
       redirect_to("/shops/index")
      else
        render("shops/new")
     end
- 
-
-
-
   end
-
-
 
   def edit
   	@shop = Shop.find_by(userid: params[:id])
@@ -61,7 +53,6 @@ class ShopsController < ApplicationController
   
   def update
   	@shop = Shop.find_by(userid: params[:id])
-  	
   	@shop.pass = params[:pass]
     @shop.shopname = params[:shopname]
     @shop.shoptel = params[:shoptel]
@@ -70,7 +61,6 @@ class ShopsController < ApplicationController
     @shop.addres2 = params[:addres2]
     @shop.area = params[:area]
     @shop.paidmember = params[:paidmember]
-    
     @shop.mail = params[:mail]
     @shop.name = params[:name]
     @shop.tel = params[:tel]
@@ -83,7 +73,6 @@ class ShopsController < ApplicationController
     @shop.topphoto = params[:topphoto]
     @shop.agegroup = params[:agegroup]
     @shop.reservation = params[:reservation]
-
     @shop.freeicon1 = params[:freeicon1]
     @shop.freeicon2 = params[:freeicon2]
     @shop.freeicon3 = params[:freeicon3]
@@ -107,8 +96,6 @@ class ShopsController < ApplicationController
     @shop.paidicon2 = params[:paidicon2]
     @shop.paidicon3 = params[:paidicon3]
     @shop.paidicon4 = params[:paidicon4]
-
-    
     @shop.topcomment = params[:topcomment]
     @shop.comment = params[:comment]
     @shop.photo1 = params[:photo1]
@@ -125,18 +112,12 @@ class ShopsController < ApplicationController
     @shop.homepage3 = params[:homepage3]
     @shop.homepage4 = params[:homepage4]
     @shop.opening = params[:opening]
-    
-
     if @shop.save
-       
       flash[:notice] = "正常に保存されました"
         redirect_to("/shops/index")
       else
        render("shops/edit")
     end
-    
-  
-
   end
 
   def destroy
@@ -145,8 +126,4 @@ class ShopsController < ApplicationController
     flash[:notice] = "投稿を削除しました"
     redirect_to("/shops/index")
   end
-
-  
-
-  
 end

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	skip_before_action :owner_logged_in?
   skip_before_action :user_logged_in?
+
   def user_home
   	@shop = Shop.find_by(id: session[:user_id])
   end
