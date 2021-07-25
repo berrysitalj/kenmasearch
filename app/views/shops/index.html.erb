@@ -1,70 +1,23 @@
-<!doctype html>
-
-
-
-<html lang="ja">
-
-	
-
-	<body class="top">
-
-		<div class="contentsKv"><p class="contentsKv__head item--sp">名古屋市の健康麻雀＆ノーレート検索</p>
-		</div>
-		
-
-
-
-		<div class="contentsLayout--shop">
-			
-			<div class="contentsMain">
-			
-				
-				<div class="contentsBreadcrumb"> <a href="/owner/index">owner/index</a><span>&gt;</span><a href="#"></a><span>&gt;</span><a href="#"></a></div>
-				
-
-
-				<div class="contentsDetails">
-					<div class="contentsDetails__flex">
-						
-						<h1 class="contentsDetails__title">店舗一覧</h1>
-					</div>
-					
-					
-					
-					
-
-					<h2 class="contentsDetails__head">店舗情報</h2>
-					
-					<table class="contentsDetails__table">
-					<% @shops.each do |shop| %>
-						<tr>
-							<th><%= link_to("編集", "/shops/#{shop.userid}/edit") %>    <%= link_to(shop.userid, "/shops/#{shop.userid}") %></th>
-							<td><%= shop.shopname %></td>
-							<td><%= link_to("削除", "/shops/#{shop.id}/destroy", {method:"post"}) %></td>
-						</tr>
-					<% end %>
-					</table>
-					
-                <%= paginate @shops %>
-					
+<body class="top">
+	<div class="contentsKv"><p class="contentsKv__head item--sp">名古屋市の健康麻雀＆ノーレート検索</p></div>
+	<div class="contentsLayout--shop">
+		<div class="contentsMain">
+			<div class="contentsBreadcrumb"> <a href="/owner/index">owner/index</a><span>&gt;</span><a href="#"></a><span>&gt;</span><a href="#"></a></div>
+			<div class="contentsDetails">
+				<div class="contentsDetails__flex">
+					<h1 class="contentsDetails__title">店舗一覧</h1>
 				</div>
-				
+				<h2 class="contentsDetails__head">店舗情報</h2>
+				<table class="contentsDetails__table">
+					<% @shops.each do |shop| %>
+						<tr><th><%= link_to("編集", "/shops/#{shop.userid}/edit") %>    <%= link_to(shop.userid, "/shops/#{shop.userid}") %></th><td><%= shop.shopname %></td><td><%= link_to("削除", "/shops/#{shop.id}/destroy", {method:"post"}) %></td></tr>
+					<% end %>
+				</table>	
+                <%= paginate @shops %>
             </div>
-
-			<div class="contentsAd">
-
-			</div>
-			
-			<div class="contentsRecommendPost">
-			</div>
-
+        </div>
+        <div class="contentsAd"></div>
+        <div class="contentsRecommendPost">
 		</div>
-
-
-
-
-
-
-	</body>
-
-</html>
+	</div>
+</body>

@@ -4,11 +4,8 @@ class HomeController < ApplicationController
   skip_before_action :owner_logged_in?
   skip_before_action :user_logged_in?
 
-  def toptop
-    
-  end
-
   def top
+    @shop = Shop.order(:updated_at).last
   	@shops_random_top = Shop.where(paidmember: 0).order("RANDOM()").limit(6)
     # mysqlは"RAND"にしないといけない
     @shops_new_top = Shop.where(paidmember: 0).order(created_at: :desc)
@@ -322,7 +319,7 @@ class HomeController < ApplicationController
                          tel2:"0000",
                          tel3:"0000",
                          area:@shop.area,
-                         addres:@shop.addres,
+                         addres:@shop.addres2,
                          charge:@shop.name,
                          tel4:"000",
                          tel5:"0000",

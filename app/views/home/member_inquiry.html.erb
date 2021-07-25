@@ -1,5 +1,3 @@
-<h2>Home#Member_inquiry</h2>
-
 <div class="contentsMain">
   <%= form_tag("/member_inquiry_create") do %>
   <div class="contentsDetails">
@@ -11,7 +9,7 @@
       <tr><th>店舗名</th><td><%= @shop.shopname %></td></tr>
 	  <tr><th>担当者名</th><td><%= @shop.name %></td></tr>
 	  <tr><th>メールアドレス</th><td><%= @shop.mail %></td></tr>
-	  <tr><th>問合せ内容<br>※電話連絡をご希望の場合はこちらに記入願います</th><td style="height: 150px;"><textarea name="question" value="<%= @sender.question %>" style="width: 100%; height: 100%;"></textarea></td></tr>
+	  <tr><th>問合せ・変更内容<br><p style="font-size: 8px;">※連絡先が異なる場合はこちらに記入願います</p></th><td style="height: 150px;"><textarea name="question" value="<%= @sender.question %>" style="width: 100%; height: 100%;"></textarea></td></tr>
 	</table>
   </div>
   <input type="submit" name="" value="送信">

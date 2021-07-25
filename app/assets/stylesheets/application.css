@@ -2278,3 +2278,14 @@ display:none
   box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
 
+/*更新日時*/
+
+.contents_updated_at{
+    text-align: right;
+    margin-top : 10px;
+    color: #808080;
+}
+
+.contents_updated_at span{
+    margin-right : 10px;
+}

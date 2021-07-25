@@ -5,27 +5,23 @@
       <div class="search_input_breadcrumb">
         <div class="search_input_form">
           <%= form_tag("/search", :method => 'get') do %>
-          <dl class="search2">
-            <dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt>
-            <dd><button>検索</button></dd>
-          </dl>
+          <dl class="search2"><dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt><dd><button>検索</button></dd></dl>
           <% end %>
         </div>
-        <div class="contentsBreadcrumb"><a href="/">TOP</a><span>&gt;</span><a>検索結果</a></div>
+        <div class="contentsBreadcrumb"><a href="/">TOP</a><span>&gt;</span><span>検索結果</span></div>
       </div>
-
       <div class="contentsNewPost--shop">
         <h1 class="contentsNewPost__head--shop"> 「 <%= @keyword %> 」<span>の店舗一覧</span></h1>
         <div class="contentsNewPost__inner">
           <% @shops.each do |shop| %>
-					<div class="contentsNewPost__item">							
+					<div class="contentsNewPost__item">
+            <div class="contents_updated_at"><span>更新</span><span><%= shop.updated_at.strftime('%Y/%m/%d') %></span></div>
 						<div class="contentsNewPost__item__head" style="display:block;">
               <!-- おすすめ -->
               <% if shop.paidicon1 == true %>
               <a class="contentsDetails__tag__osusume" style="white-space: nowrap; background-color: #FFD5EC;"><td>おすすめ</td></a>
               <% else %>
               <% end %>
-
               <!-- 場所 -->
               <% if shop.freeicon1 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap;"><td>麻雀店</td></a>
@@ -38,51 +34,42 @@
               <% else %>
               <a class="contentsDetails__tag" style="white-space: nowrap;"><td>その他の場所</td></a>
               <% end %>
-
               <!-- 麻雀の種類 -->
               <% if shop.freeicon14 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>競技麻雀</td></a>
               <% else %>
               <% end %>
-
               <% if shop.freeicon13 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap;"><td>麻雀教室</td></a>
               <% else %>
               <% end %>
-
               <% if shop.freeicon12 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #FFFF99;"><td>ノーレートフリー</td></a>
               <% else %>
               <% end %>
-
               <% if shop.freeicon11 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap;"><td>健康麻雀</td></a>
               <% else %>
               <% end %>
-
               <!-- その他情報 -->
               <% if shop.freeicon21 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>禁煙</td></a>
               <% else %>
               <% end %>
-
               <% if shop.freeicon22 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>喫煙可</td></a>
               <% else %>
               <% end %>
-
               <% if shop.freeicon23 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>セット</td></a>
               <% else %>
               <% end %>
-
               <% if shop.freeicon25 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>要予約</td></a>
               <% else %>
               <% end %>
               <h2><a class="contentsNewPost__item__title" href="/shops/<%= shop.userid %>"><%= shop.shopname %></a></h2>
             </div>
-
 						<div class="contentsNewPost__item__flex">
 							<a class="contentsNewPost__item__img" href="/shops/<%= shop.userid %>">
 								<% if shop.topphoto == "" %>
@@ -93,10 +80,7 @@
                 <img src="/topphoto_images/<%= shop.topphoto %>" alt="">
                 <% end %>
 							</a>
-							<div class="contentsNewPost__item__desc">
-                <p class="contentsNewPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p>
-                <p><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>
-              </div>
+							<div class="contentsNewPost__item__desc"><p class="contentsNewPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p><p><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p></div>
 						</div>
 						<div class="contentsNewPost__item__btn__inner"><a class="contentsNewPost__item__btn" href="/shops/<%= shop.userid %>">店舗詳細はこちら</a></div>
 					</div>
@@ -104,10 +88,7 @@
 					<%= paginate @shops %>
           <div class="search_input_form">
 						<%= form_tag("/search", :method => 'get') do %>
-						<dl class="search2">
-              <dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt>
-              <dd><button>検索</button></dd>
-            </dl>
+						<dl class="search2"><dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt><dd><button>検索</button></dd></dl>
             <% end %>
           </div>
         </div>

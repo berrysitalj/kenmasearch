@@ -1,20 +1,13 @@
 <div class="contentsLayout--shop">			
   <div class="contentsMain">
-    <div class="contentsBreadcrumb">
-      <a href="/">TOP</a>
-      <span>&gt;</span>
-      <a href="/search?utf8=✓&search=<%= @shop.addres1 %>"><%= @shop.addres1 %></a>
-      <span>&gt;</span>
-      <a><%= @shop.shopname %></a>
-    </div>
-  
+    <div class="contentsBreadcrumb"><a href="/">TOP</a><span>&gt;</span><a href="/search?utf8=✓&search=<%= @shop.addres1 %>"><%= @shop.addres1 %></a><span>&gt;</span><span><%= @shop.shopname %></span></div>
+    <div class="contents_updated_at"><span>店舗情報 更新日</span><span><%= @shop.updated_at.strftime('%Y/%m/%d') %></span></div>  
     <div class="contentsDetails">
       <div class="contentsDetails__flex" style="display:block;">	     
        <%= render 'shared/contents_details_tag' %>
        <h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
 	    </div>
       <p class="contentsDetails__desc" style="font-weight: bold; line-height: 80%;"><%= safe_join(@shop.topcomment.split("\n"),tag(:br)) %></p>
-
       <div class="contentsDetails__img">
         <% if @shop.topphoto == "" %>
         <img src="/topphoto_images/default_user.png" alt="">
@@ -23,13 +16,11 @@
         <% else %>
         <img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
         <% end %>
-
         <% if @shop.photo1 == "" %>
         <% elsif @shop.photo1 == nil %>
         <% else %>
         <img src="/photo1_images/<%= @shop.photo1 %>" alt="">
         <% end %>
-
 	      <% if @shop.photo2 == "" %>
         <% elsif @shop.photo2 == nil %>
         <% else %>

@@ -74,26 +74,26 @@
 		    </table>
 		    <h2 class="contentsDetails__head">アイコン選択</h2>
 		    <table class="contentsDetails__table">
-		  	  <tr><th>麻雀荘</th><% if @shop.freeicon1 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>公共施設</th><% if @shop.freeicon2 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>場所3</th><% if @shop.freeicon3 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>場所4</th><% if @shop.freeicon4 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>場所5</th><% if @shop.freeicon5 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>場所6</th><% if @shop.freeicon6 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>健康麻雀</th><% if @shop.freeicon11 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>ノーレートフリー</th><% if @shop.freeicon12 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>麻雀教室</th><% if @shop.freeicon13 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>競技麻雀</th><% if @shop.freeicon14 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>麻雀種別5</th><% if @shop.freeicon15 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>麻雀種別6</th><% if @shop.freeicon16 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>赤牌あり</th><% if @shop.freeicon21 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>Mリーグルール</th><% if @shop.freeicon22 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>3人打ち</th><% if @shop.freeicon23 == true %> <td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>4人打ち</th><% if @shop.freeicon24 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>その他5</th><% if @shop.freeicon25 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>その他6</th><% if @shop.freeicon26 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>その他7</th><% if @shop.freeicon27 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>(有料)おすすめ</th><% if @shop.paidicon1 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		  	  <tr><th><a class="contentsDetails__tag" style="">麻雀店</a></th><% if @shop.freeicon1 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #CCFFFF;">公共施設</th><% if @shop.freeicon2 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="">商業施設</a></th><% if @shop.freeicon3 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="">サークル・個人</a></th><% if @shop.freeicon4 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="">その他の場所</a></th><% if @shop.freeicon5 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th>------</th><% if @shop.freeicon6 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="">健康麻雀</a></th><% if @shop.freeicon11 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #FFFF99;">ノーレートフリー</a></th><% if @shop.freeicon12 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="">麻雀教室</th><% if @shop.freeicon13 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #FFCC33;">競技麻雀</a></th><% if @shop.freeicon14 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="">初心者教室</a></th><% if @shop.freeicon15 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th>------</th><% if @shop.freeicon16 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">禁煙</a></th><% if @shop.freeicon21 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">喫煙可</a></th><% if @shop.freeicon22 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">セット</a></th><% if @shop.freeicon23 == true %> <td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">女性限定</a></th><% if @shop.freeicon24 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">要予約</a></th><% if @shop.freeicon25 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">Mリーグルール</a></th><% if @shop.freeicon26 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th>------</th><% if @shop.freeicon27 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th><a class="contentsDetails__tag__osusume" style="white-space: nowrap; background-color: #FFD5EC;">おすすめ</a></th><% if @shop.paidicon1 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
 		      <tr><th>(有料)ピックアップ</th><% if @shop.paidicon2 == true %> <td>〇</td><% else %><td>------</td><% end %></tr>
 		      <tr><th>(有料)3</th><% if @shop.paidicon3 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
 		      <tr><th>(有料)4</th><% if @shop.paidicon4 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
