@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get "recruit/paid" => "home#paid"
   get "recruit/non_profit" => "home#non_profit"
   get "recruit/terms" => "home#terms"
+  get "recruit/privacy_policy" => "home#privacy_policy"
   get "adv" => "home#adv"
   get "recruit_adv" => "home#recruit_adv"
   get "member_inquiry" => "home#member_inquiry"

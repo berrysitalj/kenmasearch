@@ -87,7 +87,8 @@
   <% end %>
 
   <% if session[:user_id] %>
-  <li>ログイン店舗id:<%= session[:user_id] %></li>
+  <li>ログイン中</li>
+  <a href="/user_home">会員ページへ</a>
   <% else %>
   <% end %>
 

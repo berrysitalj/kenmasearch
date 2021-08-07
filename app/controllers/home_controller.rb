@@ -209,6 +209,10 @@ class HomeController < ApplicationController
     
   end
 
+  def privacy_policy
+    
+  end
+
   def free_edit
 
   end
