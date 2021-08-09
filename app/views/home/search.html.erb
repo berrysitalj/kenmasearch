@@ -15,6 +15,13 @@
         <div class="contentsNewPost__inner">
           <% @shops.each do |shop| %>
 					<div class="contentsNewPost__item">
+            <div style="text-align: right;">
+              <% if session[:id] %>
+                <p style="margin-right: 10px; display: inline-block;"><%= link_to("編集", "/stores/#{shop.userid}/edit") %></p>
+                <p style="display: inline-block;"><%= link_to("削除", "/stores/#{shop.id}/destroy", {method:"post"}) %></p>
+              <% else %>
+              <% end %>
+            </div>
             <div class="contents_updated_at"><span>更新</span><span><%= shop.updated_at.strftime('%Y/%m/%d') %></span></div>
 						<div class="contentsNewPost__item__head" style="display:block;">
               <!-- おすすめ -->

@@ -25,7 +25,7 @@
     <tr><td class="table_td">店舗名または名称</td><td class="table_td_content"><%= @sender.shopname %></td></tr>
     <tr><td class="table_td">よみがな</td><td class="table_td_content"><%= @sender.yomi %></td></tr>
     <tr><td class="table_td">店舗電話番号</td><td class="table_td_content"><%= @sender.tel1 %>-<%= @sender.tel2 %>-<%= @sender.tel3 %></td></tr>
-    <tr><td class="table_td">住所</td><td class="table_td_content"><%= @sender.area %><%= @sender.addres %></td></tr>
+    <tr><td class="table_td">住所</td><td class="table_td_content"><%= @sender.area %><br><%= @sender.addres %></td></tr>
     <tr><td class="table_td">担当者名</td><td class="table_td_content"><%= @sender.charge %></td></tr>         
     <tr><td class="table_td">担当者連絡先</td><td class="table_td_content"><%= @sender.tel4 %>-<%= @sender.tel5 %>-<%= @sender.tel6 %></td></tr>
     <tr><td class="table_td">メールアドレス</td><td class="table_td_content"><input id="copyTarget" type="text" value="<%= @sender.chargemail %>" readonly>
