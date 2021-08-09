@@ -18,7 +18,7 @@
             <div style="text-align: right;">
               <% if session[:id] %>
                 <p style="margin-right: 10px; display: inline-block;"><%= link_to("編集", "/stores/#{shop.userid}/edit") %></p>
-                <p style="display: inline-block;"><%= link_to("削除", "/stores/#{shop.id}/destroy", {method:"post"}) %></p>
+                <p style="display: inline-block;"><%= link_to("削除", "/stores/#{shop.id}/destroy", {method:"detele", data: {confirm: "削除しますか？"}}) %></p>
               <% else %>
               <% end %>
             </div>
