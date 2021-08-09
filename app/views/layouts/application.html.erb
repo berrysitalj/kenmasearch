@@ -76,7 +76,7 @@
 
   <% if session[:id] %>
   <%= form_tag("/logout") do %>
-  <%= submit_tag '管理者ログアウト', data: {confirm: "ログアウトしますか？"} %>
+  <%= submit_tag('管理者ログアウト', data: {confirm: "ログアウトしますか？"}) %>
   <% end %>
   <% else %>
   <% end %>
