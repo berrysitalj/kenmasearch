@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <title>KenmaSearchApp</title>
+  <title><%= content_for?(:title) ? yield(:title) : "けんま～サーチ｜全国の健康麻雀・ノーレート麻雀を検索！"%></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
