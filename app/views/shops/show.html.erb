@@ -7,7 +7,7 @@
        <%= render 'shared/contents_details_tag' %>
        <h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
 	    </div>
-      <p class="contentsDetails__desc" style="font-weight: bold; line-height: 80%;"><%= safe_join(@shop.topcomment.split("\n"),tag(:br)) %></p>
+      <p class="contentsDetails__desc" style="font-weight: bold; line-height: 150%;"><%= safe_join(@shop.topcomment.split("\n"),tag(:br)) %></p>
       <div class="contentsDetails__img">
         <% if @shop.topphoto == "" %>
         <img src="/topphoto_images/default_user.png" alt="">
