@@ -1,356 +1,371 @@
-
-
-
-
-<%= form_tag("/shops/#{@shop.userid}/update") do %>
-
-　<% @shop.errors.full_messages.each do |message| %>
-　<%= message %>
-  <% end %>
-
-  <% @user.errors.full_messages.each do |message| %>
-　<%= message %>
-  <% end %>
-
-
-
+<div class="form-style-2">
+  <div class="form-style-2-heading" style="color: blue;">店舗情報登録</div>
+  <%= form_tag("/posts/create") do %>
   
-
-<h1>Shopテーブル</h1>
-　<div class="edit_form">
-  <a href="">userid</a>
-    <textarea name="useridshop"><%= @shop.userid %></textarea>
-　</div>
-
-
-
-　<div class="edit_form">
-  <a href="">pass</a>
-    <textarea name="pass"><%= @shop.pass %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">shopname</a>
-　<textarea name="shopname"><%= @shop.shopname %></textarea>
-
-　</div>
-
-　<div class="edit_form">
-  <a href="">shoptel</a>
-　<textarea name="shoptel"><%= @shop.shoptel %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">yomi</a>
-　<textarea name="yomi"><%= @shop.yomi %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">addres1</a>
-　<textarea name="addres1"><%= @shop.addres1 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">addres2</a>
-　<textarea name="addres2"><%= @shop.addres2 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">area</a>
-　<textarea name="area"><%= @shop.area %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">paidmember</a>
-　<textarea name="paidmember"><%= @shop.paidmember %></textarea>
-　</div>
-
-<h1>Userテーブル</h1>
-
- <div class="edit_form">
-  <a href="">userid</a>
-    <textarea name="useriduser"><%= @user.userid %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">mail</a>
-    <textarea name="mail"><%= @user.mail %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">name</a>
-    <textarea name="name"><%= @user.name %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">tel</a>
-    <textarea name="tel"><%= @user.tel %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">station</a>
-    <textarea name="station"><%= @user.station %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">onfoot</a>
-    <textarea name="onfoot"><%= @user.onfoot %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">businessday</a>
-    <textarea name="businessday"><%= @user.businessday %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">businesstime1</a>
-    <textarea name="businesstime1"><%= l(@user.businesstime1, format: :hm) if @user.businesstime1  %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">businesstime2</a>
-    <textarea name="businesstime2"><%= l(@user.businesstime2, format: :hm) if @user.businesstime2  %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">pricelist</a>
-    <textarea name="pricelist"><%= @user.pricelist %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">topphoto</a>
-    <textarea name="topphoto"><%= @user.topphoto %></textarea>
-　</div>
-
- <div class="edit_form">
-  <a href="">agegroup</a>
-    <textarea name="agegroup"><%= @user.agegroup %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">reservation</a>
-    <textarea name="reservation"><%= @user.reservation %></textarea>
-　</div>
- 
-
-
-  <h1>Iconテーブル</h1>
-　<div class="edit_form">
-  <a href="">userid</a>
-    
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon1</a>
-    <textarea name="freeicon1"><%= @icon.freeicon1 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon2</a>
-    <textarea name="freeicon2"><%= @icon.freeicon2 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon3</a>
-    <textarea name="freeicon3"><%= @icon.freeicon3 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon4</a>
-    <textarea name="freeicon4"><%= @icon.freeicon4 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon5</a>
-    <textarea name="freeicon5"><%= @icon.freeicon5 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon6</a>
-    <textarea name="freeicon6"><%= @icon.freeicon6 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon11</a>
-    <textarea name="freeicon11"><%= @icon.freeicon11 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon12</a>
-    <textarea name="freeicon12"><%= @icon.freeicon12 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon13</a>
-    <textarea name="freeicon13"><%= @icon.freeicon13 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon14</a>
-    <textarea name="freeicon14"><%= @icon.freeicon14 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon15</a>
-    <textarea name="freeicon15"><%= @icon.freeicon15 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon16</a>
-    <textarea name="freeicon16"><%= @icon.freeicon16 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon21</a>
-    <textarea name="freeicon21"><%= @icon.freeicon21 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon22</a>
-    <textarea name="freeicon22"><%= @icon.freeicon22 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon23</a>
-    <textarea name="freeicon23"><%= @icon.freeicon23 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon24</a>
-    <textarea name="freeicon24"><%= @icon.freeicon24 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon25</a>
-    <textarea name="freeicon25"><%= @icon.freeicon25 %></textarea>
-　</div>
-
-　<div class="edit_form">
-  <a href="">freeicon26</a>
-    <textarea name="freeicon26"><%= @icon.freeicon26 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">freeicon27</a>
-    <textarea name="freeicon27"><%= @icon.freeicon27 %></textarea>
-　</div>
-  
-  <div class="edit_form">
-  <a href="">paidicon1</a>
-    <textarea name="paidicon1"><%= @icon.paidicon1 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">paidicon2</a>
-    <textarea name="paidicon2"><%= @icon.paidicon2 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">paidicon3</a>
-    <textarea name="paidicon3"><%= @icon.paidicon3 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">paidicon4</a>
-    <textarea name="paidicon4"><%= @icon.paidicon4 %></textarea>
-　</div>
-
-<h1>Memberテーブル</h1>
-
-  <div class="edit_form">
-  <a href="">userid</a>
-    <textarea name="useridmember"><%= @member.userid %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">topcomment</a>
-    <textarea name="topcomment"><%= @member.topcomment %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">comment</a>
-    <textarea name="comment"><%= @member.comment %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">photo1</a>
-    <textarea name="photo1"><%= @member.photo1 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">photo2</a>
-    <textarea name="photo2"><%= @member.photo2 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">tablenum</a>
-    <textarea name="tablenum"><%= @member.tablenum %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">tabletype</a>
-    <textarea name="tabletype"><%= @member.tabletype %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">service</a>
-    <textarea name="service"><%= @member.service %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">system</a>
-    <textarea name="system"><%= @member.system %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">ratio</a>
-    <textarea name="ratio"><%= @member.ratio %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">rule</a>
-    <textarea name="rule"><%= @member.rule %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">timeup</a>
-    <textarea name="timeup"><%= @member.timeup %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">homepage1</a>
-    <textarea name="homepage1"><%= @member.homepage1 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">homepage2</a>
-    <textarea name="homepage2"><%= @member.homepage2 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">homepage3</a>
-    <textarea name="homepage3"><%= @member.homepage3 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">homepage4</a>
-    <textarea name="homepage4"><%= @member.homepage4 %></textarea>
-　</div>
-
-  <div class="edit_form">
-  <a href="">opening</a>
-    <textarea name="opening"><%= @member.opening %></textarea>
-　</div>
-
-
-
-
-
-
-
-
-<input type="submit" name="" value="保存">
-
-<% end %>
-
-
+  <form>
+    <label for="field1" style="color: red;">
+      <% @shop.errors.full_messages.each do |message| %>
+      <%= message %><br>
+      <% end %>
+    </label>
+
+    <label for="field1">
+      <span>ID <span class="required"></span></span>
+      <input type="text" class="input-field" name="userid" value="<%= @shop.userid %>" />
+    </label>
+      
+    <label for="field2">
+      <span>パスワード <span class="required"></span></span>
+      <input type="text" class="input-field" name="pass" value="<%= @shop.pass %>" />
+    </label>
+      
+    <label for="field2">
+      <span>店舗名 <span class="required"></span></span>
+      <input type="text" class="input-field" name="shopname" value="<%= @shop.shopname %>" />
+    </label>
+
+    <label for="field2">
+      <span>電話番号 <span class="required"></span></span>
+      <textarea name="shoptel" class="textarea-field"><%= @shop.shoptel %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>よみがな <span class="required"></span></span>
+      <input type="text" class="input-field" name="yomi" value="<%= @shop.yomi %>" />
+    </label>
+
+    <label for="field4">
+      <span>都道府県<span class="required"></span></span>
+      <select name="addres1" class="select-field" >
+        <option value="<%= @shop.addres1 %>"><%= @shop.addres1 %></option>
+        <option value="北海道道央">北海道道央</option>
+        <option value="北海道道南">北海道道南</option>
+        <option value="北海道道東">北海道道東</option>
+        <option value="北海道道北">北海道道北</option>
+        <option value="青森県">青森県</option>
+        <option value="岩手県">岩手県</option>
+        <option value="宮城県">宮城県</option>
+        <option value="秋田県">秋田県</option>
+        <option value="山形県">山形県</option>
+        <option value="福島県">福島県</option>
+        <option value="茨城県">茨城県</option>
+        <option value="栃木県">栃木県</option>
+        <option value="群馬県">群馬県</option>
+        <option value="埼玉県">埼玉県</option>
+        <option value="千葉県">千葉県</option>
+        <option value="東京都">東京都</option>
+        <option value="神奈川県">神奈川県</option>
+        <option value="新潟県">新潟県</option>
+        <option value="富山県">富山県</option>
+        <option value="石川県">石川県</option>
+        <option value="福井県">福井県</option>
+        <option value="山梨県">山梨県</option>
+        <option value="長野県">長野県</option>
+        <option value="岐阜県">岐阜県</option>
+        <option value="静岡県">静岡県</option>
+        <option value="愛知県">愛知県</option>
+        <option value="三重県">三重県</option>
+        <option value="滋賀県">滋賀県</option>
+        <option value="京都府">京都府</option>
+        <option value="大阪府">大阪府</option>
+        <option value="兵庫県">兵庫県</option>
+        <option value="奈良県">奈良県</option>
+        <option value="和歌山県">和歌山県</option>
+        <option value="鳥取県">鳥取県</option>
+        <option value="島根県">島根県</option>
+        <option value="岡山県">岡山県</option>
+        <option value="広島県">広島県</option>
+        <option value="山口県">山口県</option>
+        <option value="徳島県">徳島県</option>
+        <option value="香川県">香川県</option>
+        <option value="愛媛県">愛媛県</option>
+        <option value="高知県">高知県</option>
+        <option value="福岡県">福岡県</option>
+        <option value="佐賀県">佐賀県</option>
+        <option value="長崎県">長崎県</option>
+        <option value="熊本県">熊本県</option>
+        <option value="大分県">大分県</option>
+        <option value="宮崎県">宮崎県</option>
+        <option value="鹿児島県">鹿児島県</option>
+        <option value="沖縄県">沖縄県</option>
+      </select>
+    </label>
+
+    <label for="field2">
+      <span>住所 <span class="required"></span></span>
+      <textarea name="addres2" class="textarea-field"><%= @shop.addres2 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>登録地域 <span class="required"></span></span>
+      <input type="text" class="input-field" name="area" value="<%= @shop.area %>" />
+    </label>
+      
+    <label for="field2">
+      <span>有料会員 <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidmember" value="<%= @shop.paidmember %>" />
+    </label>
+
+    <label for="field2">
+      <span>メール <span class="required"></span></span>
+      <input type="text" class="input-field" name="mail" value="<%= @shop.mail %>" />
+    </label>
+
+    <label for="field2">
+      <span>担当者名 <span class="required"></span></span>
+      <input type="text" class="input-field" name="name" value="<%= @shop.name %>" />
+    </label>
+
+    <label for="field2">
+      <span>担当者電話番号 <span class="required"></span></span>
+      <input type="text" class="input-field" name="tel" value="<%= @shop.tel %>" />
+    </label>
+      
+    <label for="field2">
+      <span>最寄駅 <span class="required"></span></span>
+      <textarea name="station" class="textarea-field"><%= @shop.station %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>徒歩時間 <span class="required"></span></span>
+      <textarea name="onfoot" class="textarea-field"><%= @shop.onfoot %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業日 <span class="required"></span></span>
+      <textarea name="businessday" class="textarea-field"><%= @shop.businessday %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業時間1 <span class="required"></span></span>
+      <textarea name="businesstime1" class="textarea-field"><%= @shop.businesstime1 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業時間2 <span class="required"></span></span>
+      <textarea name="businesstime2" class="textarea-field"><%= @shop.businesstime2 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>料金 <span class="required"></span></span>
+      <textarea name="pricelist" class="textarea-field"><%= @shop.pricelist %></textarea>
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">トップ写真 <span class="required"></span></span>
+      <input type="text" class="input-field" name="topphoto" value="<%= @shop.topphoto %>" />
+    </label>
+
+    <label for="field2">
+      <span>年齢層 <span class="required"></span></span>
+      <textarea name="agegroup" class="textarea-field"><%= @shop.agegroup %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>事前予約 <span class="required"></span></span>
+      <textarea name="reservation" class="textarea-field"><%= @shop.reservation %></textarea>
+    </label>
+      
+    <label for="field2">
+      <span style="color: blue;">麻雀店 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon1" value="<%= @shop.freeicon1 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: blue;">公共施設 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon2" value="<%= @shop.freeicon2 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: blue;">商業施設内 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon3" value="<%= @shop.freeicon3 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: blue;">サークル・個人 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon4" value="<%= @shop.freeicon4 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: blue;">freeicon5 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon5" value="<%= @shop.freeicon5 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: blue;">freeicon6 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon6" value="<%= @shop.freeicon6 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">健康麻雀 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon11" value="<%= @shop.freeicon11 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">ノーレートフリー <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon12" value="<%= @shop.freeicon12 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">麻雀教室 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon13" value="<%= @shop.freeicon13 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">競技麻雀 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon14" value="<%= @shop.freeicon14 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">freeicon15 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon15" value="<%= @shop.freeicon15 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: green;">競技麻雀 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon16" value="<%= @shop.freeicon16 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">禁煙 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon21" value="<%= @shop.freeicon21 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">喫煙 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon22" value="<%= @shop.freeicon22 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">セット可 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon23" value="<%= @shop.freeicon23 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">女性限定 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon24" value="<%= @shop.freeicon24 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">要予約 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon25" value="<%= @shop.freeicon25 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">Mリーグルール <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon26" value="<%= @shop.freeicon26 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: orange;">freeicon27 <span class="required"></span></span>
+      <input type="text" class="input-field" name="freeicon27" value="<%= @shop.freeicon27 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: red;">おすすめ <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon1" value="<%= @shop.paidicon1 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: red;">ピックアップ <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon2" value="<%= @shop.paidicon2 %>" />
+    </label>
+
+    <label for="paidicon3">
+      <span style="color: red;">paidicon3 <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon3" value="<%= @shop.paidicon3 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: red;">paidicon4 <span class="required"></span></span>
+      <input type="text" class="input-field" name="paidicon4" value="<%= @shop.paidicon4 %>" />
+    </label>
+
+    <label for="field2">
+      <span>トップコメント <span class="required"></span></span>
+      <textarea name="topcomment" class="textarea-field" style="height:150px;"><%= @shop.topcomment %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>説明文 <span class="required"></span></span>
+      <textarea name="comment" class="textarea-field" style="height:300px;"><%= @shop.comment %></textarea>
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">写真1 <span class="required"></span></span>
+      <input type="text" class="input-field" name="photo1" value="<%= @shop.photo1 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">写真2 <span class="required"></span></span>
+      <input type="text" class="input-field" name="photo2" value="<%= @shop.photo2 %>" />
+    </label>
+
+    <label for="field2">
+      <span>卓数 <span class="required"></span></span>
+      <textarea name="tablenum" class="textarea-field"><%= @shop.tablenum %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>卓種 <span class="required"></span></span>
+      <textarea name="tabletype" class="textarea-field"><%= @shop.tabletype %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>サービス <span class="required"></span></span>
+      <textarea name="service" class="textarea-field"><%= @shop.service %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>システム <span class="required"></span></span>
+      <textarea name="system" class="textarea-field"><%= @shop.system %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>男女比率 <span class="required"></span></span>
+      <textarea name="ratio" class="textarea-field"><%= @shop.ratio %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>ルール <span class="required"></span></span>
+      <textarea name="rule" class="textarea-field"><%= @shop.rule %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>時間打切り <span class="required"></span></span>
+      <textarea name="timeup" class="textarea-field"><%= @shop.timeup %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>HP1(公式HP) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage1" value="<%= @shop.homepage1 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP2(雀サクッ) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage2" value="<%= @shop.homepage2 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP3(麻雀王国) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage3" value="<%= @shop.homepage3 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP4(SNS) <span class="required"></span></span>
+      <textarea name="homepage4" class="textarea-field"><%= @shop.homepage4 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>オープン日 <span class="required"></span></span>
+      <textarea name="opening" class="textarea-field"><%= @shop.opening %></textarea>
+    </label>
+
+    <label>
+      <span> </span>
+      <input type="submit" name="" value="登録" />
+    </label>
+
+  </form>
+  <% end %>
+</div>

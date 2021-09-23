@@ -1,53 +1,17 @@
 <body class="user_login_form">
-
-<!--
-<% if session[:user_id] %>
-       ログインしている場合の処理
-
-      <% else %>
-
- -->
-
-
-
-
- 
-
-<div class="login">
-  
-
-  <div class="login-triangle"></div>
-  
-  <h2 class="login-header">店舗ログイン</h2>
-
-  <div class="login-container">
-    <% if @error_message %>
+  <div class="login">
+    <div class="login-triangle"></div>
+    <h2 class="login-header">店舗ログイン</h2>
+    <div class="login-container">
+      <% if @error_message %>
       <p class="user_login_form_error"><%= @error_message %></p>
-    <% end %>
-
-    <%= form_tag("/user_login") do %>
+      <% end %>
+      <%= form_tag("/user_login") do %>
       <p><input name="userid" placeholder="店舗ID" value="<%= @userid %>"></p>
       <p><input type="password" name="pass" placeholder="パスワード"></p>
       <p><input type="submit" value="ログイン"></p>
-    <% end %>
-    <a href="/recruit">新規登録はこちら</a>
+      <% end %>
+      <a href="/recruit">新規登録はこちら</a>
+    </div>
   </div>
-    
-
-
-</div>
-
-
-
-
-<!--
-
-<% end %>
-
- -->
-
-
-
-  </body>
-        
-        
+</body>

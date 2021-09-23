@@ -57,7 +57,7 @@ class HomeController < ApplicationController
           @shops_first_column = @shops_first.addres1
         rescue
           # 失敗時はランダムですべてを表示する
-          @shops_random_top = Shop.where(paidmember: 0).order("RANDOM()").limit(6)
+          @shops_random_top = Shop.where(paidmember: 1).order("RANDOM()").limit(6)
         end
       
       @shops_random_top = Shop.where(paidmember: 0, addres1: @shops_first_column).order("RANDOM()").limit(6)
