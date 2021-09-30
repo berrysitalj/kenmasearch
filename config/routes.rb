@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   get "stores/index" => "stores#index"
   get "stores/confirm" => "stores#confirm"
   get "stores/new" => "stores#new"

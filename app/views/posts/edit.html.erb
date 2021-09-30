@@ -1,0 +1,354 @@
+<h1>posts/edit</h1>
+
+<div class="form-style-2">
+  <div class="form-style-2-heading" style="color: blue;">店舗情報を入力してください</div>
+  <%= form_tag("/posts/#{@item.userid}/update") do %>
+  
+  <form>
+    <label for="field1" style="color: red;">
+      <% @item.errors.full_messages.each do |message| %>
+      <%= message %><br>
+      <% end %>
+    </label>
+
+    <h4><非公開情報></h4>
+
+    <label for="field5">
+      <span>ID <span class="required"></span></span>
+      <div class="terms_agree"><div><%= @item.userid %></div></div>
+    </label>
+
+      
+    <label for="field2">
+      <span>パスワード <span class="required"></span></span>
+      <input type="text" class="input-field" name="pass" />
+    </label>
+
+    <label for="field5">
+      <span>会員種別 <span class="required"></span></span>
+      <div class="terms_agree">
+        <% if @item.paidmember == 0 %>
+        <div>無料会員</div>
+        <% elsif @item.paidmember == 1 %>
+        <div>有料会員</div>
+        <% elsif @item.paidmember == 2 %>
+        <div>非営利会員</div>
+        <% else %>
+        <div>----</div>
+        <% end %>
+      </div>
+    </label>
+
+    <label for="field2">
+      <span>メールアドレス <span class="required"></span></span>
+      <input type="text" class="input-field" name="mail" value="<%= @item.mail %>" />
+    </label>
+
+    <label for="field2">
+      <span>担当者名 <span class="required"></span></span>
+      <input type="text" class="input-field" name="name" value="<%= @item.name %>" />
+    </label>
+
+    <label for="field2">
+      <span>担当者電話番号 <span class="required"></span></span>
+      <input type="text" class="input-field" name="tel" value="<%= @item.tel %>" />
+    </label>
+
+    <h4>　　　</h4>
+    <h4><公開情報></h4>
+      
+    <label for="field5">
+      <span>店舗名 <span class="required"></span></span>
+      <div class="terms_agree"><div><%= @item.shopname %></div></div>
+    </label>
+
+    <label for="field2">
+      <span>よみがな <span class="required"></span></span>
+      <input type="text" class="input-field" name="yomi" value="<%= @item.yomi %>" />
+    </label>
+
+    <label for="field2">
+      <span>店舗電話番号 <span class="required"></span></span>
+      <textarea name="shoptel" class="textarea-field"><%= @item.shoptel %></textarea>
+    </label>
+
+    <label for="field5">
+      <span>都道府県 <span class="required"></span></span>
+      <div class="terms_agree"><div><%= @item.addres1 %></div></div>
+    </label>
+
+    <label for="field5">
+      <span>住所 <span class="required"></span></span>
+      <div class="terms_agree"><div><%= @item.addres2 %></div></div>
+    </label>
+
+    <label for="field5">
+      <span>登録エリア <span class="required"></span></span>
+      <div class="terms_agree"><div><%= @item.area %></div></div>
+    </label> 
+      
+    <label for="field2">
+      <span>最寄駅 <span class="required"></span></span>
+      <textarea name="station" class="textarea-field"><%= @item.station %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>徒歩時間 <span class="required"></span></span>
+      <textarea name="onfoot" class="textarea-field"><%= @item.onfoot %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業日 <span class="required"></span></span>
+      <textarea name="businessday" class="textarea-field"><%= @item.businessday %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>営業時間 <span class="required"></span></span>
+      <textarea name="businesstime1" class="textarea-field"><%= @item.businesstime1 %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>料金 <span class="required"></span></span>
+      <textarea name="pricelist" class="textarea-field"><%= @item.pricelist %></textarea>
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">トップ画像 <span class="required"></span></span>
+      <input type="text" class="input-field" name="topphoto" value="<%= @item.topphoto %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">写真・画像1 <span class="required"></span></span>
+      <input type="text" class="input-field" name="photo1" value="<%= @item.photo1 %>" />
+    </label>
+
+    <label for="field2">
+      <span style="color: purple;">写真・画像2 <span class="required"></span></span>
+      <input type="text" class="input-field" name="photo2" value="<%= @item.photo2 %>" />
+    </label>
+
+    <label for="field2">
+      <span>年齢層 <span class="required"></span></span>
+      <textarea name="agegroup" class="textarea-field"><%= @item.agegroup %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>事前予約 <span class="required"></span></span>
+      <textarea name="reservation" class="textarea-field"><%= @item.reservation %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>トップコメント <span class="required"></span></span>
+      <textarea name="topcomment" class="textarea-field" style="height:150px;"><%= @item.topcomment %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>本文(紹介文) <span class="required"></span></span>
+      <textarea name="comment" class="textarea-field" style="height:300px;"><%= @item.comment %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>卓数 <span class="required"></span></span>
+      <textarea name="tablenum" class="textarea-field"><%= @item.tablenum %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>卓種 <span class="required"></span></span>
+      <textarea name="tabletype" class="textarea-field"><%= @item.tabletype %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>サービス <span class="required"></span></span>
+      <textarea name="service" class="textarea-field"><%= @item.service %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>システム <span class="required"></span></span>
+      <textarea name="system" class="textarea-field"><%= @item.system %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>男女比率 <span class="required"></span></span>
+      <textarea name="ratio" class="textarea-field"><%= @item.ratio %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>ルール <span class="required"></span></span>
+      <textarea name="rule" class="textarea-field"><%= @item.rule %></textarea>
+    </label>
+
+    <label for="field2">
+      <span>時間打切り <span class="required"></span></span>
+      <input type="text" class="input-field" name="timeup" value="<%= @item.timeup %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP1(公式HP) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage1" value="<%= @item.homepage1 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP2(雀サクッ) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage2" value="<%= @item.homepage2 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP3(麻雀王国) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage3" value="<%= @item.homepage3 %>" />
+    </label>
+
+    <label for="field2">
+      <span>HP4(SNS) <span class="required"></span></span>
+      <input type="text" class="input-field" name="homepage4" value="<%= @item.homepage4 %>" />
+    </label>
+
+    <label for="field2">
+      <span>オープン日 <span class="required"></span></span>
+      <input type="text" class="input-field" name="opening" value="<%= @item.opening %>" />
+    </label>
+
+    <h4>　　</h4>
+    <h4><アイコン表示選択></h4>
+
+    <%= form_with(model:@items, local: true) do |form| %>
+　　
+    <label for="field2">
+      <span style="color: blue; padding-top: 5px;">麻雀店 <span class="required"></span></span>
+        <%= form.radio_button :freeicon1, :false, checked: true %>
+      　<%= form.label :freeicon1, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon1, :true, checked: @item.freeicon1 %>
+      　<%= form.label :freeicon1, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: blue; padding-top: 5px;">公共施設 <span class="required"></span></span>
+        <%= form.radio_button :freeicon2, :false, checked: true %>
+      　<%= form.label :freeicon2, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon2, :true, checked: @item.freeicon2 %>
+      　<%= form.label :freeicon2, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: blue; padding-top: 5px;">商業施設内 <span class="required"></span></span>
+        <%= form.radio_button :freeicon3, :false, checked: true %>
+      　<%= form.label :freeicon3, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon3, :true, checked: @item.freeicon3 %>
+      　<%= form.label :freeicon3, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: blue; padding-top: 5px;">サークル・個人 <span class="required"></span></span>
+        <%= form.radio_button :freeicon4, :false, checked: true %>
+      　<%= form.label :freeicon4, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon4, :true, checked: @item.freeicon4 %>
+      　<%= form.label :freeicon4, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: green; padding-top: 5px;">健康麻雀 <span class="required"></span></span>
+        <%= form.radio_button :freeicon11, :false, checked: true %>
+      　<%= form.label :freeicon11, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon11, :true, checked: @item.freeicon11 %>
+      　<%= form.label :freeicon11, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: green; padding-top: 5px;">ノーレートフリー <span class="required"></span></span>
+        <%= form.radio_button :freeicon12, :false, checked: true %>
+      　<%= form.label :freeicon12, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon12, :true, checked: @item.freeicon12 %>
+      　<%= form.label :freeicon12, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: green; padding-top: 5px;">麻雀教室 <span class="required"></span></span>
+        <%= form.radio_button :freeicon13, :false, checked: true %>
+      　<%= form.label :freeicon13, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon13, :true, checked: @item.freeicon13 %>
+      　<%= form.label :freeicon13, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: green; padding-top: 5px;">競技麻雀 <span class="required"></span></span>
+        <%= form.radio_button :freeicon14, :false, checked: true %>
+      　<%= form.label :freeicon14, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon14, :true, checked: @item.freeicon14 %>
+      　<%= form.label :freeicon14, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: orange; padding-top: 5px;">禁煙 <span class="required"></span></span>
+        <%= form.radio_button :freeicon21, :false, checked: true %>
+      　<%= form.label :freeicon21, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon21, :true, checked: @item.freeicon21 %>
+      　<%= form.label :freeicon21, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: orange; padding-top: 5px;">喫煙可 <span class="required"></span></span>
+        <%= form.radio_button :freeicon22, :false, checked: true %>
+      　<%= form.label :freeicon22, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon22, :true, checked: @item.freeicon22 %>
+      　<%= form.label :freeicon22, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: orange; padding-top: 5px;">セット <span class="required"></span></span>
+        <%= form.radio_button :freeicon23, :false, checked: true %>
+      　<%= form.label :freeicon23, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon23, :true, checked: @item.freeicon23 %>
+      　<%= form.label :freeicon23, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: orange; padding-top: 5px;">女性限定 <span class="required"></span></span>
+        <%= form.radio_button :freeicon24, :false, checked: true %>
+      　<%= form.label :freeicon24, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon24, :true, checked: @item.freeicon24 %>
+      　<%= form.label :freeicon24, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: orange; padding-top: 5px;">要予約 <span class="required"></span></span>
+        <%= form.radio_button :freeicon25, :false, checked: true %>
+      　<%= form.label :freeicon25, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon25, :true, checked: @item.freeicon25 %>
+      　<%= form.label :freeicon25, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: orange; padding-top: 5px;">Mリーグルール <span class="required"></span></span>
+        <%= form.radio_button :freeicon26, :false, checked: true %>
+      　<%= form.label :freeicon26, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :freeicon26, :true, checked: @item.freeicon26 %>
+      　<%= form.label :freeicon26, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: red; padding-top: 5px;">おすすめ <span class="required"></span></span>
+        <%= form.radio_button :paidicon1, :false, checked: true %>
+      　<%= form.label :paidicon1, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :paidicon1, :true, checked: @item.paidicon1 %>
+      　<%= form.label :paidicon1, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+    <label for="field2">
+      <span style="color: red; padding-top: 5px;">ピックアップ <span class="required"></span></span>
+        <%= form.radio_button :paidicon2, :false, checked: true %>
+      　<%= form.label :paidicon2, "非表示　", {value: :false, style: "display: inline-block;"} %>
+      　<%= form.radio_button :paidicon2, :true, checked: @item.paidicon2 %>
+      　<%= form.label :paidicon2, "表示", {value: :true, style: "display: inline-block;"} %>
+    </label>
+
+<% end %>
+
+    
+
+    <label>
+      <span> </span>
+      <input type="submit" name="" value="登録" />
+    </label>
+
+  </form>
+  <% end %>
+</div>

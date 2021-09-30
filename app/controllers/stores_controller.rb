@@ -141,7 +141,7 @@ class StoresController < ApplicationController
     if @shop.save
       redirect_to("/stores/index")
     else
-      render("stores/update")
+      render("stores/edit")
     end
   end
 

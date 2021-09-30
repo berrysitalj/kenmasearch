@@ -1,43 +1,44 @@
+<h1>posts/new</h1>
+
 <div class="form-style-2">
   <div class="form-style-2-heading" style="color: blue;">店舗情報登録</div>
   <%= form_tag("/posts/create") do %>
   
   <form>
-    <label for="field1" style="color: red;">
-      <% @shop.errors.full_messages.each do |message| %>
+    <div style="color: red;">
+      <% @item.errors.full_messages.each do |message| %>
       <%= message %><br>
       <% end %>
-    </label>
-
+    </div>
     <label for="field1">
       <span>ID <span class="required"></span></span>
-      <input type="text" class="input-field" name="userid" value="<%= @shop.userid %>" />
+      <input type="text" class="input-field" name="userid" value="<%= @item.userid %>" />
     </label>
       
     <label for="field2">
       <span>パスワード <span class="required"></span></span>
-      <input type="text" class="input-field" name="pass" value="<%= @shop.pass %>" />
+      <input type="text" class="input-field" name="pass" value="<%= @item.pass %>" />
     </label>
       
     <label for="field2">
       <span>店舗名 <span class="required"></span></span>
-      <input type="text" class="input-field" name="shopname" value="<%= @shop.shopname %>" />
+      <input type="text" class="input-field" name="shopname" value="<%= @item.shopname %>" />
     </label>
 
     <label for="field2">
       <span>電話番号 <span class="required"></span></span>
-      <textarea name="shoptel" class="textarea-field"><%= @shop.shoptel %></textarea>
+      <textarea name="shoptel" class="textarea-field"><%= @item.shoptel %></textarea>
     </label>
 
     <label for="field2">
       <span>よみがな <span class="required"></span></span>
-      <input type="text" class="input-field" name="yomi" value="<%= @shop.yomi %>" />
+      <input type="text" class="input-field" name="yomi" value="<%= @item.yomi %>" />
     </label>
 
     <label for="field4">
       <span>都道府県<span class="required"></span></span>
       <select name="addres1" class="select-field" >
-        <option value="<%= @shop.addres1 %>"><%= @shop.addres1 %></option>
+        <option value="<%= @item.addres1 %>"><%= @item.addres1 %></option>
         <option value="北海道道央">北海道道央</option>
         <option value="北海道道南">北海道道南</option>
         <option value="北海道道東">北海道道東</option>
@@ -93,272 +94,237 @@
 
     <label for="field2">
       <span>住所 <span class="required"></span></span>
-      <textarea name="addres2" class="textarea-field"><%= @shop.addres2 %></textarea>
+      <textarea name="addres2" class="textarea-field"><%= @item.addres2 %></textarea>
     </label>
 
     <label for="field2">
       <span>登録地域 <span class="required"></span></span>
-      <input type="text" class="input-field" name="area" value="<%= @shop.area %>" />
+      <input type="text" class="input-field" name="area" value="<%= @item.area %>" />
     </label>
       
     <label for="field2">
       <span>有料会員 <span class="required"></span></span>
-      <input type="text" class="input-field" name="paidmember" value="<%= @shop.paidmember %>" />
+      <input type="text" class="input-field" name="paidmember" value="<%= @item.paidmember %>" />
     </label>
 
     <label for="field2">
       <span>メール <span class="required"></span></span>
-      <input type="text" class="input-field" name="mail" value="<%= @shop.mail %>" />
+      <input type="text" class="input-field" name="mail" value="<%= @item.mail %>" />
     </label>
 
     <label for="field2">
       <span>担当者名 <span class="required"></span></span>
-      <input type="text" class="input-field" name="name" value="<%= @shop.name %>" />
+      <input type="text" class="input-field" name="name" value="<%= @item.name %>" />
     </label>
 
     <label for="field2">
       <span>担当者電話番号 <span class="required"></span></span>
-      <input type="text" class="input-field" name="tel" value="<%= @shop.tel %>" />
+      <input type="text" class="input-field" name="tel" value="<%= @item.tel %>" />
     </label>
       
     <label for="field2">
       <span>最寄駅 <span class="required"></span></span>
-      <textarea name="station" class="textarea-field"><%= @shop.station %></textarea>
+      <textarea name="station" class="textarea-field"><%= @item.station %></textarea>
     </label>
 
     <label for="field2">
       <span>徒歩時間 <span class="required"></span></span>
-      <textarea name="onfoot" class="textarea-field"><%= @shop.onfoot %></textarea>
+      <textarea name="onfoot" class="textarea-field"><%= @item.onfoot %></textarea>
     </label>
 
     <label for="field2">
       <span>営業日 <span class="required"></span></span>
-      <textarea name="businessday" class="textarea-field"><%= @shop.businessday %></textarea>
+      <textarea name="businessday" class="textarea-field"><%= @item.businessday %></textarea>
     </label>
 
     <label for="field2">
       <span>営業時間1 <span class="required"></span></span>
-      <textarea name="businesstime1" class="textarea-field"><%= @shop.businesstime1 %></textarea>
+      <textarea name="businesstime1" class="textarea-field"><%= @item.businesstime1 %></textarea>
     </label>
 
     <label for="field2">
       <span>営業時間2 <span class="required"></span></span>
-      <textarea name="businesstime2" class="textarea-field"><%= @shop.businesstime2 %></textarea>
+      <textarea name="businesstime2" class="textarea-field"><%= @item.businesstime2 %></textarea>
     </label>
 
     <label for="field2">
       <span>料金 <span class="required"></span></span>
-      <textarea name="pricelist" class="textarea-field"><%= @shop.pricelist %></textarea>
+      <textarea name="pricelist" class="textarea-field"><%= @item.pricelist %></textarea>
     </label>
 
     <label for="field2">
       <span style="color: purple;">トップ写真 <span class="required"></span></span>
-      <input type="text" class="input-field" name="topphoto" value="<%= @shop.topphoto %>" />
+      <input type="text" class="input-field" name="topphoto" value="<%= @item.topphoto %>" />
     </label>
 
     <label for="field2">
       <span>年齢層 <span class="required"></span></span>
-      <textarea name="agegroup" class="textarea-field"><%= @shop.agegroup %></textarea>
+      <textarea name="agegroup" class="textarea-field"><%= @item.agegroup %></textarea>
     </label>
 
     <label for="field2">
       <span>事前予約 <span class="required"></span></span>
-      <textarea name="reservation" class="textarea-field"><%= @shop.reservation %></textarea>
+      <textarea name="reservation" class="textarea-field"><%= @item.reservation %></textarea>
     </label>
       
     <label for="field2">
       <span style="color: blue;">麻雀店 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon1" value="<%= @shop.freeicon1 %>" />
+      <input type="text" class="input-field" name="freeicon1" value="<%= @item.freeicon1 %>" />
     </label>
 
     <label for="field2">
       <span style="color: blue;">公共施設 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon2" value="<%= @shop.freeicon2 %>" />
+      <input type="text" class="input-field" name="freeicon2" value="<%= @item.freeicon2 %>" />
     </label>
 
     <label for="field2">
       <span style="color: blue;">商業施設内 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon3" value="<%= @shop.freeicon3 %>" />
+      <input type="text" class="input-field" name="freeicon3" value="<%= @item.freeicon3 %>" />
     </label>
 
     <label for="field2">
       <span style="color: blue;">サークル・個人 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon4" value="<%= @shop.freeicon4 %>" />
-    </label>
-
-    <label for="field2">
-      <span style="color: blue;">freeicon5 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon5" value="<%= @shop.freeicon5 %>" />
-    </label>
-
-    <label for="field2">
-      <span style="color: blue;">freeicon6 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon6" value="<%= @shop.freeicon6 %>" />
+      <input type="text" class="input-field" name="freeicon4" value="<%= @item.freeicon4 %>" />
     </label>
 
     <label for="field2">
       <span style="color: green;">健康麻雀 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon11" value="<%= @shop.freeicon11 %>" />
+      <input type="text" class="input-field" name="freeicon11" value="<%= @item.freeicon11 %>" />
     </label>
 
     <label for="field2">
       <span style="color: green;">ノーレートフリー <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon12" value="<%= @shop.freeicon12 %>" />
+      <input type="text" class="input-field" name="freeicon12" value="<%= @item.freeicon12 %>" />
     </label>
 
     <label for="field2">
       <span style="color: green;">麻雀教室 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon13" value="<%= @shop.freeicon13 %>" />
+      <input type="text" class="input-field" name="freeicon13" value="<%= @item.freeicon13 %>" />
     </label>
 
     <label for="field2">
       <span style="color: green;">競技麻雀 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon14" value="<%= @shop.freeicon14 %>" />
-    </label>
-
-    <label for="field2">
-      <span style="color: green;">freeicon15 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon15" value="<%= @shop.freeicon15 %>" />
-    </label>
-
-    <label for="field2">
-      <span style="color: green;">競技麻雀 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon16" value="<%= @shop.freeicon16 %>" />
+      <input type="text" class="input-field" name="freeicon14" value="<%= @item.freeicon14 %>" />
     </label>
 
     <label for="field2">
       <span style="color: orange;">禁煙 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon21" value="<%= @shop.freeicon21 %>" />
+      <input type="text" class="input-field" name="freeicon21" value="<%= @item.freeicon21 %>" />
     </label>
 
     <label for="field2">
       <span style="color: orange;">喫煙 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon22" value="<%= @shop.freeicon22 %>" />
+      <input type="text" class="input-field" name="freeicon22" value="<%= @item.freeicon22 %>" />
     </label>
 
     <label for="field2">
       <span style="color: orange;">セット可 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon23" value="<%= @shop.freeicon23 %>" />
+      <input type="text" class="input-field" name="freeicon23" value="<%= @item.freeicon23 %>" />
     </label>
 
     <label for="field2">
       <span style="color: orange;">女性限定 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon24" value="<%= @shop.freeicon24 %>" />
+      <input type="text" class="input-field" name="freeicon24" value="<%= @item.freeicon24 %>" />
     </label>
 
     <label for="field2">
       <span style="color: orange;">要予約 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon25" value="<%= @shop.freeicon25 %>" />
+      <input type="text" class="input-field" name="freeicon25" value="<%= @item.freeicon25 %>" />
     </label>
 
     <label for="field2">
       <span style="color: orange;">Mリーグルール <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon26" value="<%= @shop.freeicon26 %>" />
-    </label>
-
-    <label for="field2">
-      <span style="color: orange;">freeicon27 <span class="required"></span></span>
-      <input type="text" class="input-field" name="freeicon27" value="<%= @shop.freeicon27 %>" />
+      <input type="text" class="input-field" name="freeicon26" value="<%= @item.freeicon26 %>" />
     </label>
 
     <label for="field2">
       <span style="color: red;">おすすめ <span class="required"></span></span>
-      <input type="text" class="input-field" name="paidicon1" value="<%= @shop.paidicon1 %>" />
+      <input type="text" class="input-field" name="paidicon1" value="<%= @item.paidicon1 %>" />
     </label>
 
     <label for="field2">
       <span style="color: red;">ピックアップ <span class="required"></span></span>
-      <input type="text" class="input-field" name="paidicon2" value="<%= @shop.paidicon2 %>" />
-    </label>
-
-    <label for="paidicon3">
-      <span style="color: red;">paidicon3 <span class="required"></span></span>
-      <input type="text" class="input-field" name="paidicon3" value="<%= @shop.paidicon3 %>" />
-    </label>
-
-    <label for="field2">
-      <span style="color: red;">paidicon4 <span class="required"></span></span>
-      <input type="text" class="input-field" name="paidicon4" value="<%= @shop.paidicon4 %>" />
+      <input type="text" class="input-field" name="paidicon2" value="<%= @item.paidicon2 %>" />
     </label>
 
     <label for="field2">
       <span>トップコメント <span class="required"></span></span>
-      <textarea name="topcomment" class="textarea-field" style="height:150px;"><%= @shop.topcomment %></textarea>
+      <textarea name="topcomment" class="textarea-field" style="height:150px;"><%= @item.topcomment %></textarea>
     </label>
 
     <label for="field2">
       <span>説明文 <span class="required"></span></span>
-      <textarea name="comment" class="textarea-field" style="height:300px;"><%= @shop.comment %></textarea>
+      <textarea name="comment" class="textarea-field" style="height:300px;"><%= @item.comment %></textarea>
     </label>
 
     <label for="field2">
       <span style="color: purple;">写真1 <span class="required"></span></span>
-      <input type="text" class="input-field" name="photo1" value="<%= @shop.photo1 %>" />
+      <input type="text" class="input-field" name="photo1" value="<%= @item.photo1 %>" />
     </label>
 
     <label for="field2">
       <span style="color: purple;">写真2 <span class="required"></span></span>
-      <input type="text" class="input-field" name="photo2" value="<%= @shop.photo2 %>" />
+      <input type="text" class="input-field" name="photo2" value="<%= @item.photo2 %>" />
     </label>
 
     <label for="field2">
       <span>卓数 <span class="required"></span></span>
-      <textarea name="tablenum" class="textarea-field"><%= @shop.tablenum %></textarea>
+      <textarea name="tablenum" class="textarea-field"><%= @item.tablenum %></textarea>
     </label>
 
     <label for="field2">
       <span>卓種 <span class="required"></span></span>
-      <textarea name="tabletype" class="textarea-field"><%= @shop.tabletype %></textarea>
+      <textarea name="tabletype" class="textarea-field"><%= @item.tabletype %></textarea>
     </label>
 
     <label for="field2">
       <span>サービス <span class="required"></span></span>
-      <textarea name="service" class="textarea-field"><%= @shop.service %></textarea>
+      <textarea name="service" class="textarea-field"><%= @item.service %></textarea>
     </label>
 
     <label for="field2">
       <span>システム <span class="required"></span></span>
-      <textarea name="system" class="textarea-field"><%= @shop.system %></textarea>
+      <textarea name="system" class="textarea-field"><%= @item.system %></textarea>
     </label>
 
     <label for="field2">
       <span>男女比率 <span class="required"></span></span>
-      <textarea name="ratio" class="textarea-field"><%= @shop.ratio %></textarea>
+      <textarea name="ratio" class="textarea-field"><%= @item.ratio %></textarea>
     </label>
 
     <label for="field2">
       <span>ルール <span class="required"></span></span>
-      <textarea name="rule" class="textarea-field"><%= @shop.rule %></textarea>
+      <textarea name="rule" class="textarea-field"><%= @item.rule %></textarea>
     </label>
 
     <label for="field2">
       <span>時間打切り <span class="required"></span></span>
-      <textarea name="timeup" class="textarea-field"><%= @shop.timeup %></textarea>
+      <textarea name="timeup" class="textarea-field"><%= @item.timeup %></textarea>
     </label>
 
     <label for="field2">
       <span>HP1(公式HP) <span class="required"></span></span>
-      <input type="text" class="input-field" name="homepage1" value="<%= @shop.homepage1 %>" />
+      <input type="text" class="input-field" name="homepage1" value="<%= @item.homepage1 %>" />
     </label>
 
     <label for="field2">
       <span>HP2(雀サクッ) <span class="required"></span></span>
-      <input type="text" class="input-field" name="homepage2" value="<%= @shop.homepage2 %>" />
+      <input type="text" class="input-field" name="homepage2" value="<%= @item.homepage2 %>" />
     </label>
 
     <label for="field2">
       <span>HP3(麻雀王国) <span class="required"></span></span>
-      <input type="text" class="input-field" name="homepage3" value="<%= @shop.homepage3 %>" />
+      <input type="text" class="input-field" name="homepage3" value="<%= @item.homepage3 %>" />
     </label>
 
     <label for="field2">
       <span>HP4(SNS) <span class="required"></span></span>
-      <textarea name="homepage4" class="textarea-field"><%= @shop.homepage4 %></textarea>
+      <textarea name="homepage4" class="textarea-field"><%= @item.homepage4 %></textarea>
     </label>
 
     <label for="field2">
       <span>オープン日 <span class="required"></span></span>
-      <textarea name="opening" class="textarea-field"><%= @shop.opening %></textarea>
+      <textarea name="opening" class="textarea-field"><%= @item.opening %></textarea>
     </label>
 
     <label>
