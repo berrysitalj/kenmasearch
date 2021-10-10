@@ -1,3 +1,5 @@
+<h3><%= link_to("編集", "/comments/#{@comment.id}/edit") %></h3>
+<%= @comment.content %>
 <% if @comment.image.attached? %>
-  <%= image_tag @comment.image %>
+  <%= image_tag @comment.image, class:'comment_image' %>
 <% end %>

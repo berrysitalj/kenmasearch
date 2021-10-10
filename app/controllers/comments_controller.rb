@@ -2,12 +2,19 @@ class CommentsController < ApplicationController
 	skip_before_action :owner_logged_in?
   skip_before_action :user_logged_in?
   
-	def new
-		@comment = Comment.new
+	def index
+
+  end
+
+  def new
+    @comment = Comment.new
   end
 
   def create
-    @comment = Comment.create params.require(:comment).permit(:content, :image) # POINT
+    @comment = Comment.create params.require(:comment).permit(:content)
+    if image = params[:comment][:image]
+      @comment.image.attach(image)
+    end
     redirect_to @comment
   end
 
@@ -21,7 +28,18 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    @comment.update params.require(:comment).permit(:content, :image) # POINT
-    redirect_to @comment
+    @comment.image.attach(params[:image]) if @comment.image.blank?
+    if @comment.update(comment_params)
+      redirect_to @comment
+    else
+      render 'edit'
+    end
+
   end
+
+  private
+    def comment_params
+      params.require(:comment).permit(:content, :image)
+    end
+
 end

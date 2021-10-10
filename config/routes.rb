@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :comments
+
   get "stores/index" => "stores#index"
   get "stores/confirm" => "stores#confirm"
   get "stores/new" => "stores#new"
@@ -56,22 +56,12 @@ Rails.application.routes.draw do
   post "recruit/non_profit_create" => "home#non_profit_create"
   post "recruit/adv_create" => "home#adv_create"
   post "member_inquiry_create" => "home#member_inquiry_create"
-  
-  get "posts/index" => "posts#index"
-  get "posts/new" => "posts#new"
-  get "posts/:id" => "posts#show"
-  post "posts/create" => "posts#create"
-  get "posts/:id/edit" => "posts#edit"
-  post "posts/:id/update" => "posts#update"
-  post "posts/:id/destroy" => "posts#destroy"
 
-  get "shops/index" => "shops#index"
-  get "shops/new" => "shops#new"
-  get "shops/:id" => "shops#show"
-  post "shops/create" => "shops#create"
-  get "shops/:id/edit" => "shops#edit"
-  post "shops/:id/update" => "shops#update"
-  post "shops/:id/destroy" => "shops#destroy"
+  resources :shops
+
+  resources :posts
+
+  resources :comments
 
 
 end
