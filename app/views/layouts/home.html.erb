@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "健康麻雀・ノーレート麻雀を検索！|けんま～サーチ"%></title>
+  <meta name="description" content="健康麻雀、ノーレートフリー麻雀が楽しめる店舗や公共施設、麻雀クラブを検索できるサイトです。Mリーグルールや三人麻雀など、様々な店舗を掲載しています。お近くの健康麻雀店を今すぐ検索！">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!-- slick埋め込み1行css -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- slick埋め込み1行js -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- コード追加　Bootstrap JavaScript読み込みコード-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- コード追加 slider-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.slider').bxSlider({
+        auto: true,
+        pause: 5000,
+      });
+    });
+  </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-210295845-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-210295845-1');
+</script>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="header__inner">
+        <a class="header__logo" href="/"><img src="/assets/header_logo.png" alt="けんま〜サーチ"></a>
+        <p class="header__txt">全国<span>の健康麻雀＆ノーレート検索</span></p>
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <a class="nav__item" href="/"><img src="/assets/menu_icon01.svg" alt="">TOP</a>
+            <a class="nav__item" href="/search"><img src="/assets/menu_icon02.svg" alt="">検索</a>
+            <a class="nav__item" href="/recruit"><img src="/assets/menu_icon03.svg" alt="">掲載店舗 募集中</a>
+            <a class="nav__item" href="/adv"><img src="/assets/menu_icon05.svg" alt="">広告掲載 </a>
+            <% if session[:user_id] %>
+            <a class="nav__item" data-method="post" href="/user_logout" style="color: red;">
+              <img src="/assets/menu_icon04.svg" alt="">店舗ログアウト</a>
+            <% else %>
+              <a class="nav__item" href="/user_login">
+                <img src="/assets/menu_icon04.svg" alt="">店舗ログイン</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="menu__inner">
+        <div class="menu__list">
+          <a class="menu__item" href="/"><img src="/assets/menu_icon01.svg" alt="">TOP</a>
+          <a class="menu__item" href="/search"><img src="/assets/menu_icon02.svg" alt="">検索</a>
+          <a class="menu__item" href="/recruit"><img src="/assets/menu_icon03.svg" alt="">掲載店舗 募集中</a>
+          <a class="menu__item" href="/adv"><img src="/assets/menu_icon05.svg" alt="">広告掲載 </a>
+          <% if session[:user_id] %>
+          <a class="menu__item" data-method="post" href="/user_logout" style="color: red;">
+            <img src="/assets/menu_icon04.svg" alt="">ログアウト</a>
+          <% else %>
+          <a class="menu__item" href="/user_login">
+            <img src="/assets/menu_icon04.svg" alt="">店舗ログイン</a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <% if session[:id] %>
+  <%= form_tag("/logout") do %>
+  <%= submit_tag('管理者ログアウト', data: {confirm: "ログアウトしますか？"}) %>
+  <% end %>
+  <% else %>
+  <% end %>
+
+  <% if session[:id] %>
+  <li>ログイン管理者id:<%= session[:id] %></li>
+  <% else %>
+  <% end %>
+
+  <% if session[:user_id] %>
+  <li>ログイン中</li>
+  <a href="/user_home">会員ページへ</a>
+  <% else %>
+  <% end %>
+
+  <%= yield %>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="/"><img class="footer__logo" src="/assets/logo.png" alt="けんま〜サーチ"></a>
+      <div class="footer__mapList"></div>
+      <div class="footer__pageList">
+        <a class="footer__pageItem" href="/search">検索</a>
+        <a class="footer__pageItem" href="#">掲載店舗<br>募集中</a>
+        <a class="footer__pageItem" href="/user_login">店舗ログイン</a>
+        <a class="footer__pageItem" href="/adv">広告掲載</a>
+      </div>
+    </div>
+  </footer>
+  <div class="footer__copyright">Copyright© けんま〜サーチ All Rights Reserved.</div>
+  <script src="/js/app.js"></script>
+
+</body>
+</html>
