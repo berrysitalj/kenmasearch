@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   skip_before_action :user_logged_in?
   
 	def index
-    @comment = Comment.all
+    @comment = Comment.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
@@ -11,8 +11,7 @@ class CommentsController < ApplicationController
   end
 
   def user_new
-    @shop = Shop.find(params[:user_id])
-    @comment = Comment.new
+    
   end
 
   def create
@@ -39,7 +38,12 @@ class CommentsController < ApplicationController
     else
       render 'edit'
     end
+  end
 
+  def destroy
+    @comment = Comment.find_by(id: params[:id])
+    @comment.destroy
+    redirect_to("/comments/index")
   end
 
   private

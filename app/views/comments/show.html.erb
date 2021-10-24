@@ -1,5 +1,27 @@
-<h3><%= link_to("編集", "/comments/#{@comment.id}/edit") %></h3>
-<%= @comment.content %>
-<% if @comment.image.attached? %>
-  <%= image_tag @comment.image, class:'comment_image' %>
-<% end %>
+<h1>Comments#Show</h1>
+<p><%= link_to("一覧へ(index)", "/comments/index") %></p>
+
+
+<div class="owner_table_content"> 
+  <table class="comments_table_show">
+    <tr class="owner_table_top">
+      <th>日時</th>
+      <th>content</th>
+      <th>登録画像</th>
+      <th></th>
+    </tr>
+  
+    <tr>
+      <td class="owner_table_th">
+        <%= @comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+      </td>
+      <td><%= @comment.content %></td>
+      <td>
+        <% if @comment.image.attached? %>
+        <%= image_tag @comment.image, class:'comment_image' %>
+        <% end %>
+      </td>
+      <td><%= link_to("編集", "/comments/#{@comment.id}/edit") %></td>
+    </tr>
+  </table>
+</div>

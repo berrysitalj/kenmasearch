@@ -1,9 +1,27 @@
+<h1>Comments#Edit</h1>
+<p><%= link_to("一覧へ(index)", "/comments/index") %></p>
+<p><%= link_to("戻る(show)", "/comments/#{@comment.id}") %></p>
+
+<div class="owner_table_content"> 
+  <table>
+    <tr class="owner_table_top">
+      <td>現在保存されている画像</th>
+      <td>content</td>
+      <td>新規登録画像</td>
+      <td></td>
+    </tr>
+  
+    <tr>
+      <td>
+        <% if @comment.image.attached? %>
+        <%= image_tag @comment.image, class:'comment_image' %>
+        <% end %>
+      </td>
 <%= form_with model: @comment, local: true  do |form| %>
-  <%= form.text_area :content %><br><br>
-  <%= form.file_field :images %><br>
-  <%= form.submit %>
+      <td><%= form.text_area :content %></td>
+      <td><%= form.file_field :images %></td>
+      <td><%= form.submit %></td>
 <% end %>
-
-
-
-
+    </tr>
+  </table>
+</div>
