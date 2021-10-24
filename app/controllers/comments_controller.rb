@@ -3,10 +3,15 @@ class CommentsController < ApplicationController
   skip_before_action :user_logged_in?
   
 	def index
-
+    @comment = Comment.all
   end
 
   def new
+    @comment = Comment.new
+  end
+
+  def user_new
+    @shop = Shop.find(params[:user_id])
     @comment = Comment.new
   end
 

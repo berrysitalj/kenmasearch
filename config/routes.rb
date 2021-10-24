@@ -61,6 +61,7 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  get "comments/:id/user_new" => "comments#user_new"
   resources :comments
 
 
