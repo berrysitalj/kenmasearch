@@ -62,6 +62,7 @@ Rails.application.routes.draw do
   resources :posts
 
   get "comments/:id/user_new" => "comments#user_new"
+  get "comments/admin_show/:id" => "comments#admin_show"
   get "comments/index" => "comments#index"
   post "comments/:id/destroy" => "comments#destroy"
   resources :comments

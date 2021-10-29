@@ -1,5 +1,50 @@
+<h1>Comments#New</h1>
+<p><%= link_to("一覧へ(index)", "/comments/index") %></p>
+
+
+
+<% content_for :title do %>申込店舗情報_作成<% end %>
+
 <%= form_with model: @comment, local: true  do |form| %>
-  <%= form.text_area :content %><br>
-  <%= form.file_field :image %><br>
-  <%= form.submit %>
+<table>
+  <tr class="owner_table_top"><td>項目</th><td>管理用データ</td></tr>
+
+  <tr><td class="owner_table_th">ランダムURL</td><td class="owner_table_th"><%= form.text_area :random_url %></td></tr>
+  <tr><td class="owner_table_th">担当者名</td><td class="owner_table_th"><%= form.text_area :name %></td></tr>
+  <tr><td class="owner_table_th">担当者メールアドレス</td><td class="owner_table_th"><%= form.text_area :mail %></td></tr>
+  <tr><td class="owner_table_th">担当者電話番号</td><td class="owner_table_th"><%= form.text_area :tel %></td></tr>
+  <tr><td class="owner_table_th">店舗名</td><td class="owner_table_th"><%= form.text_area :shopname %></td></tr>
+  
+  <tr class="owner_table_top"><td>項目</th><td>店舗データ</td></tr>
+
+  <tr><td class="owner_table_th">トップ画像</td><td class="owner_table_th"><%= form.file_field :image %></td></tr>
+  <tr><td class="owner_table_th">よみがな</td><td class="owner_table_th"><%= form.text_area :yomi %></td></tr>
+  <tr><td class="owner_table_th">店舗電話番号</td><td class="owner_table_th"><%= form.text_area :shoptel %></td></tr>
+  <tr><td class="owner_table_th">住所</td><td class="owner_table_th"><%= form.text_area :addres %></td></tr>
+  <tr><td class="owner_table_th">ログイン用パスワード</td><td class="owner_table_th"><%= form.text_area :pass %></td></tr>
+  <tr><td class="owner_table_th">営業日(オンレート以外)</td><td class="owner_table_th"><%= form.text_area :businessday %></td></tr>
+  <tr><td class="owner_table_th">営業時間(オンレート以外)</td><td class="owner_table_th"><%= form.text_area :businesstime1 %></td></tr>
+  <tr><td class="owner_table_th">料金</td><td class="owner_table_th"><%= form.text_area :pricelist %></td></tr>
+  <tr><td class="owner_table_th">年齢層</td><td class="owner_table_th"><%= form.text_area :agegroup %></td></tr>
+  <tr><td class="owner_table_th">事前予約(要・不要)</td><td class="owner_table_th"><%= form.text_area :reservation %></td></tr>
+  <tr><td class="owner_table_th">トップ用コメント</td><td class="owner_table_th"><%= form.text_area :topcomment %></td></tr>
+  <tr><td class="owner_table_th">説明コメント</td><td class="owner_table_th"><%= form.text_area :comment %></td></tr>
+  <tr><td class="owner_table_th">卓数</td><td class="owner_table_th"><%= form.text_area :tablenum %></td></tr>
+  <tr><td class="owner_table_th">卓種</td><td class="owner_table_th"><%= form.text_area :tabletype %></td></tr>
+  <tr><td class="owner_table_th">サービス</td><td class="owner_table_th"><%= form.text_area :service %></td></tr>
+  <tr><td class="owner_table_th">システム・設備</td><td class="owner_table_th"><%= form.text_area :system %></td></tr>
+  <tr><td class="owner_table_th">男女比率</td><td class="owner_table_th"><%= form.text_area :ratio %></td></tr>
+  <tr><td class="owner_table_th">ルール</td><td class="owner_table_th"><%= form.text_area :rule %></td></tr>
+  <tr><td class="owner_table_th">時間打切り</td><td class="owner_table_th"><%= form.text_area :timeup %></td></tr>
+  <tr><td class="owner_table_th">HP1(公式)</td><td class="owner_table_th"><%= form.text_area :homepage1 %></td></tr>
+  <tr><td class="owner_table_th">HP2(雀サクッ)</td><td class="owner_table_th"><%= form.text_area :homepage2 %></td></tr>
+  <tr><td class="owner_table_th">HP3(麻雀王国)</td><td class="owner_table_th"><%= form.text_area :homepage3 %></td></tr>
+  <tr><td class="owner_table_th">HP4(SNS)</td><td class="owner_table_th"><%= form.text_area :homepage4 %></td></tr>
+  <tr><td class="owner_table_th">オープン日</td><td class="owner_table_th"><%= form.text_area :opening %></td></tr>
+  
+</table>
+
+<div style="padding: 10px; text-align: center;"><%= form.submit %></div>
+
+
 <% end %>

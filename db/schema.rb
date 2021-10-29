@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_08_012858) do
+ActiveRecord::Schema.define(version: 2021_10_28_030018) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -37,6 +37,37 @@ ActiveRecord::Schema.define(version: 2021_10_08_012858) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "random_url"
+    t.string "name"
+    t.string "mail"
+    t.string "tel"
+    t.string "shopname"
+    t.string "yomi"
+    t.string "shoptel"
+    t.string "addres"
+    t.string "pass"
+    t.string "businessday"
+    t.string "businesstime1"
+    t.string "pricelist"
+    t.string "topphoto"
+    t.string "photo1"
+    t.string "photo2"
+    t.string "agegroup"
+    t.string "reservation"
+    t.string "topcomment"
+    t.string "comment"
+    t.string "tablenum"
+    t.string "tabletype"
+    t.string "service"
+    t.string "system"
+    t.string "ratio"
+    t.string "rule"
+    t.string "timeup"
+    t.string "homepage1"
+    t.string "homepage2"
+    t.string "homepage3"
+    t.string "homepage4"
+    t.string "opening"
   end
 
   create_table "owners", force: :cascade do |t|

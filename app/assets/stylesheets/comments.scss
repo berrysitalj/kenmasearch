@@ -2,10 +2,99 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.comment_submit {
+  padding-top: 0px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.comment_btn {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 18pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 12px;   /* 余白       */
+  background    : #000066;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+  border        : 2px solid #000066;    /* 枠の指定 */
+}
+.comment_btn:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+  color         : #000066;     /* 背景色     */
+  background    : #ffffff;     /* 文字色     */
+}
+
+
+
+.comment_table{
+ table-layout: fixed;
+ width: 700px;
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+.comment_table tr{
+ height: auto;
+}
+
+.comment_table th{
+ text-align: center;
+ padding: 10px;
+ background: #778ca3;
+ border: solid 1px #666666;
+ color: #ffffff;
+}
+
+.comment_table th.width40 {
+ width: 35%;
+}
+
+.comment_table th.width60 {
+ width: 65%;
+}
+
+.comment_table td{
+ padding: 10px;
+ border: solid 1px #666666;
+}
+
+.comment_table td.comment_show_item{
+  text-align: center;
+}
+.comment_table td:first-child {
+ background: #e9faf9;
+}
 
 img.comment_image {
-  width: 250px;
-  height: 250px;
+  width: 90%;
+  height: auto;
   object-fit: cover;
 }
 
+.comment_text_area{
+  width: 90%;
+  height: 90%;
+}
+
+@media screen and (max-width: 959px) {
+  .comment_table{
+ table-layout: fixed;
+ width: 80%;
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+  /* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+.comment_table{
+ table-layout: fixed;
+ width: 90%;
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+  /* 480px以下に適用されるCSS（スマホ用） */
+}

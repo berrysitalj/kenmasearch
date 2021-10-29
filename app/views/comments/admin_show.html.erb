@@ -1,0 +1,39 @@
+<h1>Comments#Admin_show</h1>
+<p><%= link_to("一覧へ(index)", "/comments/index") %></p>
+
+<table>
+  <tr class="owner_table_top"><td>項目</th><td>管理用データ</td></tr>
+
+  <tr><td class="owner_table_th">更新日時</td><td class="owner_table_th"><%= @comment.created_at.strftime('%Y/%m/%d %H:%M') %></td></tr>
+  <tr><td class="owner_table_th">ランダムURL</td><td class="owner_table_th"><%= @comment.random_url %></td></tr>
+  <tr><td class="owner_table_th">担当者名</td><td class="owner_table_th"><%= @comment.name %></td></tr>
+  <tr><td class="owner_table_th">担当者メールアドレス</td><td class="owner_table_th"><%= @comment.mail %></td></tr>
+  <tr><td class="owner_table_th">担当者電話番号</td><td class="owner_table_th"><%= @comment.tel %></td></tr>
+  <tr><td class="owner_table_th">店舗名</td><td class="owner_table_th"><%= @comment.shopname %></td></tr>
+  
+  <tr class="owner_table_top"><td>項目</th><td>店舗データ</td></tr>
+  <tr><td class="owner_table_th">トップ画像</td><td class="owner_table_th"><% if @comment.image.attached? %><%= image_tag @comment.image, class:'comment_image' %><% end %></td></tr>
+  <tr><td class="owner_table_th">よみがな</td><td class="owner_table_th"><%= @comment.yomi %></td></tr>
+  <tr><td class="owner_table_th">店舗電話番号</td><td class="owner_table_th"><%= @comment.shoptel %></td></tr>
+  <tr><td class="owner_table_th">住所</td><td class="owner_table_th"><%= @comment.addres %></td></tr>
+  <tr><td class="owner_table_th">ログイン用パスワード</td><td class="owner_table_th"><%= @comment.pass %></td></tr>
+  <tr><td class="owner_table_th">営業日(オンレート以外)</td><td class="owner_table_th"><%= @comment.businessday %></td></tr>
+  <tr><td class="owner_table_th">営業時間(オンレート以外)</td><td class="owner_table_th"><%= @comment.businesstime1 %></td></tr>
+  <tr><td class="owner_table_th">料金</td><td class="owner_table_th"><%= @comment.pricelist %></td></tr>
+  <tr><td class="owner_table_th">年齢層</td><td class="owner_table_th"><%= @comment.agegroup %></td></tr>
+  <tr><td class="owner_table_th">事前予約(要・不要)</td><td class="owner_table_th"><%= @comment.reservation %></td></tr>
+  <tr><td class="owner_table_th">トップ用コメント</td><td class="owner_table_th"><%= @comment.topcomment %></td></tr>
+  <tr><td class="owner_table_th">説明コメント</td><td class="owner_table_th"><%= @comment.comment %></td></tr>
+  <tr><td class="owner_table_th">卓数</td><td class="owner_table_th"><%= @comment.tablenum %></td></tr>
+  <tr><td class="owner_table_th">卓種</td><td class="owner_table_th"><%= @comment.tabletype %></td></tr>
+  <tr><td class="owner_table_th">サービス</td><td class="owner_table_th"><%= @comment.service %></td></tr>
+  <tr><td class="owner_table_th">システム・設備</td><td class="owner_table_th"><%= @comment.system %></td></tr>
+  <tr><td class="owner_table_th">男女比率</td><td class="owner_table_th"><%= @comment.ratio %></td></tr>
+  <tr><td class="owner_table_th">ルール</td><td class="owner_table_th"><%= @comment.rule %></td></tr>
+  <tr><td class="owner_table_th">時間打切り</td><td class="owner_table_th"><%= @comment.timeup %></td></tr>
+  <tr><td class="owner_table_th">HP1(公式)</td><td class="owner_table_th"><%= @comment.homepage1 %></td></tr>
+  <tr><td class="owner_table_th">HP2(雀サクッ)</td><td class="owner_table_th"><%= @comment.homepage2 %></td></tr>
+  <tr><td class="owner_table_th">HP3(麻雀王国)</td><td class="owner_table_th"><%= @comment.homepage3 %></td></tr>
+  <tr><td class="owner_table_th">HP4(SNS)</td><td class="owner_table_th"><%= @comment.homepage4 %></td></tr>
+  <tr><td class="owner_table_th">オープン日</td><td class="owner_table_th"><%= @comment.opening %></td></tr>
+</table>

@@ -1,27 +1,45 @@
-<h1>Comments#Show</h1>
-<p><%= link_to("一覧へ(index)", "/comments/index") %></p>
+<% if session[:id] %>
+  <h1>Comments#Show</h1>
+  <p><%= link_to("一覧へ(index)", "/comments/index") %></p>
+<% else %>
+<% end %>
 
+<table class="comment_table">
+  <tr><th class="width40">項目</th><th class="width60">会員情報(非公開)</th></tr>
 
-<div class="owner_table_content"> 
-  <table class="comments_table_show">
-    <tr class="owner_table_top">
-      <th>日時</th>
-      <th>content</th>
-      <th>登録画像</th>
-      <th></th>
-    </tr>
+  <tr><td class="comment_show_item">送信日時</td><td><%= @comment.created_at.strftime('%Y/%m/%d %H:%M') %></td></tr>
+  <tr><td class="comment_show_item">担当者名</td><td><%= @comment.name %></td></tr>
+  <% if session[:id] %>
+  <tr><td class="comment_show_item">URL</td><td><%= @comment.random_url %></td></tr>
+  <tr><td class="comment_show_item">ログイン用パスワード</td><td><%= @comment.pass %></td></tr>
+  <% else %><% end %>
+  <tr><td class="comment_show_item">担当者メールアドレス</td><td><%= @comment.mail %></td></tr>
+  <tr><td class="comment_show_item">担当者電話番号</td><td><%= @comment.tel %></td></tr>
+  <tr><td class="comment_show_item">ログイン用パスワード</td><td>*********</td></tr>
   
-    <tr>
-      <td class="owner_table_th">
-        <%= @comment.created_at.strftime('%Y/%m/%d %H:%M') %>
-      </td>
-      <td><%= @comment.content %></td>
-      <td>
-        <% if @comment.image.attached? %>
-        <%= image_tag @comment.image, class:'comment_image' %>
-        <% end %>
-      </td>
-      <td><%= link_to("編集", "/comments/#{@comment.id}/edit") %></td>
-    </tr>
-  </table>
-</div>
+  <tr><th class="width40">項目</th><th class="width60">店舗情報(公開)</th></tr>
+  <tr><td class="comment_show_item">店舗名</td><td><%= @comment.shopname %></td></tr>
+  <tr><td class="comment_show_item">よみがな</td><td><%= @comment.yomi %></td></tr>
+  <tr><td class="comment_show_item">店舗電話番号</td><td><%= @comment.shoptel %></td></tr>
+  <tr><td class="comment_show_item">住所</td><td><%= @comment.addres %></td></tr>
+  <tr><td class="comment_show_item">営業日(オンレート以外)</td><td><%= @comment.businessday %></td></tr>
+  <tr><td class="comment_show_item">営業時間(オンレート以外)</td><td><%= @comment.businesstime1 %></td></tr>
+  <tr><td class="comment_show_item">料金</td><td><%= @comment.pricelist %></td></tr>
+  <tr><td class="comment_show_item">年齢層</td><td><%= @comment.agegroup %></td></tr>
+  <tr><td class="comment_show_item">事前予約(要・不要)</td><td><%= @comment.reservation %></td></tr>
+  <tr><td class="comment_show_item">トップ画像</td><td><% if @comment.image.attached? %><%= image_tag @comment.image, class:'comment_image' %><% end %></td></tr>
+  <tr><td class="comment_show_item">トップ用コメント</td><td><%= @comment.topcomment %></td></tr>
+  <tr><td class="comment_show_item">本文</td><td><%= @comment.comment %></td></tr>
+  <tr><td class="comment_show_item">卓数</td><td><%= @comment.tablenum %></td></tr>
+  <tr><td class="comment_show_item">卓種</td><td><%= @comment.tabletype %></td></tr>
+  <tr><td class="comment_show_item">サービス</td><td><%= @comment.service %></td></tr>
+  <tr><td class="comment_show_item">システム・設備</td><td><%= @comment.system %></td></tr>
+  <tr><td class="comment_show_item">男女比率</td><td><%= @comment.ratio %></td></tr>
+  <tr><td class="comment_show_item">ルール</td><td><%= @comment.rule %></td></tr>
+  <tr><td class="comment_show_item">時間打切り</td><td><%= @comment.timeup %></td></tr>
+  <tr><td class="comment_show_item">HP1(公式)</td><td><%= @comment.homepage1 %></td></tr>
+  <tr><td class="comment_show_item">HP2(雀サクッ)</td><td><%= @comment.homepage2 %></td></tr>
+  <tr><td class="comment_show_item">HP3(麻雀王国)</td><td><%= @comment.homepage3 %></td></tr>
+  <tr><td class="comment_show_item">HP4(SNS)</td><td><%= @comment.homepage4 %></td></tr>
+  <tr><td class="comment_show_item">オープン日</td><td><%= @comment.opening %></td></tr>
+</table>
