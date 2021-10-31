@@ -5,6 +5,8 @@
 
 <% content_for :title do %>申込店舗情報_作成<% end %>
 
+<% @comment.errors.full_messages.each do |message| %><%= message %><br><% end %>
+
 <%= form_with model: @comment, local: true  do |form| %>
 <table>
   <tr class="owner_table_top"><td>項目</th><td>管理用データ</td></tr>

@@ -6,6 +6,10 @@ class CommentsController < ApplicationController
     @comment = Comment.all.order(created_at: :desc).page(params[:page]).per(5)
   end
 
+  def show
+    @comment = Comment.find_by(random_url: params[:id])
+  end
+
   def new
     @comment = Comment.new
   end
@@ -23,7 +27,7 @@ class CommentsController < ApplicationController
     
     if @comment.save
       flash[:notice] = "新規登録が完了しました"
-      redirect_to @comment
+      redirect_to("/comments/#{@comment.random_url}")
      else
        render("comments/new")
     end
@@ -31,30 +35,28 @@ class CommentsController < ApplicationController
     
   end
 
-  def show
-    @comment = Comment.find(params[:id])
-  end
-
   def admin_show
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find_by(random_url: params[:id])
   end
 
   def edit
-    @comment = Comment.find(params[:id]) 
+    @comment = Comment.find_by(random_url: params[:id])
+    @new_random_url = @comment.random_url + "_update"
   end
 
   def update
     @comment = Comment.find(params[:id])
     @comment.image.attach(params[:image]) if @comment.image.blank?
+    @comment.random_url = @comment.random_url + "_updated"
     if @comment.update(comment_edit_params)
-      redirect_to @comment
+      redirect_to("/comments/#{@comment.random_url}")
     else
       render 'edit'
     end
   end
 
   def destroy
-    @comment = Comment.find_by(id: params[:id])
+    @comment = Comment.find_by(random_url: params[:id])
     @comment.destroy
     redirect_to("/comments/index")
   end
@@ -72,7 +74,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_edit_params
-    params.require(:comment).permit(:content, :yomi, :shoptel, :addres, :pass, :image,
+    params.require(:comment).permit(:yomi, :shoptel, :addres, :pass, :image,
                                     :businessday, :businesstime1, :pricelist, :agegroup,
                                     :reservation, :topcomment, :comment, :tablenum,
                                     :tabletype, :service, :system, :ratio, :rule,

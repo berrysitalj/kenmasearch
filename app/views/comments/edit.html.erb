@@ -1,7 +1,7 @@
 <% if session[:id] %>
   <h1>Comments#Edit</h1>
   <p><%= link_to("一覧へ(index)", "/comments/index") %></p>
-  <p><%= link_to("戻る(show)", "/comments/#{@comment.id}") %></p>
+  <p><%= link_to("戻る(show)", "/comments/#{@comment.random_url}") %></p>
 <% else %>
 <% end %>
 
