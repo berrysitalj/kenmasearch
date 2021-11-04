@@ -46,4 +46,10 @@ class OwnerController < ApplicationController
   	flash[:notice] = "ログアウトしました"
   	redirect_to("/login")
   end
+
+  def destroy
+    @sender = Sender.find_by(id: params[:id])
+    @sender.destroy
+    redirect_to("/owner/member_list")
+  end
 end

@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "login" => "owner#login_form"
   post "login" => "owner#login"
   post "logout" => "owner#logout"
+  post "owner/:id/destroy" => "owner#destroy"
 
   resources :home
   root 'home#top' #トップページをhomeコントローラのindexアクションに設定
