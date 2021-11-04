@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
     @comment.image.attach(params[:image]) if @comment.image.blank?
     @comment.random_url = @comment.random_url + "_updated"
     if @comment.update(comment_edit_params)
-      redirect_to("/comments/#{@comment.random_url}")
+      redirect_to("/recruit/send_completely")
     else
       render 'edit'
     end
