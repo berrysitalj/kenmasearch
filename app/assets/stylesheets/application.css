@@ -1870,7 +1870,7 @@ background:#fff;
 padding:10px 10px 20px;
 border:1px solid #d2cbc5;
 border-radius:5px;
-margin-top:8px
+margin-top:8px;
 }
 
 .contentsRecommendPost__item__tag{
@@ -1912,7 +1912,7 @@ margin-top:5px
 display:-webkit-box;
 display:-ms-flexbox;
 display:flex;
-margin-top:8px
+margin-top:8px;
 }
 
 @media screen and (min-width:769px){
@@ -1946,12 +1946,22 @@ height:180px
 
 .contentsRecommendPost__item__img img{
 width:100%;
-height:100%;
+height:110px;
 border-radius:5px;
 -o-object-fit:cover;
 object-fit:cover;
 font-family:"object-fit: cover;"
 }
+
+@media screen and (max-width:768px){
+.contentsRecommendPost__item__img img{
+width:100%;
+height:100%;
+border-radius:5px;
+-o-object-fit:cover;
+object-fit:cover;
+font-family:"object-fit: cover;"
+}}
 
 .contentsRecommendPost__item__desc{
 font-size:10px;
@@ -1962,7 +1972,7 @@ display:-webkit-box;
 -webkit-box-orient:vertical;
 -webkit-line-clamp:6;
 overflow:hidden;
-height:10.8em;
+height: 100%;
 line-height:1.8
 }
 
@@ -1975,11 +1985,15 @@ width:100%
 
 .contentsRecommendPost__item__desc__arddres{
     font-size:16px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contentsRecommendPost__item__desc__arddres span{
     margin-right : 10px;
+}
+
+.contentsRecommendPost__item__desc_topcomment{
+    height: 100%;
 }
 
 .search_input_breadcrumb{
