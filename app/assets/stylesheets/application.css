@@ -1454,6 +1454,62 @@ font-weight:400
 font-size:12px
 }
 
+
+
+
+
+
+
+
+
+/*-- PC版表示CSS  --*/
+pc_area{
+  display:block;
+}
+phone_area{
+  display:none;
+}
+
+/*-- スマホ版表示CSS  --*/
+@media screen and (max-width: 768px){
+  pc_area{
+    display:none;
+  }
+  phone_area{
+    display:block;
+  }
+}
+
+.select_shops_content_sp{
+    display:none;
+}
+
+.new_shop_content_sp{
+    display:none;
+}
+
+@media screen and (max-width:769px){
+.new_shop_content_pc{
+    display:none;
+}
+.select_shops_content_sp{
+    display:block;
+}}
+
+@media screen and (max-width:769px){
+.select_shops_content_pc{
+    display:none;
+}
+.new_shop_content_sp{
+    display:block;
+}}
+
+
+
+
+
+
+
 @media screen and (min-width:769px){
 .contentsNewPost,.contentsNewPost--shop{
 margin-top:100px

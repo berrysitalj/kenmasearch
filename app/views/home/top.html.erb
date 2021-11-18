@@ -366,9 +366,12 @@
 					</a>
         </div>
       </div>
-      <%= render 'shared/new_shop' %>
+      <div class="new_shop_content_pc"><%= render 'shared/new_shop' %></div>
+      <div class="select_shops_content_sp"><%= render 'shared/pickup_select_shops' %></div>
+      
     </div>
     <%= render 'shared/advertising' %>
-    <%= render 'shared/pickup_select_shops' %>
+    <div class="select_shops_content_pc"><%= render 'shared/pickup_select_shops' %></div>
+    <div class="new_shop_content_sp"><%= render 'shared/new_shop' %></div>
   </div>
 </body>
