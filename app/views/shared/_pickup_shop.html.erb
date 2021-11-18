@@ -3,7 +3,7 @@
 
   <% @shops_random_top.each do |shop| %>
     <div class="contentsRecommendPost__item">
-    	<!-- 場所 -->
+      <!-- 場所 -->
       <% if shop.freeicon1 == true %>
       <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>麻雀店</td></a>
       <% elsif %>
@@ -59,11 +59,11 @@
       <% end %>
 
       <h3><a class="contentsRecommendPost__item__title"><%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a></h3>
-					
-	    <div class="contentsRecommendPost__item__flex">
-		    <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
-		    	<% if shop.topphoto == "" %>
-	          <img src="/topphoto_images/default_user.png" alt="">
+          
+      <div class="contentsRecommendPost__item__flex">
+        <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
+          <% if shop.topphoto == "" %>
+            <img src="/topphoto_images/default_user.png" alt="">
           <% elsif shop.topphoto == nil %>
             <img src="/topphoto_images/default_user.png" alt="">
           <% else %>
@@ -71,10 +71,10 @@
           <% end %>
         </a>
         <div class="contentsRecommendPost__item__desc">
-		      <p class="contentsRecommendPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p>
-		      <p class="contentsRecommendPost__item__desc_topcomment><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>
-		    </div>
-		</div>
-	</div>
+          <p class="contentsRecommendPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p>
+          <p><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>
+        </div>
+    </div>
+  </div>
   <% end %>
 </div>

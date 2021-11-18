@@ -38,6 +38,7 @@ class HomeController < ApplicationController
   end
 
   def search
+    @pickup_select_shops = Shop.where(paidicon4: 1).order("RANDOM()").limit(6)
     # 検索窓に入力された場合
   	@shops = Shop.search(params[:search]).order(updated_at: :desc).page(params[:page]).per(5)
     # 入力されたキーワードその1
