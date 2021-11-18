@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	skip_before_action :owner_logged_in?, only: [:show, :edit]
+	skip_before_action :owner_logged_in?, only: [:edit]
   skip_before_action :user_logged_in?
   
 	def index

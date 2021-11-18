@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   def top
     @shop = Shop.order(:updated_at).last
   	@shops_random_top = Shop.where(paidmember: 0).order("RANDOM()").limit(6)
+    @pickup_select_shops = Shop.where(paidicon4: 1).order("RANDOM()").limit(6)
     # mysqlは"RAND"にしないといけない
     @shops_new_top = Shop.where(paidmember: 0).order(created_at: :desc)
 

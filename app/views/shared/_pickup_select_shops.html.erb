@@ -1,0 +1,80 @@
+<div class="contentsRecommendPost">
+  <h2 class="contentsRecommendPost__head">おすすめ店舗<img src="/assets/recommend_mark.svg" alt=""></h2>
+
+  <% @pickup_select_shops.each do |shop| %>
+    <div class="contentsRecommendPost__item">
+    	<!-- 場所 -->
+      <% if shop.freeicon1 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>麻雀店</td></a>
+      <% elsif %>
+      <% shop.freeicon2 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #CCFFFF;"><td>公共施設</td></a>
+      <% elsif %>
+      <% shop.freeicon3 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>サークル・個人</td></a>
+      <% else %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>その他の場所</td></a>
+      <% end %>
+
+      <!-- 麻雀の種類 -->
+      <% if shop.freeicon14 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>競技麻雀</td></a>
+      <% else %>
+      <% end %>
+
+      <% if shop.freeicon13 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>麻雀教室</td></a>
+      <% else %>
+      <% end %>
+
+      <% if shop.freeicon12 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #FFFF99;"><td>ノーレートフリー</td></a>
+      <% else %>
+      <% end %>
+
+      <% if shop.freeicon11 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>健康麻雀</td></a>
+      <% else %>
+      <% end %>
+
+      <!-- その他情報 -->
+      <% if shop.freeicon21 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>禁煙</td></a>
+      <% else %>
+      <% end %>
+
+      <% if shop.freeicon22 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>喫煙可</td></a>
+      <% else %>
+      <% end %>
+
+      <% if shop.freeicon23 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>セット</td></a>
+      <% else %>
+      <% end %>
+
+      <% if shop.freeicon25 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>要予約</td></a>
+      <% else %>
+      <% end %>
+
+      <h3><a class="contentsRecommendPost__item__title"><%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a></h3>
+					
+	    <div class="contentsRecommendPost__item__flex">
+		    <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
+		    	<% if shop.topphoto == "" %>
+	          <img src="/topphoto_images/default_user.png" alt="">
+          <% elsif shop.topphoto == nil %>
+            <img src="/topphoto_images/default_user.png" alt="">
+          <% else %>
+            <img src="/topphoto_images/<%= shop.topphoto %>" alt="">
+          <% end %>
+        </a>
+        <div class="contentsRecommendPost__item__desc">
+		      <p class="contentsRecommendPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p>
+		      <p><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>
+		    </div>
+		</div>
+	</div>
+  <% end %>
+</div>
