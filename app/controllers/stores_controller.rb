@@ -2,11 +2,11 @@ class StoresController < ApplicationController
 	skip_before_action :user_logged_in?
 
   def index
-  	@shop = Shop.all.order(created_at: :desc).page(params[:page]).per(50)
+  	@shop = Shop.all.order(updated_at: :desc).page(params[:page]).per(50)
   end
 
   def show
-  	@shop = Shop.all.order(created_at: :desc).page(params[:page]).per(50)
+  	@shop = Shop.all.order(updated_at: :desc).page(params[:page]).per(50)
   end
 
   def confirm
