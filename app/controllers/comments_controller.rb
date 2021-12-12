@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
-	skip_before_action :owner_logged_in?, only: [:edit]
+	skip_before_action :owner_logged_in?, only: [:edit, :update,]
   skip_before_action :user_logged_in?
   
 	def index
-    @comment = Comment.all.order(created_at: :desc).page(params[:page]).per(5)
+    @comment = Comment.all.order(updated_at: :desc).page(params[:page]).per(5)
   end
 
   def show

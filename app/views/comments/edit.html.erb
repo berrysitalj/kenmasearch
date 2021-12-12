@@ -13,7 +13,7 @@
   <tr><th class="width40">項目</th><th class="width60">会員情報(非公開)</th></tr>
 
   <tr><td class="comment_show_item">担当者名</td><td><%= @comment.name %></td></tr>
-  <tr><td class="comment_show_item">担当者メールアドレス</td><td><%= @comment.mail %></td></tr>
+  <tr><td class="comment_show_item">担当者メールアドレス</td><td><%= form.text_field :mail, class: "comment_text_area" %></td></tr>
   <tr><td class="comment_show_item">担当者電話番号</td><td><%= form.text_field :tel, class: "comment_text_area" %></td></tr>
   <tr><td class="comment_show_item">ログイン用パスワード</td><td><%= form.text_field :pass %></td></tr>
   
