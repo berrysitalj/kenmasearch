@@ -74,7 +74,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_edit_params
-    params.require(:comment).permit(:yomi, :shoptel, :addres, :pass, :image, :mail,
+    params.require(:comment).permit(:yomi, :shoptel, :addres, :pass, :image, :mail, :tel,
                                     :businessday, :businesstime1, :pricelist, :agegroup,
                                     :reservation, :topcomment, :comment, :tablenum,
                                     :tabletype, :service, :system, :ratio, :rule,
