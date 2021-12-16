@@ -126,7 +126,7 @@ class HomeController < ApplicationController
     @shops_new_top = Shop.where(paidmember: 0, addres1: ["愛知県","岐阜県","長野県",
                                                          "静岡県","山梨県","富山県",
                                                          "石川県","新潟県","福井県"]).order(created_at: :desc)
-    @shops_random_top = Shop.where(paidmember: 1, addres1: ["愛知県","岐阜県","長野県",
+    @shops_random_top = Shop.where(paidicon4: 1, addres1: ["愛知県","岐阜県","長野県",
                                                             "静岡県","山梨県","富山県",
                                                             "石川県","新潟県","福井県"]).order("RANDOM()").limit(6)
   end
@@ -142,7 +142,7 @@ class HomeController < ApplicationController
     @shops_new_top = Shop.where(paidmember: 0, addres1: ["大阪府","京都府","兵庫県",
                                                          "滋賀県","奈良県","和歌山県",
                                                          "三重県"]).order(created_at: :desc)
-    @shops_random_top = Shop.where(paidmember: 1, addres1: ["大阪府","京都府","兵庫県",
+    @shops_random_top = Shop.where(paidicon4: 1, addres1: ["大阪府","京都府","兵庫県",
                                                             "滋賀県","奈良県","和歌山県",
                                                             "三重県"]).order("RANDOM()").limit(6)
   end
@@ -166,7 +166,7 @@ class HomeController < ApplicationController
     @number_of_stores_yamaguchi = Shop.where(addres1:["山口県"]).count
     @shops_new_top = Shop.where(paidmember: 0, addres1: ["鳥取県","島根県","岡山県",
                                                          "広島県","山口県"]).order(created_at: :desc)
-    @shops_random_top = Shop.where(paidmember: 1, addres1: ["鳥取県","島根県","岡山県",
+    @shops_random_top = Shop.where(paidicon4: 1, addres1: ["鳥取県","島根県","岡山県",
                                                             "広島県","山口県"]).order("RANDOM()").limit(6)
   end
 

@@ -29,7 +29,7 @@
   <tr><td class="comment_show_item">年齢層</td><td><%= form.text_area :agegroup, class: "comment_text_area" %></td></tr>
   <tr><td class="comment_show_item">事前予約(要・不要)</td><td><%= form.text_area :reservation, class: "comment_text_area" %></td></tr>
   <tr><td class="comment_show_item">登録済みのトップ画像</td><td><% if @comment.image.attached? %><%= image_tag @comment.image, class:'comment_image' %><% end %></td></tr>
-  <tr><td class="comment_show_item">トップ画像変更</td><td><%= form.file_field :image %></td></tr>
+  <tr><td class="comment_show_item">トップ画像変更(１枚)</td><td><%= form.file_field :image %></td></tr>
   <tr><td class="comment_show_item">トップ用コメント</td><td><%= form.text_area :topcomment, class: "comment_text_area", :size=>"60x6" %></td></tr>
   <tr><td class="comment_show_item">説明コメント</td><td><%= form.text_area :comment, class: "comment_text_area", :size=>"60x10" %></td></tr>
   <tr><td class="comment_show_item">卓数</td><td><%= form.text_area :tablenum, class: "comment_text_area" %></td></tr>
