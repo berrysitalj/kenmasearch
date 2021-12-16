@@ -38,7 +38,6 @@ class HomeController < ApplicationController
   end
 
   def search
-    @pickup_select_shops = Shop.where(paidicon4: 1).order("RANDOM()").limit(6)
     # 検索窓に入力された場合
   	@shops = Shop.search(params[:search]).order(updated_at: :desc).page(params[:page]).per(5)
     # 入力されたキーワードその1
@@ -48,7 +47,7 @@ class HomeController < ApplicationController
 
     if @searchword = nil then
     # 入力されたキーワードその2がnilの場合、ランダムですべてを表示する
-      @shops_random_top = Shop.where(paidmember: 0).order("RANDOM()").limit(6)
+      @shops_random_top = Shop.all.order("RANDOM()").limit(6)
     
     else
       
@@ -59,13 +58,13 @@ class HomeController < ApplicationController
           @shops_first_column = @shops_first.addres1
         rescue
           # 失敗時はランダムですべてを表示する
-          @shops_random_top = Shop.where(paidmember: 1).order("RANDOM()").limit(6)
+          @shops_random_top = Shop.all.order("RANDOM()").limit(6)
         end
       
       @shops_random_top = Shop.where(paidmember: 0, addres1: @shops_first_column).order("RANDOM()").limit(6)
         # mysqlは"RAND"にしないといけない
     end
-    
+    @pickup_select_shops = Shop.where(paidicon4: 1, addres1: @shops_first_column).order("RANDOM()").limit(6)
     @shops_new_top = Shop.where(paidmember: 1).order(created_at: :desc)
   end
 
