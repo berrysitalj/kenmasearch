@@ -44,7 +44,7 @@
         <tr><th>営業日</th><td><%= safe_join(@shop.businessday.split("\n"),tag(:br)) %></td></tr>
         <tr><th>営業時間</th><td><%= safe_join(@shop.businesstime1.split("\n"),tag(:br)) %></td></tr>
         <tr><th>料金</th><td><%= safe_join(@shop.pricelist.split("\n"),tag(:br)) %></td></tr>
-        <tr><th>HP(公式)</th><td><%= link_to(@shop.homepage1, @shop.homepage1, target: :_blank, rel: "noopener noreferrer") %></td></tr>
+        <tr><th>HP(公式)</th><td><%= text_url_to_link(safe_join((h(@shop.homepage1)).split("\n"),tag(:br))).html_safe %></td></tr>
         <tr><th>HP(雀サクッ)</th><td><%= link_to(@shop.homepage2, @shop.homepage2, target: :_blank, rel: "noopener noreferrer") %></td></tr>
         <tr><th>HP(麻雀王国)</th><td><%= link_to(@shop.homepage3, @shop.homepage3, target: :_blank, rel: "noopener noreferrer") %></td></tr>
         <tr><th>Twitter</th><td><%= link_to(@shop.homepage4, @shop.homepage4, target: :_blank, rel: "noopener noreferrer") %></td></tr>
