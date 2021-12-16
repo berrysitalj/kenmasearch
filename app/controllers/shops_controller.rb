@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
     if @shops_random.present?
       @shops_random_top = @shops_random
     else
-      @shops_random_top = Shop.where(paidmember: 0, addres1: @shop.addres1).order("RANDOM()").limit(6)
+      @shops_random_top = Shop.where(paidicon4: 1, addres1: @shop.addres1).order("RANDOM()").limit(6)
     end    
   end
 
