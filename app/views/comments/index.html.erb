@@ -13,7 +13,7 @@
   <% @comment.each do |comment| %>
     <tr>
   	  <td class="owner_table_th">
-  	  	<%= link_to(comment.created_at.strftime('%Y/%m/%d %H:%M'), "/comments/#{comment.random_url}") %>
+  	  	<%= link_to(comment.updated_at.strftime('%Y/%m/%d %H:%M'), "/comments/#{comment.random_url}") %>
   	  </td>
       <td><%= comment.shopname %></td>
       <td>
