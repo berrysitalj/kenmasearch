@@ -61,7 +61,9 @@
       <h3><a class="contentsRecommendPost__item__title"><%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a></h3>
 					
 	    <div class="contentsRecommendPost__item__flex">
-		    <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
+
+		    
+        <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
 		    	<% if shop.topphoto == "" %>
 	          <img src="/topphoto_images/default_user.png" alt="">
           <% elsif shop.topphoto == nil %>
@@ -70,6 +72,9 @@
             <img src="/topphoto_images/<%= shop.topphoto %>" alt="">
           <% end %>
         </a>
+        
+
+
         <div class="contentsRecommendPost__item__desc">
 		      <p class="contentsRecommendPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p>
 		      <p><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p>

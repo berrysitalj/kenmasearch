@@ -9,26 +9,48 @@
   	  	  <h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
   	  	</div>
   	  	<p class="contentsDetails__desc"><%= @shop.topcomment %></p>
-  	  	<div class="contentsDetails__img">
-  	  		<% if @shop.topphoto == "" %><img src="/topphoto_images/default_user.png" alt="">
-		      <% elsif @shop.topphoto == nil %><img src="/topphoto_images/default_user.png" alt="">
-          <% else %><img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
-          <% end %>
 
-          <% if @shop.photo1 == "" %>
-          <% elsif @shop.photo1 == nil %>
-          <% else %><img src="/photo1_images/<%= @shop.photo1 %>" alt="">
-          <% end %>
 
-	        <% if @shop.photo2 == "" %>
-          <% elsif @shop.photo2 == nil %>
-          <% else %><img src="/photo2_images/<%= @shop.photo2 %>" alt="">
+ <!--  ここから　-->
+      <div class="contentsDetails__img" style="display:block;">
+        
+        <div id="contentsDetails__img">
+          <% if @shop.topphoto == "" %>
+          <img src="/topphoto_images/default_user.png" alt="">
+          <% elsif @shop.topphoto == nil %>
+          <img src="/topphoto_images/default_user.png" alt="">
+          <% else %>
+          <img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
           <% end %>
         </div>
+        
+        <div style="display:flex; justify-content: center;align-items: center;">
+          <div id="contentsDetails__img" style="width: 360px;">
+            <% if @shop.photo1 == "" %>
+            <% elsif @shop.photo1 == nil %>
+            <% else %>
+            <img src="/photo1_images/<%= @shop.photo1 %>" alt="">
+            <% end %>
+          </div>
+	      
+          <div id="contentsDetails__img" style="width: 360px; padding-left: 5px;">
+            <% if @shop.photo2 == "" %>
+            <% elsif @shop.photo2 == nil %>
+            <% else %>
+            <img src="/photo2_images/<%= @shop.photo2 %>" alt="">
+            <% end %>
+          </div>
+        </div>
+	    </div>
+
+<!--  ここまで　-->
+
+
+
         <p class="contentsDetails__desc"><%= @shop.comment %></p>					
         <!-- <p><%= link_to("店舗情報を変更する", "/user/#{@shop.id}/user_edit") %></p> -->
         <!-- <p>基本情報の変更はできません。変更が必要な場合は<%= link_to("こちら", "") %>にお問い合わせください</p> -->
-        <h2>現在準備中のため、会員情報の変更はできません。変更が必要な場合は<%= link_to("こちらから", "/member_inquiry") %>お問い合わせください</h2>
+        <h2 style="padding-top: 20px; padding-bottom: 20px; background-color: #FFEEFF;">現在準備中のため、会員情報の変更はできません。<br>変更が必要な場合は<%= link_to("こちらから", "/member_inquiry") %>お問い合わせください</h2>
         <h2 class="contentsDetails__head" style="background-color:#FFFF99;">会員情報(非公開情報)</h2>
         <table class="contentsDetails__table">
         	<tr><th>店舗id</th><td><%= @shop.userid %></td></tr>
@@ -93,10 +115,10 @@
 		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">要予約</a></th><% if @shop.freeicon25 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
 		      <tr><th><a class="contentsDetails__tag" style="background-color: #DDDDDD;">Mリーグルール</a></th><% if @shop.freeicon26 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
 		      <tr><th>------</th><% if @shop.freeicon27 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th><a class="contentsDetails__tag__osusume" style="white-space: nowrap; background-color: #FFD5EC;">おすすめ</a></th><% if @shop.paidicon1 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th>(有料)地域ページ<br><a class="contentsDetails__tag__osusume" style="white-space: nowrap; background-color: #FFD5EC;">おすすめ</a></th><% if @shop.paidicon1 == true %><td>〇　※地域の有料会員店舗がランダムで表示されます</td><% else %><td>------　※地域の有料会員店舗がランダムで表示されます</td><% end %></tr>
 		      <tr><th>(有料)ピックアップ</th><% if @shop.paidicon2 == true %> <td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>(有料)3</th><% if @shop.paidicon3 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
-		      <tr><th>(有料)4</th><% if @shop.paidicon4 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th>(有料)---</th><% if @shop.paidicon3 == true %><td>〇</td><% else %><td>------</td><% end %></tr>
+		      <tr><th>(有料)トップページ<br>おすすめ表示</th><% if @shop.paidicon4 == true %><td>〇　※すべての有料会員店舗がランダムで表示されます</td><% else %><td>------　※すべての有料会員店舗がランダムで表示されます</td><% end %></tr>
 		    </table>
 		  </div>
 		</div>

@@ -8,25 +8,43 @@
        <h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
 	    </div>
       <p class="contentsDetails__desc" style="font-weight: bold; line-height: 150%;"><%= safe_join(@shop.topcomment.split("\n"),tag(:br)) %></p>
-      <div class="contentsDetails__img">
-        <% if @shop.topphoto == "" %>
-        <img src="/topphoto_images/default_user.png" alt="">
-        <% elsif @shop.topphoto == nil %>
-        <img src="/topphoto_images/default_user.png" alt="">
-        <% else %>
-        <img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
-        <% end %>
-        <% if @shop.photo1 == "" %>
-        <% elsif @shop.photo1 == nil %>
-        <% else %>
-        <img src="/photo1_images/<%= @shop.photo1 %>" alt="">
-        <% end %>
-	      <% if @shop.photo2 == "" %>
-        <% elsif @shop.photo2 == nil %>
-        <% else %>
-        <img src="/photo2_images/<%= @shop.photo2 %>" alt="">
-        <% end %>
+      
+<!--  ここから　-->
+      <div class="contentsDetails__img" style="display:block;">
+        
+        <div id="contentsDetails__img">
+          <% if @shop.topphoto == "" %>
+          <img src="/topphoto_images/default_user.png" alt="">
+          <% elsif @shop.topphoto == nil %>
+          <img src="/topphoto_images/default_user.png" alt="">
+          <% else %>
+          <img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
+          <% end %>
+        </div>
+        
+        <div style="display:flex; justify-content: center;align-items: center;">
+          <div id="contentsDetails__img" style="width: 360px;">
+            <% if @shop.photo1 == "" %>
+            <% elsif @shop.photo1 == nil %>
+            <% else %>
+            <img src="/photo1_images/<%= @shop.photo1 %>" alt="">
+            <% end %>
+          </div>
+	      
+          <div id="contentsDetails__img" style="width: 360px; padding-left: 5px;">
+            <% if @shop.photo2 == "" %>
+            <% elsif @shop.photo2 == nil %>
+            <% else %>
+            <img src="/photo2_images/<%= @shop.photo2 %>" alt="">
+            <% end %>
+          </div>
+        </div>
 	    </div>
+
+<!--  ここまで　-->
+
+
+
       <p class="contentsDetails__desc" style="line-height: 90%;"><%= safe_join(@shop.comment.split("\n"),tag(:br)) %></p>
 
       <h2 class="contentsDetails__head">基本情報</h2>

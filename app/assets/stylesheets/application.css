@@ -51,6 +51,33 @@ img{
 vertical-align:top
 }
 
+
+#contentsDetails__img img {
+max-width: 100%;
+height: auto;
+width /***/:auto;
+}
+
+
+/*#contentsRecommendPost__item__img img {
+max-width: 100%;
+height: auto;
+width /***/:auto;
+justify-content: center;
+align-items: center;
+}
+
+*/
+
+/*
+#contentsNewPost__item__img img {
+max-width: 100%;
+height: auto;
+width /***/:auto;
+}
+*/
+
+
 a:link{
 text-decoration:none
 }
@@ -1922,11 +1949,12 @@ display:block
 
 .contentsRecommendPost__item__img{
 width:41%;
-height:85px;
-border:1px solid #ddd;
-border-radius:5px;
+height:auto;
+/*height:85px;*/
+/*border:1px solid #ddd;*/
+/*border-radius:5px;*/
 -webkit-transition:.5s;
-transition:.5s
+transition:.5s;
 }
 
 .contentsRecommendPost__item__img:hover{
@@ -1935,17 +1963,19 @@ opacity:.7
 
 @media screen and (min-width:769px){
 .contentsRecommendPost__item__img{
-width:100%;
-height:130px
+height:130px;
+/*height:130px;*/
 }}
 
 @media screen and (min-width:500px) and (max-width:768px){
 .contentsRecommendPost__item__img{
-height:180px
+/*height:auto;*/
+height:100%;
+width:100%;
 }}
 
 .contentsRecommendPost__item__img img{
-width:100%;
+width: 100%;
 height:110px;
 border-radius:5px;
 -o-object-fit:cover;
@@ -1955,8 +1985,8 @@ font-family:"object-fit: cover;"
 
 @media screen and (max-width:768px){
 .contentsRecommendPost__item__img img{
-width:100%;
-height:100%;
+width: 100%;
+height:250px;
 border-radius:5px;
 -o-object-fit:cover;
 object-fit:cover;
@@ -2117,7 +2147,7 @@ justify-content:flex-end;
 .contentsDetails__flex,.contentsDetails__img{
 display:-webkit-box;
 display:-ms-flexbox;
-display:flex
+
 }
 
 .contentsDetails__img{

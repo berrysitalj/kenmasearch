@@ -61,7 +61,7 @@
       <h3><a class="contentsRecommendPost__item__title"><%= link_to(shop.shopname, "/shops/#{shop.userid}") %></a></h3>
           
       <div class="contentsRecommendPost__item__flex">
-        <a class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
+        <a id="contentsRecommendPost__item__img" class="contentsRecommendPost__item__img" href="/shops/<%= shop.userid %>">
           <% if shop.topphoto == "" %>
             <img src="/topphoto_images/default_user.png" alt="">
           <% elsif shop.topphoto == nil %>

@@ -63,7 +63,7 @@
 		  </div>
 		
 		  <div class="contentsNewPost__item__flex">
-		    <a class="contentsNewPost__item__img" href="/shops/<%= shop.userid %>">
+		    <a id="contentsNewPost__item__img" class="contentsNewPost__item__img" href="/shops/<%= shop.userid %>">
 			  <% if shop.topphoto == "" %>
 	        <img src="/topphoto_images/default_user.png" alt="">
         <% elsif shop.topphoto == nil %>
