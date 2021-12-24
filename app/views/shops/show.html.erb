@@ -18,7 +18,7 @@
           <% elsif @shop.topphoto == nil %>
           <img src="/topphoto_images/default_user.png" alt="">
           <% else %>
-          <img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
+          <img style="object-fit: contain;" src="/topphoto_images/<%= @shop.topphoto %>" alt="">
           <% end %>
         </div>
         
@@ -27,7 +27,7 @@
             <% if @shop.photo1 == "" %>
             <% elsif @shop.photo1 == nil %>
             <% else %>
-            <img src="/photo1_images/<%= @shop.photo1 %>" alt="">
+            <img style="object-fit: contain;" src="/photo1_images/<%= @shop.photo1 %>" alt="">
             <% end %>
           </div>
 	      
@@ -35,7 +35,7 @@
             <% if @shop.photo2 == "" %>
             <% elsif @shop.photo2 == nil %>
             <% else %>
-            <img src="/photo2_images/<%= @shop.photo2 %>" alt="">
+            <img style="object-fit: contain;" src="/photo2_images/<%= @shop.photo2 %>" alt="">
             <% end %>
           </div>
         </div>

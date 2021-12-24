@@ -52,7 +52,9 @@ vertical-align:top
 }
 
 
-
+*, *:before, *:after {
+　　　　 box-sizing: border-box;
+}
 
 
 
@@ -1247,7 +1249,8 @@ margin-top: 50px;
 }
 
 .contentsKv__img, .slider img{
-margin-top: 20px;
+margin-top: 0px;
+padding-top: 5px;
 min-height:0;
 min-width : 0;
 width:100%;
@@ -1649,6 +1652,7 @@ background:#d8ec8a
 }}
 
 .contentsNewPost__item__tag{
+    overflow: hidden;
 pointer-events: none;
 display:inline-block;
 background:#d8ec8a;
@@ -1667,6 +1671,7 @@ opacity:.7
 
 @media screen and (min-width:769px){
 .contentsNewPost__item__tag{
+    overflow: hidden;
 margin-left:20px
 }}
 
@@ -1702,7 +1707,7 @@ margin-top:15px
 display:block;
 width:100%;
 height:170px;
-border:1px solid #d2cbc5;
+/*border:1px solid #d2cbc5;*/
 border-radius:5px;
 -webkit-transition:.5s;
 transition:.5s
@@ -1827,6 +1832,7 @@ padding:20px 0
 }}
 
 .contentsAd__item{
+padding:5px;
 width:100%;
 cursor:pointer;
 -webkit-transition:.5s;
@@ -1919,7 +1925,7 @@ margin-top:5px
 display:-webkit-box;
 display:-ms-flexbox;
 display:flex;
-margin-top:8px;
+margin-top:8px
 }
 
 @media screen and (min-width:769px){
@@ -1930,10 +1936,7 @@ display:block
 .contentsRecommendPost__item__img{
 width:41%;
 height:85px;
-border:1px solid #ddd;
-border-radius:5px;
--webkit-transition:.5s;
-transition:.5s
+
 }
 
 .contentsRecommendPost__item__img:hover{
@@ -1943,18 +1946,19 @@ opacity:.7
 @media screen and (min-width:769px){
 .contentsRecommendPost__item__img{
 width:100%;
-height:130px
+height:130px;
+
 }}
 
 @media screen and (min-width:500px) and (max-width:768px){
 .contentsRecommendPost__item__img{
-height:180px
+height:180px;
+
 }}
 
 .contentsRecommendPost__item__img img{
 width:100%;
 height:100%;
-border-radius:5px;
 -o-object-fit:cover;
 object-fit:cover;
 font-family:"object-fit: cover;"
