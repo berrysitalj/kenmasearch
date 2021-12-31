@@ -90,11 +90,11 @@
 						<div class="contentsNewPost__item__flex">
 							<a class="contentsNewPost__item__img" href="/shops/<%= shop.userid %>">
 								<% if shop.topphoto == "" %>
-								<img src="/topphoto_images/default_user.png" alt="">
+								<img style="object-fit: contain; border-radius:5px; border:1px solid #d2cbc5;" src="/topphoto_images/default_user.png" alt="">
                 <% elsif shop.topphoto == nil %>
-                <img src="/topphoto_images/default_user.png" alt="">
+                <img style="object-fit: contain; border-radius:5px; border:1px solid #d2cbc5;" src="/topphoto_images/default_user.png" alt="">
                 <% else %>
-                <img src="/topphoto_images/<%= shop.topphoto %>" alt="">
+                <img style="object-fit: contain; border-radius:5px;" src="/topphoto_images/<%= shop.topphoto %>" alt="">
                 <% end %>
 							</a>
 							<div class="contentsNewPost__item__desc"><p class="contentsNewPost__item__desc__arddres"><span><%= shop.addres1 %></span><%= shop.area %></p><p><%=safe_join(shop.topcomment.split("\n"),tag(:br))%></p></div>
