@@ -107,7 +107,7 @@ class HomeController < ApplicationController
     @shops_new_top = Shop.where(paidmember: 0, addres1: ["東京都","神奈川県","千葉県",
                                                          "埼玉県","茨城県","栃木県",
                                                          "群馬県"]).order(created_at: :desc)
-    @shops_random_top = Shop.where(paidmember: 1, addres1: ["東京都","神奈川県","千葉県",
+    @shops_random_top = Shop.where(paidicon4: 1, addres1: ["東京都","神奈川県","千葉県",
                                                             "埼玉県","茨城県","栃木県",
                                                             "群馬県"]).order("RANDOM()").limit(6)
   end
