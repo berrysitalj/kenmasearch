@@ -1,3 +1,9 @@
+<% if session[:user_id] %>
+  <li>ログイン中</li>
+  <a href="/user_home">会員ページへ</a>
+<% else %>
+<% end %>
+
 <div class="contentsLayout--shop">			
   <div class="contentsMain">
     <div class="contentsBreadcrumb"><a href="/">TOP</a><span>&gt;</span><a href="/search?utf8=✓&search=<%= @shop.addres1 %>"><%= @shop.addres1 %></a><span>&gt;</span><span><%= @shop.shopname %></span></div>

@@ -2391,3 +2391,24 @@ display:none
 .contents_updated_at span{
     margin-right : 10px;
 }
+
+.notice, .caution, .error {
+  color: #fff;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+}
+
+/* あお */
+.notice {
+  background-color: #4682b4;
+}
+
+/* きいろ */
+.caution {
+  background-color: #ef9500;
+}
+
+/* あか */
+.error {
+  background-color: #B43530;
+}

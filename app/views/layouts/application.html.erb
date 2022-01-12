@@ -100,10 +100,8 @@
   <% else %>
   <% end %>
 
-  <% if session[:user_id] %>
-  <li>ログイン中</li>
-  <a href="/user_home">会員ページへ</a>
-  <% else %>
+  <% if flash[:notice] %>
+  <p class="notice"><%=h flash[:notice] %></p>
   <% end %>
 
   <%= yield %>
