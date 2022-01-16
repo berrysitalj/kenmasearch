@@ -58,6 +58,11 @@ Rails.application.routes.draw do
   post "recruit/adv_create" => "home#adv_create"
   post "member_inquiry_create" => "home#member_inquiry_create"
 
+  get "aichi" => "prefectures#aichi"
+  get "gihu" => "prefectures#gihu"
+  get "mie" => "prefectures#mie"
+  get "tokyo" => "prefectures#tokyo"
+
   resources :shops
 
   resources :posts
