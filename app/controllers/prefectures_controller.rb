@@ -3,8 +3,9 @@ class PrefecturesController < ApplicationController
 	skip_before_action :user_logged_in?
 
 	before_action :set_chubu, only: [:aichi, :gifu]
-	before_action :set_kanto, only: [:tokyo, :chiba]
-	before_action :set_shops, only: [:tokyo, :aichi]
+	before_action :set_kanto, only: [:tokyo, :chiba, :gunma, :kanagawa, :saitama, :tochigi, :ibaraki]
+	before_action :set_kansai, only: [:osaka, :kyoto, :nara, :mie, :wakayama]
+	before_action :set_shops
 
 	def aichi
 		@prefecture = "愛知県"
@@ -16,6 +17,11 @@ class PrefecturesController < ApplicationController
 		set_shops
 	end
 
+	def osaka
+		@prefecture = "大阪府"
+		set_shops
+	end
+
 	private
   
   def set_chubu
@@ -24,6 +30,10 @@ class PrefecturesController < ApplicationController
 
   def set_kanto
   	@area = "関東"
+  end
+
+  def set_kansai
+  	@area = "関西"
   end
 
   def set_shops

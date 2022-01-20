@@ -62,6 +62,7 @@ Rails.application.routes.draw do
   get "gihu" => "prefectures#gihu"
   get "mie" => "prefectures#mie"
   get "tokyo" => "prefectures#tokyo"
+  get "osaka" => "prefectures#osaka"
 
   resources :shops
 
