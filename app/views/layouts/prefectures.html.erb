@@ -121,6 +121,8 @@
       </div>
       <div class="contentsNewPost--shop">
         <h1 class="contentsNewPost__head--shop"> 「 <%= @prefecture %> 」<span>の店舗一覧</span></h1>        
+        
+
         <div class="contentsNewPost__inner">
           <% @shops.each do |shop| %>        
           <div class="contentsNewPost__item">
@@ -186,8 +188,17 @@
           <% end %>
           <% if @shops.size == 0 %><p style="padding: 10px;">検索結果がありませんでした</p><% end %>
           <%= paginate @shops %>
-          <div class="search_input_form"><%= form_tag("/search", :method => 'get') do %><dl class="search2"><dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt><dd><button>検索</button></dd></dl><% end %></div>
+          
+
+          
         </div>
+
+
+          
+
+          <div class="search_input_form"><%= form_tag("/search", :method => 'get') do %><dl class="search2"><dt><input type="text" name="search" value="" placeholder="キーワードを入力" /></dt><dd><button>検索</button></dd></dl><% end %></div>
+
+
       </div>
 
 
