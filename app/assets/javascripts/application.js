@@ -14,3 +14,9 @@
 //= require activestorage
 //= require_tree .
 //= require jquery
+
+$(function() {
+    $('.slider').slick({
+        dots: true,
+    });
+});
