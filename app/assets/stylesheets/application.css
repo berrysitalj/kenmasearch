@@ -1287,6 +1287,9 @@ max-width:1200px;
 margin:auto
 }}
 
+.slider.slick-initialized {
+  display: block;
+}
 
 
 @media screen and (min-width:769px){
