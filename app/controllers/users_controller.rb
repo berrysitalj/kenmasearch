@@ -72,7 +72,6 @@ class UsersController < ApplicationController
     @shop.freeicon15 = params[:freeicon15]
     @shop.freeicon21 = params[:freeicon21]
     @shop.freeicon22 = params[:freeicon22]
-    @shop.freeicon23 = params[:freeicon23]
     @shop.freeicon24 = params[:freeicon24]
     @shop.freeicon25 = params[:freeicon25]
     @shop.freeicon26 = params[:freeicon26]
