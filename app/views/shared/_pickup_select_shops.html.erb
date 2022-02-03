@@ -11,19 +11,26 @@
       <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #CCFFFF;"><td>公共施設</td></a>
       <% elsif %>
       <% shop.freeicon3 == true %>
-      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>サークル・個人</td></a>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>商業施設内</td></a>
+      <% elsif %>
+      <% shop.freeicon4 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>サークル</td></a>
       <% else %>
-      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>その他の場所</td></a>
       <% end %>
 
       <!-- 麻雀の種類 -->
+      <% if shop.freeicon15 == true %>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>初心者教室</td></a>
+      <% else %>
+      <% end %>
+
       <% if shop.freeicon14 == true %>
-      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>競技麻雀</td></a>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>麻雀教室</td></a>
       <% else %>
       <% end %>
 
       <% if shop.freeicon13 == true %>
-      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>麻雀教室</td></a>
+      <a class="contentsRecommendPost__item__tag" style="white-space: nowrap;"><td>競技麻雀</td></a>
       <% else %>
       <% end %>
 
