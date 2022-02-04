@@ -47,17 +47,23 @@
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #CCFFFF;"><td>公共施設</td></a>
               <% elsif %>
               <% shop.freeicon3 == true %>
-              <a class="contentsDetails__tag" style="white-space: nowrap;"><td>サークル・個人</td></a>
+              <a class="contentsDetails__tag" style="white-space: nowrap;"><td>商業施設内</td></a>
+              <% elsif %>
+              <% shop.freeicon4 == true %>
+              <a class="contentsDetails__tag" style="white-space: nowrap;"><td>サークル</td></a>
               <% else %>
-              <a class="contentsDetails__tag" style="white-space: nowrap;"><td>その他の場所</td></a>
               <% end %>
               <!-- 麻雀の種類 -->
+              <% if shop.freeicon15 == true %>
+              <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>初心者教室</td></a>
+              <% else %>
+              <% end %>
               <% if shop.freeicon14 == true %>
-              <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>競技麻雀</td></a>
+              <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #FFCC33;"><td>麻雀教室</td></a>
               <% else %>
               <% end %>
               <% if shop.freeicon13 == true %>
-              <a class="contentsDetails__tag" style="white-space: nowrap;"><td>麻雀教室</td></a>
+              <a class="contentsDetails__tag" style="white-space: nowrap;"><td>競技麻雀</td></a>
               <% else %>
               <% end %>
               <% if shop.freeicon12 == true %>
@@ -77,12 +83,16 @@
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>喫煙可</td></a>
               <% else %>
               <% end %>
-              <% if shop.freeicon23 == true %>
-              <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>セット</td></a>
+              <% if shop.freeicon24 == true %>
+              <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>女性限定</td></a>
               <% else %>
               <% end %>
               <% if shop.freeicon25 == true %>
               <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>要予約</td></a>
+              <% else %>
+              <% end %>
+              <% if shop.freeicon26 == true %>
+              <a class="contentsDetails__tag" style="white-space: nowrap; background-color: #DDDDDD;"><td>Mリーグルール</td></a>
               <% else %>
               <% end %>
               <h2><a class="contentsNewPost__item__title" href="/shops/<%= shop.userid %>"><%= shop.shopname %></a></h2>
