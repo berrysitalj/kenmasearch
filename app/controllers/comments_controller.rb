@@ -14,10 +14,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  def user_new
-    
-  end
-
   def create
     @comment = Comment.create(comment_create_params)
     
@@ -31,8 +27,6 @@ class CommentsController < ApplicationController
      else
        render("comments/new")
     end
-    
-    
   end
 
   def admin_show

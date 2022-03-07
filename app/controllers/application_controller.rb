@@ -15,10 +15,6 @@ class ApplicationController < ActionController::Base
   redirect_to "#{request.protocol}#{FQDN}#{port}#{request.path}", status: :moved_permanently
   end
 
-
-
-  
-  
   def owner_logged_in?
     if session[:id]
       begin
@@ -37,8 +33,6 @@ class ApplicationController < ActionController::Base
     session[:id] = nil
     @current_owner = nil
   end
-
-
 
   def user_logged_in?
     if session[:user_id]

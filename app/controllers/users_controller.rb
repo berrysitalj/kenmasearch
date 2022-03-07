@@ -34,13 +34,8 @@ class UsersController < ApplicationController
     @shop = Shop.find_by(userid: params[:id])
   end
 
-
-
-
-
   def user_update
-    @shop = Shop.find_by(userid:params[:id])
-    
+    @shop = Shop.find_by(userid:params[:id])    
     @shop.topcomment = params[:topcomment]
     @shop.comment = params[:comment]
     @shop.name = params[:name]
@@ -76,7 +71,6 @@ class UsersController < ApplicationController
     @shop.freeicon25 = params[:freeicon25]
     @shop.freeicon26 = params[:freeicon26]
 
-
     if @shop.save
       flash[:notice] = "保存しました"
       redirect_to("/user_home")
@@ -84,10 +78,6 @@ class UsersController < ApplicationController
       flash.now[:error] = '項目に不備があります'
       render("users/user_edit")
     end
-
   end
 
-
-
-  
 end

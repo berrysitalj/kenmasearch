@@ -187,7 +187,6 @@ class HomeController < ApplicationController
   end
 
   def recruit
-    
   end
 
   def free
@@ -207,15 +206,12 @@ class HomeController < ApplicationController
   end
 
   def terms
-    
   end
 
   def privacy_policy
-    
   end
 
   def free_edit
-
   end
 
   def member_inquiry
@@ -340,21 +336,10 @@ class HomeController < ApplicationController
   end
 
   def send_completely
-    
   end
 
   def adv
-    
   end
-
-
-
-
-
-
-
-
-
 
   private
 
@@ -371,9 +356,5 @@ class HomeController < ApplicationController
   def set_shop
     @shops = Shop.all.order(created_at: :desc)
   end
-
-  
-
-
 
 end

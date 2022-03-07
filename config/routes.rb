@@ -28,7 +28,6 @@ Rails.application.routes.draw do
 
   resources :home
   root 'home#top' #トップページをhomeコントローラのindexアクションに設定
-  # get 'home/top'  #デフォルト
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "list" => "home#list"
   get "search" => "home#search"
@@ -65,10 +64,8 @@ Rails.application.routes.draw do
   get "osaka" => "prefectures#osaka"
 
   resources :shops
-
   resources :posts
 
-  get "comments/:id/user_new" => "comments#user_new"
   get "comments/admin_show/:id" => "comments#admin_show"
   get "comments/index" => "comments#index"
   post "comments/:id/destroy" => "comments#destroy"

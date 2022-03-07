@@ -6,7 +6,6 @@ class OwnerController < ApplicationController
   end
 
   def new
-  	
   end
 
   def member_list
@@ -24,7 +23,6 @@ class OwnerController < ApplicationController
   end
 
   def login_form
-  	
   end
 
   def login
