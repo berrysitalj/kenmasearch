@@ -30,7 +30,12 @@
 
     <label for="field2">
       <span>電話番号 <span class="required"></span></span>
-      <textarea name="shoptel" class="textarea-field"><%= @shop.shoptel %></textarea>
+      <input type="text" class="input-field" name="shoptel" value="<%= @shop.shoptel %>" />
+    </label>
+
+    <label for="field2">
+      <span>電話番号補足 <span class="required"></span></span>
+      <input type="text" class="input-field" name="businesstime2" value="<%= @shop.businesstime2 %>" />
     </label>
 
     <label for="field2">
@@ -141,13 +146,8 @@
     </label>
 
     <label for="field2">
-      <span>営業時間1 <span class="required"></span></span>
+      <span>営業時間 <span class="required"></span></span>
       <textarea name="businesstime1" class="textarea-field"><%= @shop.businesstime1 %></textarea>
-    </label>
-
-    <label for="field2">
-      <span>営業時間2 <span class="required"></span></span>
-      <textarea name="businesstime2" class="textarea-field"><%= @shop.businesstime2 %></textarea>
     </label>
 
     <label for="field2">

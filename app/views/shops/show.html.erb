@@ -14,7 +14,7 @@
        <%= render 'shared/contents_details_tag' %>
        <h1 class="contentsDetails__title"><%= @shop.shopname %></h1>
 	    </div>
-      <p class="contentsDetails__desc" style="font-weight: bold; line-height: 150%"><%= @shop.topcomment %></p>
+      <p class="contentsDetails__desc" style="font-weight: bold; line-height: 150%"><%= text_url_to_link(h(@shop.topcomment)).html_safe %></p>
       
 <!--  ここから　-->
       <div class="contentsDetails__img" style="display:block;">
@@ -52,13 +52,13 @@
 
 
 
-      <p class="contentsDetails__desc" style="line-height: 130%;"><%= safe_join(@shop.comment.split("\n"),tag(:br)) %></p>
+      <p class="contentsDetails__desc" style="line-height: 130%;"><%= text_url_to_link(h(@shop.comment)).html_safe %></p>
 
       <h2 class="contentsDetails__head">基本情報</h2>
       <table class="contentsDetails__table">
 	      <tr><th>店舗名</th><td><%= @shop.shopname %></td></tr>	
 	      <tr><th>よみがな</th><td><%= @shop.yomi %></td></tr>
-        <tr><th>電話番号</th><td><a href="tel:<%= @shop.shoptel %>"><%= @shop.shoptel %></a></td></tr>
+        <tr><th>電話番号</th><td><a href="tel:<%= @shop.shoptel %>"><%= @shop.shoptel %></a><p><%= @shop.businesstime2 %></p></td></tr>
 			  <tr><th>住所</th><td><%=safe_join(@shop.addres2.split("\n"),tag(:br))%></td></tr>
       </table>
     
