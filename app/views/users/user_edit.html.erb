@@ -5,7 +5,7 @@
     <div class="contentsDetails">
       <div class="contentsDetails__flex" style="display:block;"><%= render 'shared/contents_details_tag' %><h1 class="contentsDetails__title"><%= @shop.shopname %></h1></div>
       <%= form_tag("/users/#{@shop.userid}/user_update") do %>
-      <p class="contentsDetails__desc"><textarea style="height: 150px; width: 100%;" name="topcomment"><%= @shop.topcomment %></textarea></p>
+      <p class="contentsDetails__desc">↓トップコメント入力欄↓<textarea style="height: 150px; width: 100%;" name="topcomment"><%= @shop.topcomment %></textarea></p>
       <div class="contentsDetails__img" style="display:block;">
         <div id="contentsDetails__img">
           <% if @shop.topphoto == "" %>
@@ -16,7 +16,7 @@
           <img src="/topphoto_images/<%= @shop.topphoto %>" alt="">
           <% end %>
         </div>
-        <p href="">トップ画像を変更(準備中)</p>
+        <!-- <p href="">トップ画像を変更(準備中)</p> -->
         <div style="display:flex; justify-content: center;align-items: center;">
           <div id="contentsDetails__img" style="width: 360px;">
             <% if @shop.photo1 == "" %>
@@ -33,10 +33,10 @@
             <% end %>
           </div>
         </div>
-        <div><div style="display: inline-block;"><p href="">画像（２枚目）を変更(準備中)</p></div><div style="text-align: right; "><p href="">画像（３枚目）を変更(準備中)</p></div></div>
+        <!-- <div><div style="display: inline-block;"><p href="">画像（２枚目）を変更(準備中)</p></div><div style="text-align: right; "><p href="">画像（３枚目）を変更(準備中)</p></div></div> -->
       </div>
       <h3><p style="background-color:#FFFFCC">画像の変更は<%= link_to "TwitterのDM", "https://twitter.com/mahjong_search", target: :_blank, rel: "noopener noreferrer" %>または<%= link_to "問合せフォーム", "/member_inquiry", target: :_blank, rel: "noopener noreferrer" %>からお問い合わせください</p></h3>
-      <p class="contentsDetails__desc"><textarea style="height: 300px; width: 100%;" name="comment"><%= @shop.comment %></textarea></p> 
+      <p class="contentsDetails__desc">↓概要・コメント入力欄↓<textarea style="height: 300px; width: 100%;" name="comment"><%= @shop.comment %></textarea></p> 
       <h2 class="contentsDetails__head" style="background-color:#FFFF99;">会員情報(非公開情報)</h2>
       <table class="contentsDetails__table">
         <tr><th>店舗id</th><td><%= @shop.userid %></td></tr>
