@@ -1,0 +1,41 @@
+<h3>club_request</h3>
+
+<% content_for :title do %>健康麻雀クラブ_名古屋市中川区生涯学習センター<% end %>
+<div class="form-style-2">
+  <div class="form-style-2-heading">健康麻雀クラブ申込フォーム<br>７月６日（水）９時～１２時　中川生涯学習センター</div>
+  <%= form_tag("/club_request_create") do %>
+  <form>
+    <label for="field1" style="color: red;">
+      <% @sender.errors.full_messages.each do |message| %>
+      <%= message %><br>
+      <% end %>
+    </label>
+    
+    <label for="field1">
+      <span>お名前 <span class="required">*</span></span>
+      <input type="text" class="input-field" name="shopname" value="<%= @sender.shopname %>" />
+    </label>
+    
+    <label for="field2"><span>よみがな <span class="required">*</span></span>
+      <input type="text" class="input-field" name="yomi" value="<%= @sender.yomi %>" />
+    </label>
+    
+    <label>
+      <span>電話番号 <span class="required">*</span></span>
+      <input type="text" class="tel-number-field" name="tel1" value="<%= @sender.tel1 %>" maxlength="4" />-<input type="text" class="tel-number-field" name="tel2" value="<%= @sender.tel2 %>" maxlength="4" />-<input type="text" class="tel-number-field" name="tel3" value="<%= @sender.tel3 %>" maxlength="10"  />
+    </label>
+    
+    <label for="field2"><span>ご住所(区町村) <span class="required">*</span></span><input type="text" class="input-field" name="addres" value="<%= @sender.addres %>" /></label>
+    
+    <label for="field2">
+      <span>メールアドレス <span class="required">*</span></span>
+      <input type="text" class="input-field" name="chargemail" value="<%= @sender.chargemail %>" /></label>
+    
+    <label for="field5"><span>ご質問等 </span><textarea name="question" class="textarea-field"><%= @sender.question %></textarea></label>
+    
+
+    <label><span> </span><input type="submit" name="" value="送信" />
+    </label>
+  </form>
+  <% end %>
+</div>

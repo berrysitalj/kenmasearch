@@ -49,6 +49,9 @@ Rails.application.routes.draw do
   get "adv" => "home#adv"
   get "recruit_adv" => "home#recruit_adv"
   get "member_inquiry" => "home#member_inquiry"
+  # クラブ
+  get "reserve" => "home#reserve"
+  get "club_request" => "home#club_request"
   get "recruit/send_completely" => "home#send_completely"
   post "recruit/free_create" => "home#free_create"
   post "recruit/paid_create" => "home#paid_create"
@@ -56,6 +59,7 @@ Rails.application.routes.draw do
   post "recruit/non_profit_create" => "home#non_profit_create"
   post "recruit/adv_create" => "home#adv_create"
   post "member_inquiry_create" => "home#member_inquiry_create"
+  post "club_request_create" => "home#club_request_create"
 
   get "aichi" => "prefectures#aichi"
   get "gihu" => "prefectures#gihu"

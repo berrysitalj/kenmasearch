@@ -229,12 +229,10 @@ ja:
       sender: ユーザー
     attributes:
       sender:
-        shopname: 店舗名
-        yomi: 店舗名よみがな
+        shopname: 名前
+        yomi: よみがな
         area: 都道府県
         addres: 住所
         charge: 担当者名
-        tel4: 担当者連絡先
-        tel5: 担当者連絡先
-        tel6: 担当者連絡先
+        tel4: 電話番号
         chargemail: メールアドレス

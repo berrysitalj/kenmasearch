@@ -10,7 +10,7 @@
       <tr><th>店舗名</th><td><%= @shop.shopname %></td></tr>
 	  <tr><th>担当者名</th><td><%= @shop.name %></td></tr>
 	  <tr><th>メールアドレス</th><td><%= @shop.mail %></td></tr>
-	  <tr><th>問合せ・変更内容<br><p style="font-size: 8px;">※連絡先が異なる場合はこちらに記入願います</p></th><td style="height: 150px;"><textarea name="question" value="<%= @sender.question %>" style="width: 100%; height: 100%;"></textarea></td></tr>
+	  <tr><th>問合せ・変更内容<br><p style="font-size: 8px;">※連絡先が異なる場合はこちらに記入願います</p></th><td style="height: 150px;"><textarea name="question" style="width: 100%; height: 100%;"><%= @sender.question %></textarea></td></tr>
 	</table>
   </div>
   <input type="submit" name="" value="送信">

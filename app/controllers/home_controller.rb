@@ -219,6 +219,15 @@ class HomeController < ApplicationController
     @sender = Sender.new
   end
 
+  # クラブ一覧
+  def reserve
+    
+  end
+  # クラブ申込みフォーム
+  def club_request
+    @sender = Sender.new
+  end
+
   def free_create
     @sender = Sender.new(category:"0",
                          shopname:params[:shopname], 
@@ -332,6 +341,28 @@ class HomeController < ApplicationController
       redirect_to("/recruit/send_completely")
     else
       render("member_inquiry")
+    end
+  end
+
+  def club_request_create
+    @sender = Sender.new(category:"5",
+                         shopname:params[:shopname], 
+                         yomi:params[:yomi],
+                         tel1:params[:tel1],
+                         tel2:params[:tel2],
+                         tel3:params[:tel3],
+                         tel4: "***",
+                         area: "***",
+                         addres:params[:addres],
+                         charge: "***",
+                         chargemail:params[:chargemail],
+                         question:params[:question]
+                         )
+    if @sender.save
+      redirect_to("/recruit/send_completely")
+    else
+      
+      render("club_request")
     end
   end
 

@@ -178,7 +178,7 @@ LARGE DISPLAY
 	color:red;
 }
 .form-style-2 .tel-number-field{
-	width: 40px;
+	width: 50px;
 	text-align: center;
 }
 .form-style-2 input.input-field, .form-style-2 .select-field{
@@ -371,3 +371,25 @@ input[type="checkbox"]:checked + .p1111{
 	text-align: center;
 	padding: 10px;
 }
+
+
+
+
+
+
+
+table.reserve{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+}
+
+table.reserve tr{
+  border-bottom: solid 1px #eee;
+}
+
+table.reserve th,table td{
+  text-align: center;
+  padding: 15px 0;
+}
+

@@ -16,7 +16,7 @@
     <label for="field2"><span>担当者名 <span class="required">*</span></span><input type="text" class="input-field" name="charge" value="<%= @sender.charge %>" /></label>      
     <label><span>担当者連絡先 <span class="required">*</span></span><input type="text" class="tel-number-field" name="tel4" value="<%= @sender.tel4 %>" maxlength="4" />-<input type="text" class="tel-number-field" name="tel5" value="<%= @sender.tel5 %>" maxlength="4" />-<input type="text" class="tel-number-field" name="tel6" value="<%= @sender.tel6 %>" maxlength="10"  /></label>
     <label for="field2"><span>メールアドレス <span class="required">*</span></span><input type="text" class="input-field" name="chargemail" value="<%= @sender.chargemail %>" /></label>
-    <label for="field5"><span>広告申込み・<br>　ご質問等<br>広告番号を記入</span><textarea name="question" class="textarea-field" value="<%= @sender.question %>" ></textarea></label>
+    <label for="field5"><span>広告申込み・<br>　ご質問等<br>広告番号を記入</span><textarea name="question" class="textarea-field"><%= @sender.question %></textarea></label>
     <label for="field5"><span>利用規約<br>プライバシーポリシー</span><div class="terms_agree"><a href="/recruit/terms" target="_blank">利用規約を確認</a><br><a href="/recruit/privacy_policy" target="_blank">プライバシーポリシーを確認</a></div></label>
     <label><span> </span><input type="submit" name="" value="利用規約に同意して送信" /></label>
   </form>

@@ -25,6 +25,9 @@
 	    <% elsif %>
 	    <% sender.category == 4 %>
 		  <td style="color: green;">会員問合せ</td>
+		  <% elsif %>
+      <% sender.category == 5 %>
+      <td style="color: green;">クラブ申込み</td>
 	    <% else %>
 		  <td>no_category</td>
 	    <% end %>		   
